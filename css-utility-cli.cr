@@ -1,7 +1,14 @@
 require "colorize"
 require "file_utils"
 require "option_parser"
+require "yaml"
 
+config_state = ""
+config_screen = ""
+config_property = ""
+
+file_data = {{ `cat #{__DIR__}/data.yaml`.stringify }}
+puts file_data
 # -> 694168
 
 #https://crystal-lang.org/reference/1.2/getting_started/cli.html
@@ -23,8 +30,14 @@ OptionParser.parse do |parser|
       puts " The directory #{project.colorize(:green)} is already created"
     else
       Dir.mkdir( project )
+      Dir.mkdir( project+"/config" )
+      File.write(project+"/config/screen.yaml", config_screen )
+      File.write(project+"/config/state.yaml", config_state )
+      File.write(project+"/config/property.yaml",config_property)
+
+
       puts " Project : #{project.colorize(:green)} created !"
-      puts " The Next step is run this command"
+      puts " The next step is run this command"
       puts "  cd #{project.colorize(:green)} && css-utility init"
     end
     exit
