@@ -1,4 +1,5 @@
 require "colorize"
+require "file_utils"
 require "option_parser"
 
 # -> 694168
@@ -17,12 +18,19 @@ OptionParser.parse do |parser|
     exit
   end
   parser.on "-c PROJECT", "--create=PROJECT", "create css-utility project" do | project |
-    puts " Project : #{project.colorize(:green)} created"
-    puts " The Next step is run this command"
-    puts "  cd #{project} && css-utility init"
+
+    if Dir.exists?(project)
+      puts " The directory #{project.colorize(:green)} is already created"
+    else
+      Dir.mkdir( project )
+      puts " Project : #{project.colorize(:green)} created !"
+      puts " The Next step is run this command"
+      puts "  cd #{project.colorize(:green)} && css-utility init"
+    end
     exit
   end
   parser.on "-i", "--init", "initialize css-utility project" do
+
     puts "Project : aaaa created"
     puts "cd aaa && run css-utility init"
     exit
