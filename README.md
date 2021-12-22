@@ -14,7 +14,7 @@ Descarga este repositorio
 
 console```
 git clone https://github.com/carlos-sweb/css-utility-cli.git
-```
+``
 
 ### Paso 2
 
@@ -22,12 +22,12 @@ Compila el archivo cr con el siguiente comando
 
 console```
 crystal build css-utility-cli --release
-```
+``
 
 ### Paso 3
 
 descubre como usar css-utility-cli
 
-```
+console```
 css-utility --help
-```
+``
