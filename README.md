@@ -28,7 +28,7 @@ crystal build css-utility-cli --release
 
 ### Paso 3
 
-descubre como usar css-utility
+descubre como usar css-utility-cli
 
 ´
 css-utility --help
