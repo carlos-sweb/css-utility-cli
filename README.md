@@ -21,7 +21,7 @@ git clone https://github.com/carlos-sweb/css-utility-cli.git
 Compila el archivo cr con el siguiente comando
 
 ```console
-crystal build css-utility-cli --release
+crystal build css-utility-cli.cr --release
 ```
 
 ### Paso 3
