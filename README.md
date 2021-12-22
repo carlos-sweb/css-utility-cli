@@ -4,7 +4,7 @@ Un programa que genera recursos css para tu projecto.
 
 ## ¿ Como comenzar ?
 
-## Requisitos previos
+<strong>Requisitos previos</strong>
 
 crystal-lang instalado
 
