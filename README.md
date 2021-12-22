@@ -12,24 +12,22 @@ crystal-lang instalado
 
 Descarga este repositorio
 
-console´
-
+console```
 git clone https://github.com/carlos-sweb/css-utility-cli.git
-
-´
+```
 
 ### Paso 2
 
 Compila el archivo cr con el siguiente comando
 
-console´
+console```
 crystal build css-utility-cli --release
-´
+```
 
 ### Paso 3
 
 descubre como usar css-utility-cli
 
-´
+```
 css-utility --help
-´
+```
