@@ -4,6 +4,38 @@ require "option_parser"
 require "yaml"
 
 #https://crystal-lang.org/reference/1.2/getting_started/cli.html
+propertys = [
+  "alignment",
+  "backgrounds",
+  "bgcolor",
+  "border",
+  "effects",
+  "flexbox",
+  "grid",
+  "interactivity",
+  "layout",
+  "sizing",
+  "spacing",
+  "tables",
+  "typography"
+]
+
+
+config_property = [] of String
+config_property.insert(0, {{ `cat #{__DIR__}/config/property/alignment.yaml`.stringify }} )
+config_property.insert(1, {{ `cat #{__DIR__}/config/property/backgrounds.yaml`.stringify }} )
+config_property.insert(2, {{ `cat #{__DIR__}/config/property/bgcolor.yaml`.stringify }} )
+config_property.insert(3, {{ `cat #{__DIR__}/config/property/border.yaml`.stringify }} )
+config_property.insert(4, {{ `cat #{__DIR__}/config/property/effects.yaml`.stringify }} )
+config_property.insert(5, {{ `cat #{__DIR__}/config/property/flexbox.yaml`.stringify }} )
+config_property.insert(6, {{ `cat #{__DIR__}/config/property/grid.yaml`.stringify }} )
+config_property.insert(7, {{ `cat #{__DIR__}/config/property/interactivity.yaml`.stringify }} )
+config_property.insert(8, {{ `cat #{__DIR__}/config/property/layout.yaml`.stringify }} )
+config_property.insert(9, {{ `cat #{__DIR__}/config/property/layout.yaml`.stringify }} )
+config_property.insert(10, {{ `cat #{__DIR__}/config/property/sizing.yaml`.stringify }} )
+config_property.insert(11, {{ `cat #{__DIR__}/config/property/spacing.yaml`.stringify }} )
+config_property.insert(12, {{ `cat #{__DIR__}/config/property/tables.yaml`.stringify }} )
+config_property.insert(13, {{ `cat #{__DIR__}/config/property/typography.yaml`.stringify }} )
 
 OptionParser.parse do |parser|
   parser.banner = "Welcome to Css-Utility"
@@ -30,39 +62,6 @@ OptionParser.parse do |parser|
       config_state = {{ `cat #{__DIR__}/config/state.yaml`.stringify }}
       config_screen = {{ `cat #{__DIR__}/config/screen.yaml`.stringify }}
 
-      propertys = [
-        "alignment",
-        "backgrounds",
-        "bgcolor",
-        "border",
-        "effects",
-        "flexbox",
-        "grid",
-        "interactivity",
-        "layout",
-        "sizing",
-        "spacing",
-        "tables",
-        "typography"
-      ]
-
-
-      config_property = [] of String
-      config_property.insert(0, {{ `cat #{__DIR__}/config/property/alignment.yaml`.stringify }} )
-      config_property.insert(1, {{ `cat #{__DIR__}/config/property/backgrounds.yaml`.stringify }} )
-      config_property.insert(2, {{ `cat #{__DIR__}/config/property/bgcolor.yaml`.stringify }} )
-      config_property.insert(3, {{ `cat #{__DIR__}/config/property/border.yaml`.stringify }} )
-      config_property.insert(4, {{ `cat #{__DIR__}/config/property/effects.yaml`.stringify }} )
-      config_property.insert(5, {{ `cat #{__DIR__}/config/property/flexbox.yaml`.stringify }} )
-      config_property.insert(6, {{ `cat #{__DIR__}/config/property/grid.yaml`.stringify }} )
-      config_property.insert(7, {{ `cat #{__DIR__}/config/property/interactivity.yaml`.stringify }} )
-      config_property.insert(8, {{ `cat #{__DIR__}/config/property/layout.yaml`.stringify }} )
-      config_property.insert(9, {{ `cat #{__DIR__}/config/property/layout.yaml`.stringify }} )
-      config_property.insert(10, {{ `cat #{__DIR__}/config/property/sizing.yaml`.stringify }} )
-      config_property.insert(11, {{ `cat #{__DIR__}/config/property/spacing.yaml`.stringify }} )
-      config_property.insert(12, {{ `cat #{__DIR__}/config/property/tables.yaml`.stringify }} )
-      config_property.insert(13, {{ `cat #{__DIR__}/config/property/typography.yaml`.stringify }} )
-
       File.write(project+"/config/screen.yaml", config_screen )
       File.write(project+"/config/state.yaml", config_state )
 
@@ -73,10 +72,10 @@ OptionParser.parse do |parser|
         break if iterator >= (config_property.size-1)
       end
 
-
       puts " Project : #{project.colorize(:green)} created !"
       puts " The next step is run this command"
       puts "  cd #{project.colorize(:green)} && css-utility init"
+
     end
     exit
   end
@@ -84,6 +83,13 @@ OptionParser.parse do |parser|
 
     puts "Project : aaaa created"
     puts "cd aaa && run css-utility init"
+    exit
+  end
+  parser.on "-b", "--build", "build project" do
+
+    puts "Already for compiled"
+
+
     exit
   end
   parser.invalid_option do |flag|
