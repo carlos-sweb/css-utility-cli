@@ -76,7 +76,7 @@ OptionParser.parse do |parser|
 
       puts " Project : #{project.colorize(:green)} created !"
       puts " The next step is run this command"
-      puts "  cd #{project.colorize(:green)} && css-utility init"            
+      puts "  cd #{project.colorize(:green)} && css-utility init"
     end
     exit
   end
