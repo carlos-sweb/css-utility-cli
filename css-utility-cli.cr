@@ -3,26 +3,6 @@ require "file_utils"
 require "option_parser"
 require "yaml"
 
-
-
-
-
-
-#config_property["alignment"] = {{ `cat #{__DIR__}/config/property/alignment.yaml`.stringify }}
-#config_property["backgrounds"] =  {{ `cat #{__DIR__}/config/property/backgrounds.yaml`.stringify }}
-#config_property["bgcolor"] =  {{ `cat #{__DIR__}/config/property/bgcolor.yaml`.stringify }}
-#config_property["border"] =  {{ `cat #{__DIR__}/config/property/border.yaml`.stringify }}
-#config_property["effects"] =  {{ `cat #{__DIR__}/config/property/effects.yaml`.stringify }}
-#config_property["flexbox"] =  {{ `cat #{__DIR__}/config/property/flexbox.yaml`.stringify }}
-#config_property["grid"] =  {{ `cat #{__DIR__}/config/property/grid.yaml`.stringify }}
-#config_property["interactivity"] =  {{ `cat #{__DIR__}/config/property/interactivity.yaml`.stringify }}
-#config_property["layout"] =  {{ `cat #{__DIR__}/config/property/layout.yaml`.stringify }}
-#config_property["spacing"] =  {{ `cat #{__DIR__}/config/property/spacing.yaml`.stringify }}
-#config_property["tables"] =  {{ `cat #{__DIR__}/config/property/tables.yaml`.stringify }}
-#config_property["typograpgy"] =  {{ `cat #{__DIR__}/config/property/typograpgy.yaml`.stringify }}
-
-# -> 694168
-
 #https://crystal-lang.org/reference/1.2/getting_started/cli.html
 
 OptionParser.parse do |parser|
@@ -41,9 +21,11 @@ OptionParser.parse do |parser|
     if Dir.exists?(project)
       puts " The directory #{project.colorize(:green)} is already created"
     else
-      Dir.mkdir( project )
+      Dir.mkdir( project  )
       Dir.mkdir( project+"/config" )
       Dir.mkdir( project+"/config/property" )
+      Dir.mkdir( project+"/dist" )
+      Dir.mkdir( project+"/less" )
 
       config_state = {{ `cat #{__DIR__}/config/state.yaml`.stringify }}
       config_screen = {{ `cat #{__DIR__}/config/screen.yaml`.stringify }}
@@ -94,8 +76,7 @@ OptionParser.parse do |parser|
 
       puts " Project : #{project.colorize(:green)} created !"
       puts " The next step is run this command"
-      puts "  cd #{project.colorize(:green)} && css-utility init"
-
+      puts "  cd #{project.colorize(:green)} && css-utility init"            
     end
     exit
   end
