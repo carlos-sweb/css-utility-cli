@@ -20,7 +20,6 @@ propertys = [
   "typography"
 ]
 
-
 config_property = [] of String
 config_property.insert(0, {{ `cat #{__DIR__}/config/property/alignment.yaml`.stringify }} )
 config_property.insert(1, {{ `cat #{__DIR__}/config/property/backgrounds.yaml`.stringify }} )
@@ -80,7 +79,6 @@ OptionParser.parse do |parser|
     exit
   end
   parser.on "-i", "--init", "initialize css-utility project" do
-
     puts "Project : aaaa created"
     puts "cd aaa && run css-utility init"
     exit
@@ -110,11 +108,28 @@ OptionParser.parse do |parser|
         end
         File.write("sass/screen.sass",screenContent)
         # ======================================================================
+        # ======================================================================
+        state = File.open("config/state.yaml") do | file |
+          YAML.parse(file).as_a
+        end
+        #  procesamos el archivo screen
+        # lo conertimos en un archivo sass
+        # se declaran como variables generales
+        stateContent = "@state:"
+        stateIterator = 0
+        state.each do |  value |
+          stateContent +=" #{value}"
+          if stateIterator < (state.size-1)
+            stateContent +=","
+          end
+          stateIterator += 1
+        end
+        File.write("sass/state.sass",stateContent)
+        # ======================================================================
       else
           puts "Error:".colorize(:red)
           puts " Dont exists config folder"
       end
-
     exit
   end
   parser.invalid_option do |flag|
