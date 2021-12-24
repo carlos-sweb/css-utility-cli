@@ -50,14 +50,14 @@ OptionParser.parse do |parser|
   end
   parser.on "-c PROJECT", "--create=PROJECT", "create css-utility project" do | project |
     # create project and create config file
-    if Dir.exists?(project)
+      if Dir.exists?(project)
       puts " The directory #{project.colorize(:green)} is already created"
     else
       Dir.mkdir( project  )
       Dir.mkdir( project+"/config" )
       Dir.mkdir( project+"/config/property" )
       Dir.mkdir( project+"/dist" )
-      Dir.mkdir( project+"/less" )
+      Dir.mkdir( project+"/sass" )
 
       config_state = {{ `cat #{__DIR__}/config/state.yaml`.stringify }}
       config_screen = {{ `cat #{__DIR__}/config/screen.yaml`.stringify }}
@@ -86,9 +86,34 @@ OptionParser.parse do |parser|
     exit
   end
   parser.on "-b", "--build", "build project" do
-
-    puts "Already for compiled"
-
+      if Dir.exists?("config")
+        # ======================================================================
+        screen = File.open("config/screen.yaml") do | file |
+          YAML.parse(file).as_h
+        end
+        #  procesamos el archivo screen
+        # lo conertimos en un archivo sass
+        # se declaran como variables generales
+        screenContent = ""
+        screen.each do | key , value |
+            screenContent += "@#{key}("
+            iterator_screen = 0
+            value.as_h.each do | k , v |
+                if iterator_screen == (value.as_h.size-1)
+                    screenContent += "\"#{k}\":#{v}"
+                else
+                    screenContent += "\"#{k}\":#{v},"
+                end
+                iterator_screen += 1
+            end
+            screenContent +=")\n"
+        end
+        File.write("sass/screen.sass",screenContent)
+        # ======================================================================
+      else
+          puts "Error:".colorize(:red)
+          puts " Dont exists config folder"
+      end
 
     exit
   end
