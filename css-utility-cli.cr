@@ -49,18 +49,19 @@ OptionParser.parse do |parser|
       puts " The directory #{project.colorize(:green)} is already created"
     else
       Dir.mkdir(project)
-      Dir.mkdir(project + "/config")
-      Dir.mkdir(project + "/config/property")
-      Dir.mkdir(project + "/dist")
-      Dir.mkdir(project + "/scss")
-      Dir.mkdir(project + "/scss/property")
+      Dir.mkdir("#{project}/config")
+      Dir.mkdir("#{project}/config/property")
+      Dir.mkdir("#{project}/dist")
+      Dir.mkdir("#{project}/less")
+      Dir.mkdir("#{project}/less/property")
       config_state = {{ `cat #{__DIR__}/config/state.yaml`.stringify }}
       config_screen = {{ `cat #{__DIR__}/config/screen.yaml`.stringify }}
-      File.write(project + "/config/screen.yaml", config_screen)
-      File.write(project + "/config/state.yaml", config_state)
+      File.write("#{project}/config/screen.yaml", config_screen)
+      File.write("#{project}/config/state.yaml", config_state)
       iterator = 0
       while iterator <= config_property.size
-        File.write(project + "/config/property/#{propertys[iterator]}.yaml", config_property[iterator])
+        File.write("#{project}/config/property/#{propertys[iterator]}.yaml", config_property[iterator])
+        Dir.mkdir("#{project}/dist/#{propertys[iterator]}")
         iterator += 1
         break if iterator >= (config_property.size - 1)
       end
@@ -85,7 +86,7 @@ OptionParser.parse do |parser|
       # se declaran como variables generales
       screenContent = ""
       screen.each do |key, value|
-        screenContent += "$#{key}("
+        screenContent += "@#{key}("
         iterator_screen = 0
         value.as_h.each do |k, v|
           if iterator_screen == (value.as_h.size - 1)
@@ -97,7 +98,7 @@ OptionParser.parse do |parser|
         end
         screenContent += ");\n"
       end
-      File.write("scss/screen.scss", screenContent)
+      File.write("less/screen.less", screenContent)
       # ======================================================================
       # ======================================================================
       state = File.open("config/state.yaml") do |file|
@@ -106,7 +107,7 @@ OptionParser.parse do |parser|
       #  procesamos el archivo screen
       # lo conertimos en un archivo scss
       # se declaran como variables generales
-      stateContent = "$state:"
+      stateContent = "@state:"
       stateIterator = 0
       state.each do |value|
         stateContent += " #{value}"
@@ -117,7 +118,7 @@ OptionParser.parse do |parser|
         end
         stateIterator += 1
       end
-      File.write("scss/state.scss", stateContent)
+      File.write("less/state.less", stateContent)
       # ======================================================================
       propertys.each do |_property|
         baseUrlProperty = "config/property/"
@@ -125,7 +126,7 @@ OptionParser.parse do |parser|
           propertyYaml = File.open(baseUrlProperty + _property + ".yaml") do |file|
             YAML.parse(file)
           end
-          propertyContent = ""
+          propertyContent = "@import './../state.less';\n"
           propertyYaml.as_h.each do |key, value|
             value.as_h.each do |k, v|
               propertyContent += ".#{k}{\n"
@@ -133,16 +134,18 @@ OptionParser.parse do |parser|
               propertyContent += "}\n"
             end
           end
-          propertyContent += "@each $value in $state{\n"
+          propertyContent += "each(@state,{\n"
           propertyYaml.as_h.each do |key, value|
             value.as_h.each do |k, v|
-              propertyContent += " .#{k}\\:\#{$value}:\#{$value}{\n"
+              propertyContent += " .#{k}\\:@{value}:@{value}{\n"
               propertyContent += "   #{key}:#{v};\n"
               propertyContent += " }\n"
             end
           end
-          propertyContent += "}\n"
-          File.write("scss/property/" + _property + ".scss", propertyContent)
+          propertyContent += "})\n"
+          File.write("less/property/#{_property}.less", propertyContent)
+          Process.run("lessc less/property/#{_property}.less dist/#{_property}/#{_property}.css", shell: true)
+          Process.run("lessc less/property/#{_property}.less -x dist/#{_property}/#{_property}.min.css", shell: true)
         end
       end
     else
