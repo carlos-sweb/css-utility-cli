@@ -1,5 +1,5 @@
 ---
-- border-bottom-right-radius:
+  border-bottom-right-radius:
     rounded-br-none: 0px
     rounded-br-sm: 0.125rem
     rounded-br: 0.25rem
