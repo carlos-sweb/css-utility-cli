@@ -85,19 +85,17 @@ OptionParser.parse do |parser|
       #  procesamos el archivo screen
       # lo conertimos en un archivo scss
       # se declaran como variables generales
-      screenContent = ""
+      screenContent = "@screen:"
+      screenIterator = 1
+      screensize = screen.keys.size
       screen.each do |key, value|
-        screenContent += "@#{key}("
-        iterator_screen = 0
-        value.as_h.each do |k, v|
-          if iterator_screen == (value.as_h.size - 1)
-            screenContent += "\"#{k}\":#{v}"
-          else
-            screenContent += "\"#{k}\":#{v},"
-          end
-          iterator_screen += 1
+        screenContent += "#{key} #{value.as_h["min"]} #{value.as_h["max"]}"
+        if screenIterator < screensize
+          screenContent += ","
+        else
+          screenContent += ";"
         end
-        screenContent += ");\n"
+        screenIterator += 1
       end
       File.write("less/screen.less", screenContent)
       # ======================================================================
@@ -128,6 +126,7 @@ OptionParser.parse do |parser|
             YAML.parse(file)
           end
           propertyContent = "@import './../../state.less';\n"
+          propertyContent = "@import './../../screen.less';\n"
           puts "#{"processing".colorize(:yellow)} #{_property} :"
           propertyYaml.as_h.each do |key, value|
             puts " - #{key.colorize(:green)}"
@@ -136,6 +135,16 @@ OptionParser.parse do |parser|
               propertyContent += "  #{key}:#{v};\n"
               propertyContent += "}\n"
             end
+            propertyContent += "each(@screen,{\n"
+            propertyContent += " escape(\"@media\") (min-width:0px) and (max-width:400px){"
+            value.as_h.each do |k, v|
+              propertyContent += " .@{key}#{k}{\n"
+              propertyContent += "   #{key}:#{v};\n"
+              propertyContent += " }\n"
+            end
+            propertyContent += " }"
+            propertyContent += "})"
+
             # Creamos el bucle para
             propertyContent += "each(@state,{\n"
             value.as_h.each do |k, v|

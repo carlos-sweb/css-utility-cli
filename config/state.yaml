@@ -1,9 +1,10 @@
 ---
+  - link
+  - visited
+  - hover
+  - focus
   - active
   - checked
-  - disabled
-  - focus
-  - focus-visible
-  - hover
-  - required
-  - visited
+  - disabled  
+  - focus-visible  
+  - required  

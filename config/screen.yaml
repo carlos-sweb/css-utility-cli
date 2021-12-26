@@ -1,13 +1,13 @@
 ---
 xs:
-  min: 0
-  max: 639
+  min: 0px
+  max: 639px
 sm:
-  min: 640
-  max: 767
+  min: 640px
+  max: 767px
 md:
-  min: 768
-  max: 1023
+  min: 768px
+  max: 1023px
 lg:
-  min: 1024
-  max: 2000
+  min: 1024px
+  max: 2000px
