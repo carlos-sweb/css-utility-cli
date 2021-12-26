@@ -28,11 +28,10 @@ config_property.insert(5, {{ `cat #{__DIR__}/config/property/flexbox.yaml`.strin
 config_property.insert(6, {{ `cat #{__DIR__}/config/property/grid.yaml`.stringify }})
 config_property.insert(7, {{ `cat #{__DIR__}/config/property/interactivity.yaml`.stringify }})
 config_property.insert(8, {{ `cat #{__DIR__}/config/property/layout.yaml`.stringify }})
-config_property.insert(9, {{ `cat #{__DIR__}/config/property/layout.yaml`.stringify }})
-config_property.insert(10, {{ `cat #{__DIR__}/config/property/sizing.yaml`.stringify }})
-config_property.insert(11, {{ `cat #{__DIR__}/config/property/spacing.yaml`.stringify }})
-config_property.insert(12, {{ `cat #{__DIR__}/config/property/tables.yaml`.stringify }})
-config_property.insert(13, {{ `cat #{__DIR__}/config/property/typography.yaml`.stringify }})
+config_property.insert(9, {{ `cat #{__DIR__}/config/property/sizing.yaml`.stringify }})
+config_property.insert(10, {{ `cat #{__DIR__}/config/property/spacing.yaml`.stringify }})
+config_property.insert(11, {{ `cat #{__DIR__}/config/property/tables.yaml`.stringify }})
+config_property.insert(12, {{ `cat #{__DIR__}/config/property/typography.yaml`.stringify }})
 OptionParser.parse do |parser|
   parser.banner = "Welcome to Css-Utility"
   parser.on "-v", "--version", "Show version" do
@@ -62,6 +61,7 @@ OptionParser.parse do |parser|
       while iterator <= config_property.size
         File.write("#{project}/config/property/#{propertys[iterator]}.yaml", config_property[iterator])
         Dir.mkdir("#{project}/dist/#{propertys[iterator]}")
+        Dir.mkdir("#{project}/less/property/#{propertys[iterator]}")
         iterator += 1
         break if iterator >= (config_property.size - 1)
       end
@@ -77,6 +77,7 @@ OptionParser.parse do |parser|
   end
   parser.on "-b", "--build", "build project" do
     if Dir.exists?("config")
+      timeStart = Time.local
       # ======================================================================
       screen = File.open("config/screen.yaml") do |file|
         YAML.parse(file).as_h
@@ -126,32 +127,42 @@ OptionParser.parse do |parser|
           propertyYaml = File.open(baseUrlProperty + _property + ".yaml") do |file|
             YAML.parse(file)
           end
-          propertyContent = "@import './../state.less';\n"
+          propertyContent = "@import './../../state.less';\n"
+          puts "#{"processing".colorize(:yellow)} #{_property} :"
           propertyYaml.as_h.each do |key, value|
+            puts " - #{key.colorize(:green)}"
             value.as_h.each do |k, v|
               propertyContent += ".#{k}{\n"
               propertyContent += "  #{key}:#{v};\n"
               propertyContent += "}\n"
             end
-          end
-          propertyContent += "each(@state,{\n"
-          propertyYaml.as_h.each do |key, value|
+            # Creamos el bucle para
+            propertyContent += "each(@state,{\n"
             value.as_h.each do |k, v|
               propertyContent += " .#{k}\\:@{value}:@{value}{\n"
               propertyContent += "   #{key}:#{v};\n"
               propertyContent += " }\n"
             end
+            propertyContent += "})\n"
+            File.write("less/property/#{_property}/#{key}.less", propertyContent)
+            Process.run("lessc less/property/#{_property}/#{key}.less dist/#{_property}/#{key}.css", shell: true)
+            Process.run("lessc less/property/#{_property}/#{key}.less -clean-css dist/#{_property}/#{key}.min.css", shell: true)
           end
-          propertyContent += "})\n"
-          File.write("less/property/#{_property}.less", propertyContent)
-          Process.run("lessc less/property/#{_property}.less dist/#{_property}/#{_property}.css", shell: true)
-          Process.run("lessc less/property/#{_property}.less -x dist/#{_property}/#{_property}.min.css", shell: true)
         end
+      end
+      timeFinish = Time.local
+      # puts "Time to start #{timeStart} , Time to Finish #{timeFinish}"
+      duration = timeFinish - timeStart
+      if duration.total_seconds < 60
+        puts "Total duration : #{duration.total_seconds.round(2).colorize(:yellow)} seconds"
+      else
+        puts "Total duration : #{duration.total_minutes.round(2).colorize(:yellow)} minutes"
       end
     else
       puts "Error:".colorize(:red)
       puts " Dont exists config folder"
     end
+
     exit
   end
   parser.invalid_option do |flag|
