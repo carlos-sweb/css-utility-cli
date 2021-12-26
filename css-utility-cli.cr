@@ -125,34 +125,47 @@ OptionParser.parse do |parser|
           propertyYaml = File.open(baseUrlProperty + _property + ".yaml") do |file|
             YAML.parse(file)
           end
-          propertyContent = "@import './../../state.less';\n"
-          propertyContent = "@import './../../screen.less';\n"
           puts "#{"processing".colorize(:yellow)} #{_property} :"
           propertyYaml.as_h.each do |key, value|
             puts " - #{key.colorize(:green)}"
+            propertyContent = "@import './../../state.less';\n"
+            propertyContent += "@import './../../screen.less';\n"
             value.as_h.each do |k, v|
               propertyContent += ".#{k}{\n"
               propertyContent += "  #{key}:#{v};\n"
               propertyContent += "}\n"
             end
-            propertyContent += "each(@screen,{\n"
-            propertyContent += " escape(\"@media\") (min-width:0px) and (max-width:400px){"
-            value.as_h.each do |k, v|
-              propertyContent += " .@{key}#{k}{\n"
-              propertyContent += "   #{key}:#{v};\n"
-              propertyContent += " }\n"
-            end
-            propertyContent += " }"
-            propertyContent += "})"
 
-            # Creamos el bucle para
             propertyContent += "each(@state,{\n"
             value.as_h.each do |k, v|
-              propertyContent += " .#{k}\\:@{value}:@{value}{\n"
-              propertyContent += "   #{key}:#{v};\n"
-              propertyContent += " }\n"
+              propertyContent += ".#{k}\\:@{value}:@{value}{\n"
+              propertyContent += "  #{key}:#{v};\n"
+              propertyContent += "}\n"
             end
             propertyContent += "})\n"
+
+            propertyContent += "each(@screen,{\n"
+            propertyContent += " @text : extract(extract(@screen,@index),1);\n"
+            propertyContent += " @minimun : extract(extract(@screen,@index),2);\n"
+            propertyContent += " @maximum : extract(extract(@screen,@index),3);\n"
+            propertyContent += " @media(min-width: @minimun ) and (max-width: @maximum ){\n"
+
+            propertyContent += "each(@state,.(@v,@k,@i){\n"
+            value.as_h.each do |k, v|
+              propertyContent += ".@{text}\\:#{k}\\:@{v}:@{v}{\n"
+              propertyContent += "  #{key}:#{v};\n"
+              propertyContent += "}\n"
+            end
+            propertyContent += "})\n"
+
+            value.as_h.each do |k, v|
+              propertyContent += "  .@{text}\\:#{k}{\n"
+              propertyContent += "    #{key}:#{v};\n"
+              propertyContent += "  }\n"
+            end
+            propertyContent += "  }\n"
+            propertyContent += "})\n"
+
             File.write("less/property/#{_property}/#{key}.less", propertyContent)
             Process.run("lessc less/property/#{_property}/#{key}.less dist/#{_property}/#{key}.css", shell: true)
             Process.run("lessc less/property/#{_property}/#{key}.less -clean-css dist/#{_property}/#{key}.min.css", shell: true)
