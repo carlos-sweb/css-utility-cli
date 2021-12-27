@@ -96,34 +96,9 @@ OptionParser.parse do |parser|
           propertyYaml.as_h.each do |key, value|
             # informamos en pantalla el grupo a trabjar
             puts " - #{key.colorize(:green)}"
-            filenameMin = "./dist/#{_property}/#{key}.min.css"
-            File.open(filenameMin, "w+") do |file|
-              # =========================================
-              nameImport += "@import url(\"#{_property}/#{key}.min.css\");\n"
-              value.as_h.each do |nClass, vClass|
-                file.puts ".#{nClass}{#{key}:#{vClass};}"
-              end
-              value.as_h.each do |nClass, vClass|
-                state.each do |nState|
-                  file.puts ".#{nClass}\\:#{nState}:#{nState}{#{key}:#{vClass};}"
-                end
-              end
-              # =========================================
-              screen.each do |sName, obj|
-                file.puts "@media(min-width:#{obj["min"]}) and (max-width:#{obj["max"]}){"
-                value.as_h.each do |nClass, vClass|
-                  file.puts ".#{sName}\\:#{nClass}{#{key}:#{vClass};}"
-                end
-                value.as_h.each do |nClass, vClass|
-                  state.each do |nState|
-                    file.puts ".#{sName}\\:#{nClass}\\:#{nState}:#{nState}{#{key}:#{vClass};}"
-                  end
-                end
-                file.puts "}"
-              end
-            end
             filename = "./dist/#{_property}/#{key}.css"
             File.open(filename, "w+") do |file|
+              nameImport += "@import url(\"#{_property}/#{key}.min.css\");\n"
               # =========================================
               value.as_h.each do |nClass, vClass|
                 file.puts <<-END
