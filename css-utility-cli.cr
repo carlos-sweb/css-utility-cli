@@ -51,8 +51,6 @@ OptionParser.parse do |parser|
       Dir.mkdir("#{project}/config")
       Dir.mkdir("#{project}/config/property")
       Dir.mkdir("#{project}/dist")
-      Dir.mkdir("#{project}/less")
-      Dir.mkdir("#{project}/less/property")
       config_state = {{ `cat #{__DIR__}/config/state.yaml`.stringify }}
       config_screen = {{ `cat #{__DIR__}/config/screen.yaml`.stringify }}
       File.write("#{project}/config/screen.yaml", config_screen)
@@ -61,9 +59,8 @@ OptionParser.parse do |parser|
       while iterator <= config_property.size
         File.write("#{project}/config/property/#{propertys[iterator]}.yaml", config_property[iterator])
         Dir.mkdir("#{project}/dist/#{propertys[iterator]}")
-        Dir.mkdir("#{project}/less/property/#{propertys[iterator]}")
         iterator += 1
-        break if iterator >= (config_property.size - 1)
+        break if iterator >= (config_property.size)
       end
       puts " Project : #{project.colorize(:green)} created !"
       puts " The next step is run this command"
@@ -82,43 +79,13 @@ OptionParser.parse do |parser|
       screen = File.open("config/screen.yaml") do |file|
         YAML.parse(file).as_h
       end
-      #  procesamos el archivo screen
-      # lo conertimos en un archivo scss
-      # se declaran como variables generales
-      screenContent = "@screen:"
-      screenIterator = 1
-      screensize = screen.keys.size
-      screen.each do |key, value|
-        screenContent += "#{key} #{value.as_h["min"]} #{value.as_h["max"]}"
-        if screenIterator < screensize
-          screenContent += ","
-        else
-          screenContent += ";"
-        end
-        screenIterator += 1
-      end
-      File.write("less/screen.less", screenContent)
       # ======================================================================
       # ======================================================================
       state = File.open("config/state.yaml") do |file|
         YAML.parse(file).as_a
       end
-      #  procesamos el archivo screen
-      # lo conertimos en un archivo scss
-      # se declaran como variables generales
-      stateContent = "@state:"
-      stateIterator = 0
-      state.each do |value|
-        stateContent += " #{value}"
-        if stateIterator < (state.size - 1)
-          stateContent += ","
-        else
-          stateContent += ";"
-        end
-        stateIterator += 1
-      end
-      File.write("less/state.less", stateContent)
       # ======================================================================
+      nameImport = ""
       propertys.each do |_property|
         baseUrlProperty = "config/property/"
         if File.exists?(baseUrlProperty + _property + ".yaml")
@@ -127,51 +94,88 @@ OptionParser.parse do |parser|
           end
           puts "#{"processing".colorize(:yellow)} #{_property} :"
           propertyYaml.as_h.each do |key, value|
+            # informamos en pantalla el grupo a trabjar
             puts " - #{key.colorize(:green)}"
-            propertyContent = "@import './../../state.less';\n"
-            propertyContent += "@import './../../screen.less';\n"
-            value.as_h.each do |k, v|
-              propertyContent += ".#{k}{\n"
-              propertyContent += "  #{key}:#{v};\n"
-              propertyContent += "}\n"
+            filenameMin = "./dist/#{_property}/#{key}.min.css"
+            File.open(filenameMin, "w+") do |file|
+              # =========================================
+              nameImport += "@import url(\"#{_property}/#{key}.min.css\");\n"
+              value.as_h.each do |nClass, vClass|
+                file.puts ".#{nClass}{#{key}:#{vClass};}"
+              end
+              value.as_h.each do |nClass, vClass|
+                state.each do |nState|
+                  file.puts ".#{nClass}\\:#{nState}:#{nState}{#{key}:#{vClass};}"
+                end
+              end
+              # =========================================
+              screen.each do |sName, obj|
+                file.puts "@media(min-width:#{obj["min"]}) and (max-width:#{obj["max"]}){"
+                value.as_h.each do |nClass, vClass|
+                  file.puts ".#{sName}\\:#{nClass}{#{key}:#{vClass};}"
+                end
+                value.as_h.each do |nClass, vClass|
+                  state.each do |nState|
+                    file.puts ".#{sName}\\:#{nClass}\\:#{nState}:#{nState}{#{key}:#{vClass};}"
+                  end
+                end
+                file.puts "}"
+              end
             end
+            filename = "./dist/#{_property}/#{key}.css"
+            File.open(filename, "w+") do |file|
+              # =========================================
+              value.as_h.each do |nClass, vClass|
+                file.puts <<-END
+                .#{nClass}{
+                  #{key}:#{vClass};
+                }
+                END
+              end
+              value.as_h.each do |nClass, vClass|
+                state.each do |nState|
+                  file.puts <<-END
+                  .#{nClass}\\:#{nState}:#{nState}{
+                    #{key}:#{vClass};
+                  }
+                  END
+                end
+              end
+              # =========================================
+              screen.each do |sName, obj|
+                file.puts <<-END
+                @media(min-width:#{obj["min"]}) and (max-width:#{obj["max"]}){
+                END
+                value.as_h.each do |nClass, vClass|
+                  file.puts <<-END
+                    .#{sName}\\:#{nClass}{
+                      #{key}:#{vClass};
+                    }
+                  END
+                end
 
-            propertyContent += "each(@state,{\n"
-            value.as_h.each do |k, v|
-              propertyContent += ".#{k}\\:@{value}:@{value}{\n"
-              propertyContent += "  #{key}:#{v};\n"
-              propertyContent += "}\n"
+                value.as_h.each do |nClass, vClass|
+                  state.each do |nState|
+                    file.puts <<-END
+                      .#{sName}\\:#{nClass}\\:#{nState}:#{nState}{
+                        #{key}:#{vClass};
+                      }
+                    END
+                  end
+                end
+
+                file.puts <<-END
+                }
+                END
+              end
             end
-            propertyContent += "})\n"
-
-            propertyContent += "each(@screen,{\n"
-            propertyContent += " @text : extract(extract(@screen,@index),1);\n"
-            propertyContent += " @minimun : extract(extract(@screen,@index),2);\n"
-            propertyContent += " @maximum : extract(extract(@screen,@index),3);\n"
-            propertyContent += " @media(min-width: @minimun ) and (max-width: @maximum ){\n"
-
-            propertyContent += "each(@state,.(@v,@k,@i){\n"
-            value.as_h.each do |k, v|
-              propertyContent += ".@{text}\\:#{k}\\:@{v}:@{v}{\n"
-              propertyContent += "  #{key}:#{v};\n"
-              propertyContent += "}\n"
-            end
-            propertyContent += "})\n"
-
-            value.as_h.each do |k, v|
-              propertyContent += "  .@{text}\\:#{k}{\n"
-              propertyContent += "    #{key}:#{v};\n"
-              propertyContent += "  }\n"
-            end
-            propertyContent += "  }\n"
-            propertyContent += "})\n"
-
-            File.write("less/property/#{_property}/#{key}.less", propertyContent)
-            Process.run("lessc less/property/#{_property}/#{key}.less dist/#{_property}/#{key}.css", shell: true)
-            Process.run("lessc less/property/#{_property}/#{key}.less -clean-css dist/#{_property}/#{key}.min.css", shell: true)
           end
         end
       end
+      File.open("dist/master.css", "w+") do |master|
+        master.puts nameImport
+      end
+      # fin del proceso de crear los archivos
       timeFinish = Time.local
       # puts "Time to start #{timeStart} , Time to Finish #{timeFinish}"
       duration = timeFinish - timeStart
