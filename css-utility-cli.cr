@@ -144,6 +144,8 @@ OptionParser.parse do |parser|
                 END
               end
             end
+            # Process.run("css-utility-minify ./dist/#{_property}/#{key}.css ./dist/#{_property}/#{key}.min.css", shell: true)
+            # Process.run("sh", {"-c", "css-utility-minify ./dist/#{_property}/#{key}.css ./dist/#{_property}/#{key}.min.css"})
           end
         end
       end
