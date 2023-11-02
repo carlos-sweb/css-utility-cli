@@ -1,0 +1,29 @@
+---
+outline:
+  outline-none: 2px solid transparent
+  outline-white: 2px dotted white
+  outline-black: 2px dotted black
+outline-offset:
+  outline-offset-2: 2px
+appearance:
+  appearance-none: none
+cursor:
+  cursor-auto: auto
+  cursor-default: default
+  cursor-pointer: pointer
+  cursor-wait: wait
+  cursor-text: text
+  cursor-move: move
+  cursor-help: help
+  cursor-not-allowed: not-allowed
+  cursor-none: none
+resize:
+  resize-none: none
+  resize-vertical: vertical
+  resize-horizontal: horizontal
+  resize: both
+user-select:
+  select-none: none
+  select-text: text
+  select-all: all
+  select-auto: auto

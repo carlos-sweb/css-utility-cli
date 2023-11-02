@@ -1,0 +1,10 @@
+---
+  - link
+  - visited
+  - hover
+  - focus
+  - active
+  - checked
+  - disabled  
+  - focus-visible  
+  - required

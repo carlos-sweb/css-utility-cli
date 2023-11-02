@@ -1,0 +1,7 @@
+---
+border-collapse:
+  border-collapse: collapse
+  border-separate: separate
+table-layout:
+  table-auto: auto
+  table-fixed: fixed

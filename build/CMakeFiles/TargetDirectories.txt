@@ -1,0 +1,7 @@
+/home/sweb/Escritorio/cpp/build/CMakeFiles/cssutilitycli.dir
+/home/sweb/Escritorio/cpp/build/CMakeFiles/edit_cache.dir
+/home/sweb/Escritorio/cpp/build/CMakeFiles/rebuild_cache.dir
+/home/sweb/Escritorio/cpp/build/CMakeFiles/list_install_components.dir
+/home/sweb/Escritorio/cpp/build/CMakeFiles/install.dir
+/home/sweb/Escritorio/cpp/build/CMakeFiles/install/local.dir
+/home/sweb/Escritorio/cpp/build/CMakeFiles/install/strip.dir
