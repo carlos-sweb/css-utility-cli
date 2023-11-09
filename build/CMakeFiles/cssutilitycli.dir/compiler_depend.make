@@ -4,6 +4,7 @@
 CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
   /home/sweb/Escritorio/cpp/config/build.h \
   /home/sweb/Escritorio/cpp/config/categories.h \
+  /home/sweb/Escritorio/cpp/config/normalize.h \
   /home/sweb/Escritorio/cpp/config/property/alignment.h \
   /home/sweb/Escritorio/cpp/config/property/backgrounds.h \
   /home/sweb/Escritorio/cpp/config/property/bgcolor.h \
@@ -16,6 +17,7 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
   /home/sweb/Escritorio/cpp/config/property/sizing.h \
   /home/sweb/Escritorio/cpp/config/property/spacing.h \
   /home/sweb/Escritorio/cpp/config/property/tables.h \
+  /home/sweb/Escritorio/cpp/config/property/transform.h \
   /home/sweb/Escritorio/cpp/config/property/typography.h \
   /home/sweb/Escritorio/cpp/config/screens.h \
   /home/sweb/Escritorio/cpp/config/states.h \
@@ -516,9 +518,9 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/memory:
 
-/usr/include/c++/13.2.1/bits/exception.h:
+/usr/include/c++/13.2.1/map:
 
-/usr/include/bits/setjmp.h:
+/usr/include/c++/13.2.1/locale:
 
 /usr/include/c++/13.2.1/bits/enable_special_members.h:
 
@@ -550,10 +552,6 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/bits/locale_facets_nonio.tcc:
 
-/usr/include/c++/13.2.1/bits/stl_iterator_base_funcs.h:
-
-/usr/include/bits/unistd_ext.h:
-
 /usr/include/c++/13.2.1/bits/erase_if.h:
 
 /usr/include/c++/13.2.1/bits/postypes.h:
@@ -581,8 +579,6 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 /usr/include/bits/types/struct_itimerspec.h:
 
 /usr/include/bits/struct_rwlock.h:
-
-/usr/include/c++/13.2.1/bits/exception_defines.h:
 
 /usr/include/bits/types/locale_t.h:
 
@@ -628,25 +624,9 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/bits/thread-shared-types.h:
 
-/usr/include/c++/13.2.1/bits/allocated_ptr.h:
+/usr/include/bits/struct_mutex.h:
 
-/usr/include/bits/types.h:
-
-/home/sweb/Escritorio/cpp/config/build.h:
-
-/usr/include/libintl.h:
-
-/usr/include/bits/endianness.h:
-
-/home/sweb/Escritorio/cpp/config/property/typography.h:
-
-/usr/include/c++/13.2.1/bits/indirect_array.h:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/home/sweb/Escritorio/cpp/config/property/grid.h:
-
-/usr/include/c++/13.2.1/bits/memoryfwd.h:
+/usr/include/c++/13.2.1/ext/alloc_traits.h:
 
 /usr/include/bits/confname.h:
 
@@ -659,6 +639,32 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 /usr/include/c++/13.2.1/bits/hashtable_policy.h:
 
 /usr/include/asm-generic/errno-base.h:
+
+/usr/local/include/yaml-cpp/node/node.h:
+
+/usr/include/alloca.h:
+
+/usr/include/c++/13.2.1/cstdio:
+
+/home/sweb/Escritorio/cpp/config/property/typography.h:
+
+/usr/include/c++/13.2.1/bits/indirect_array.h:
+
+/usr/include/c++/13.2.1/bits/allocated_ptr.h:
+
+/usr/include/bits/types.h:
+
+/home/sweb/Escritorio/cpp/config/build.h:
+
+/usr/include/libintl.h:
+
+/usr/include/bits/endianness.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/home/sweb/Escritorio/cpp/config/property/grid.h:
+
+/usr/include/c++/13.2.1/bits/memoryfwd.h:
 
 /usr/include/c++/13.2.1/algorithm:
 
@@ -674,19 +680,41 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/codecvt:
 
-/usr/include/c++/13.2.1/map:
-
 /home/sweb/Escritorio/cpp/config/states.h:
 
-/usr/local/include/yaml-cpp/node/node.h:
+/usr/include/bits/types/struct_FILE.h:
 
-/usr/include/alloca.h:
-
-/usr/include/c++/13.2.1/cstdio:
+/usr/include/bits/environments.h:
 
 /usr/include/bits/floatn-common.h:
 
 /usr/include/c++/13.2.1/bits/slice_array.h:
+
+/usr/include/c++/13.2.1/list:
+
+/usr/include/c++/13.2.1/bits/concept_check.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/messages_members.h:
+
+/usr/include/bits/timesize.h:
+
+/usr/include/bits/flt-eval-method.h:
+
+/usr/include/c++/13.2.1/bits/fs_fwd.h:
+
+/usr/include/c++/13.2.1/type_traits:
+
+/usr/include/c++/13.2.1/bits/localefwd.h:
+
+/home/sweb/Escritorio/cpp/config/property/sizing.h:
+
+/home/sweb/Escritorio/cpp/config/property/border.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/c++/13.2.1/bits/locale_facets.tcc:
 
 /usr/include/c++/13.2.1/bits/stl_list.h:
 
@@ -716,36 +744,6 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/cstring:
 
-/usr/include/bits/struct_mutex.h:
-
-/usr/include/c++/13.2.1/ext/alloc_traits.h:
-
-/usr/include/c++/13.2.1/list:
-
-/usr/include/c++/13.2.1/bits/concept_check.h:
-
-/usr/include/bits/byteswap.h:
-
-/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/messages_members.h:
-
-/usr/include/bits/timesize.h:
-
-/usr/include/bits/flt-eval-method.h:
-
-/usr/include/c++/13.2.1/bits/fs_fwd.h:
-
-/usr/include/c++/13.2.1/type_traits:
-
-/usr/include/c++/13.2.1/bits/localefwd.h:
-
-/home/sweb/Escritorio/cpp/config/property/sizing.h:
-
-/home/sweb/Escritorio/cpp/config/property/border.h:
-
-/usr/include/gnu/stubs.h:
-
-/usr/include/c++/13.2.1/bits/locale_facets.tcc:
-
 /usr/include/bits/pthreadtypes-arch.h:
 
 /usr/include/c++/13.2.1/bits/range_access.h:
@@ -759,18 +757,6 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 /usr/include/bits/types/sigset_t.h:
 
 /usr/include/c++/13.2.1/bits/list.tcc:
-
-/usr/include/bits/endian.h:
-
-/usr/include/c++/13.2.1/clocale:
-
-/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h:
-
-/usr/include/c++/13.2.1/bits/stl_relops.h:
-
-/usr/include/c++/13.2.1/bits/streambuf_iterator.h:
-
-/usr/include/bits/waitflags.h:
 
 /home/sweb/Escritorio/cpp/config/property/backgrounds.h:
 
@@ -810,8 +796,6 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/cmath:
 
-/home/sweb/Escritorio/cpp/config/property/bgcolor.h:
-
 /usr/include/c++/13.2.1/system_error:
 
 /home/sweb/Escritorio/cpp/config/screens.h:
@@ -820,15 +804,21 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/bits/stream_iterator.h:
 
+/home/sweb/Escritorio/cpp/config/property/bgcolor.h:
+
 /usr/include/wctype.h:
 
 /usr/include/sched.h:
 
 /usr/include/bits/fp-fast.h:
 
-/usr/include/bits/types/struct_FILE.h:
+/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h:
 
-/usr/include/bits/environments.h:
+/usr/include/c++/13.2.1/bits/stl_relops.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/c++/13.2.1/clocale:
 
 /usr/include/bits/floatn.h:
 
@@ -890,6 +880,18 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/bits/types/struct___jmp_buf_tag.h:
 
+/usr/include/bits/setjmp.h:
+
+/usr/include/c++/13.2.1/bits/exception.h:
+
+/usr/include/bits/unistd_ext.h:
+
+/usr/include/c++/13.2.1/bits/stl_iterator_base_funcs.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/c++/13.2.1/bits/streambuf_iterator.h:
+
 /usr/include/bits/types/error_t.h:
 
 /usr/include/c++/13.2.1/bits/unordered_map.h:
@@ -897,6 +899,8 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 /usr/include/c++/13.2.1/bits/fs_dir.h:
 
 /usr/include/bits/types/__mbstate_t.h:
+
+/home/sweb/Escritorio/cpp/config/normalize.h:
 
 /usr/include/c++/13.2.1/chrono:
 
@@ -912,6 +916,8 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/bits/types/struct_timeval.h:
 
+/usr/include/c++/13.2.1/bits/exception_defines.h:
+
 /usr/local/include/yaml-cpp/node/emit.h:
 
 /usr/include/c++/13.2.1/bits/exception_ptr.h:
@@ -920,9 +926,9 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/bits/ios_base.h:
 
-/usr/include/bits/sched.h:
-
 /usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/sched.h:
 
 /usr/include/c++/13.2.1/bits/fs_ops.h:
 
@@ -1038,6 +1044,8 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/bits/stl_bvector.h:
 
+/home/sweb/Escritorio/cpp/config/property/transform.h:
+
 /usr/include/c++/13.2.1/functional:
 
 /usr/include/c++/13.2.1/bits/stl_function.h:
@@ -1113,5 +1121,3 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 /usr/include/c++/13.2.1/iostream:
 
 /usr/include/c++/13.2.1/iterator:
-
-/usr/include/c++/13.2.1/locale:

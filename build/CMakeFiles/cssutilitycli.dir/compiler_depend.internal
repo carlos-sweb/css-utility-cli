@@ -5,6 +5,7 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o
  /home/sweb/Escritorio/cpp/main.cpp
  /home/sweb/Escritorio/cpp/config/build.h
  /home/sweb/Escritorio/cpp/config/categories.h
+ /home/sweb/Escritorio/cpp/config/normalize.h
  /home/sweb/Escritorio/cpp/config/property/alignment.h
  /home/sweb/Escritorio/cpp/config/property/backgrounds.h
  /home/sweb/Escritorio/cpp/config/property/bgcolor.h
@@ -17,6 +18,7 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o
  /home/sweb/Escritorio/cpp/config/property/sizing.h
  /home/sweb/Escritorio/cpp/config/property/spacing.h
  /home/sweb/Escritorio/cpp/config/property/tables.h
+ /home/sweb/Escritorio/cpp/config/property/transform.h
  /home/sweb/Escritorio/cpp/config/property/typography.h
  /home/sweb/Escritorio/cpp/config/screens.h
  /home/sweb/Escritorio/cpp/config/states.h

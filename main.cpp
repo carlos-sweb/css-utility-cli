@@ -54,7 +54,7 @@ void warningMesage( string message ){ cout << termcolor::yellow << " Warning -> 
 // -----------------------------------------------------------------------------------------------
 void successMesage( string message ){cout << termcolor::green << " Success -> "<< termcolor::reset <<  message  << "\n";}
 // -----------------------------------------------------------------------------------------------
-void showVersion(){ cout << "version " << VERSION << "\n"; }
+void showVersion(){ cout << " version " << VERSION << "\n"; }
 // -----------------------------------------------------------------------------------------------
 
 string getDataYaml( unsigned char* data){
@@ -82,13 +82,13 @@ std::map< std::string , YAML::Node > PropertiesCss = {
 
 void helpOptions(){
     cout << "\n";
-    cout << "Welcome to Css-Utility-Cli \n";
+    cout << " Welcome to "<< termcolor::green << "Css-Utility-Cli " << termcolor::reset << " \n";
     showVersion();
     cout << "\n";
     cout << "    -v, --version                    Show version\n";
     cout << "    -h, --help                       Show help\n";
-    cout << "    -c=PROJECT, --create=PROJECT     create css-utility project\n";
-    cout << "    -i, --init                       initialize css-utility project\n";
+    cout << "    -c=PROJECT, --create=PROJECT     create css-utility-cli project\n";
+    cout << "    -i, --init                       initialize css-utility-cli project\n";
     cout << "    -b, --build                      build project\n";
     cout << "\n";
 }
@@ -132,38 +132,6 @@ bool createDirectory( string directoryName ){
     return false;
 }
 // -----------------------------------------------------------------------------------------------
-void createFileCss(std::string filename,YAML::const_iterator YamlCss,YAML::const_iterator screen){
-    std::string prefix = screen->first.as<std::string>();
-    std::string max = screen->second["max"].as<std::string>();
-    std::string min = screen->second["min"].as<std::string>();
-        
-    std::ofstream archivo(filename);
-    if (archivo.is_open()){
-        archivo << "@media only screen and (min-width:"+ min +") and ( max-width: " + max + " ){";
-        if( YamlCss->second.IsMap() ){
-            for(  YAML::const_iterator it = YamlCss->second.begin(); it!= YamlCss->second.end();it++ ){
-                archivo << "."+ prefix + "-" + it->first.as<std::string>() + "{";
-                archivo << YamlCss->first.as<std::string>() + ":" +  it->second.as<std::string>() + "}";
-            }
-        }
-        archivo << "}";
-        archivo.close();
-    }
-
-}
-void createFileCss(std::string filename , YAML::const_iterator YamlCss ){
-    std::ofstream archivo(filename);
-    if (archivo.is_open()){
-        if( YamlCss->second.IsMap() ){
-            for(  YAML::const_iterator it = YamlCss->second.begin(); it!= YamlCss->second.end();it++ ){
-                archivo << "." + it->first.as<std::string>() + "{";
-                archivo << YamlCss->first.as<std::string>() + ":" +  it->second.as<std::string>() + "}";
-            }
-        }        
-        archivo.close();
-    }
-}
-// -----------------------------------------------------------------------------------------------
 void createFileConfig(std::string filename , std::string content){
     std::ofstream archivo(filename);
     if (archivo.is_open()){
@@ -173,47 +141,49 @@ void createFileConfig(std::string filename , std::string content){
 }
 // -----------------------------------------------------------------------------------------------
 void createProject( string name ){
-        if( name == "" ){
-            warningMesage("Must provide a name");
-            name =  getAnswer("name -> ");
-        };        
-        if( name == "" ){ errorMesage("the project name cannot be empty");}else{
-            if( fs::exists( name ) ){
-                warningMesage("folder already exists.");                                
-                if( answer(QUESTION_INITIALIZE) ){ initialize();}else{
-                    normalMesage( "the next step is:" );
-                    normalMesage( "   cd " + name + " && cssutility --init");
+    string dirPath = fs::current_path().generic_string();
+    vector<string> categories_raw = YAML::Load( getDataYaml( categories_yaml ) ).as<vector<string>>();
+    // --------------------------------------------------------------------------------------------
+    // VERIFICAMOS EL NOMBRE DE PROJECTO QUE NO SEA NADA
+    if( name == "" ){
+        warningMesage("Must provide a name");
+        name =  getAnswer("name -> ");
+    }
+    // --------------------------------------------------------------------------------------------
+    if( name == "" ){ errorMesage("the project name cannot be empty");}else{
+        std::string dirPathName = dirPath + "/" +name;
+        std::string dirPathNameConfig = dirPathName + "/config";
+        std::string dirPathNameDist = dirPathName + "/dist";
+        if( fs::exists( dirPathName ) ){
+            warningMesage("folder already exists.");                                
+            if( answer(QUESTION_INITIALIZE) ){ initialize();}else{
+                normalMesage( "the next step is:" );
+                normalMesage( "   cd " + name + " && cssutilitycli --init");
+            }
+        }else{
+            if( 
+            createDirectory( dirPathName ) && createDirectory( dirPathNameConfig  ) 
+            &&  createDirectory( dirPathNameDist )  ){                
+            // -------------------------------------------------------------   
+            successMesage("The directory was created");
+            // -------------------------------------------------------------
+            createFileConfig(dirPathName + "/build.yaml", getDataYaml(build_yaml) );                                                
+
+            for(string category : categories_raw){
+                std::string fileCategoryYaml = dirPathNameConfig+"/"+category+".yaml";
+                if( !fs::exists(fileCategoryYaml) ){
+                    createFileConfig( fileCategoryYaml , "Pipi\n" );
+                    cout << termcolor::green << "    Created : " << termcolor::reset <<  category +" -> "+category+".yaml" << "\n";
                 }
-            }else{
-                if( 
-                createDirectory( name ) && createDirectory( name + "/config"  ) 
-                &&  createDirectory( name + "/dist"  )  ){                
-                // -------------------------------------------------------------   
-                successMesage("The directory was created");
-                // -------------------------------------------------------------
-                createFileConfig(name + "/build.yaml", getDataYaml(build_yaml) );
-                std::string str;
-                //str.append(reinterpret_cast<const char*>(categories_yaml));
-                str = getDataYaml( categories_yaml );
-                YAML::Node node = YAML::Load( str );
-                if( node.Type() == YAML::NodeType::Sequence ){         
-                    for (YAML::const_iterator it=node.begin();it!=node.end();++it) {
-                        std::string a = name + "/config/" + it->as<string>();
-                        createDirectory( a );
-                        if( !std::filesystem::exists( a +"/config.yaml" ) ){
-                            createFileConfig( a +"/config.yaml" , "Pipi\n" );
-                            cout << termcolor::green << "    Created : " << termcolor::reset <<  it->as<string>() +" -> config.yaml" << "\n";
-                        }                                                
-                    }
-                }
-                // -------------------------------------------------------------
-                if( answer(QUESTION_INITIALIZE) ){ initialize(); }else{
-                    normalMesage( "the next step is:" );
-                    normalMesage( "   cd " + name + " && cssutility --init");
-                }
-                }
+            }                                                     
+            // -------------------------------------------------------------
+            if( answer(QUESTION_INITIALIZE) ){ initialize(); }else{
+                normalMesage( "the next step is:" );
+                normalMesage( "   cd " + name + " && cssutilitycli --init");
+            }
             }
         }
+    }
 }
 // -----------------------------------------------------------------------------------------------------
 
