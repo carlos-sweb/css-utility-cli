@@ -274,7 +274,7 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: \
  /usr/local/include/yaml-cpp/node/detail/impl.h \
  /usr/local/include/yaml-cpp/node/parse.h \
  /usr/local/include/yaml-cpp/node/emit.h \
- /home/sweb/Escritorio/cpp/config/normalize.h \
+ /home/sweb/Escritorio/cpp/config/normalize.min.h \
  /home/sweb/Escritorio/cpp/config/build.h \
  /home/sweb/Escritorio/cpp/config/states.h \
  /home/sweb/Escritorio/cpp/config/screens.h \

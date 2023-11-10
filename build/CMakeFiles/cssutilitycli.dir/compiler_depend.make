@@ -4,7 +4,7 @@
 CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
   /home/sweb/Escritorio/cpp/config/build.h \
   /home/sweb/Escritorio/cpp/config/categories.h \
-  /home/sweb/Escritorio/cpp/config/normalize.h \
+  /home/sweb/Escritorio/cpp/config/normalize.min.h \
   /home/sweb/Escritorio/cpp/config/property/alignment.h \
   /home/sweb/Escritorio/cpp/config/property/backgrounds.h \
   /home/sweb/Escritorio/cpp/config/property/bgcolor.h \
@@ -716,6 +716,14 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/bits/locale_facets.tcc:
 
+/usr/include/c++/13.2.1/tr1/ell_integral.tcc:
+
+/usr/include/c++/13.2.1/bits/std_abs.h:
+
+/usr/include/c++/13.2.1/bits/vector.tcc:
+
+/usr/include/c++/13.2.1/cstring:
+
 /usr/include/c++/13.2.1/bits/stl_list.h:
 
 /usr/include/c++/13.2.1/bits/stl_uninitialized.h:
@@ -724,6 +732,12 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/bits/posix_opt.h:
 
+/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
+
+/usr/include/bits/typesizes.h:
+
+/home/sweb/Escritorio/cpp/config/normalize.min.h:
+
 /usr/local/include/yaml-cpp/parser.h:
 
 /usr/include/bits/locale.h:
@@ -731,18 +745,6 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 /usr/include/bits/wctype-wchar.h:
 
 /home/sweb/Escritorio/cpp/main.cpp:
-
-/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
-
-/usr/include/bits/typesizes.h:
-
-/usr/include/c++/13.2.1/tr1/ell_integral.tcc:
-
-/usr/include/c++/13.2.1/bits/std_abs.h:
-
-/usr/include/c++/13.2.1/bits/vector.tcc:
-
-/usr/include/c++/13.2.1/cstring:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
@@ -858,9 +860,9 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/c++/13.2.1/bits/stl_multimap.h:
 
-/usr/include/c++/13.2.1/bits/charconv.h:
-
 /usr/include/bits/uintn-identity.h:
+
+/usr/include/c++/13.2.1/bits/charconv.h:
 
 /usr/include/c++/13.2.1/bits/stl_tree.h:
 
@@ -900,8 +902,6 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/bits/types/__mbstate_t.h:
 
-/home/sweb/Escritorio/cpp/config/normalize.h:
-
 /usr/include/c++/13.2.1/chrono:
 
 /usr/include/c++/13.2.1/istream:
@@ -924,9 +924,9 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: /home/sweb/Escritorio/cpp/main.cpp \
 
 /usr/include/features.h:
 
-/usr/include/c++/13.2.1/bits/ios_base.h:
-
 /usr/include/bits/types/__FILE.h:
+
+/usr/include/c++/13.2.1/bits/ios_base.h:
 
 /usr/include/bits/sched.h:
 

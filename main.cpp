@@ -3,22 +3,17 @@
 #include <iostream>
 #include <cassert>
 #include <cstring>
-
 #include <chrono>
 #include <ctime>
 #include <thread>
 #include <algorithm>
-
 #include <functional>
-
 #include "termcolor/termcolor.hpp"
 #include "argh.h"
 #include "yaml-cpp/yaml.h"
-
 // -----------------------------------------------------------------------------------------------
 // normalize_min_css
-#include "config/normalize.h"
-
+#include "config/normalize.min.h"
 #include "config/build.h"
 #include "config/states.h"
 #include "config/screens.h"
@@ -142,7 +137,7 @@ void createFileConfig(std::string filename , std::string content){
 // -----------------------------------------------------------------------------------------------
 void createProject( string name ){
     string dirPath = fs::current_path().generic_string();
-    vector<string> categories_raw = YAML::Load( getDataYaml( categories_yaml ) ).as<vector<string>>();
+    vector<string> categories_raw = YAML::Load( getDataYaml( categories_yml ) ).as<vector<string>>();
     // --------------------------------------------------------------------------------------------
     // VERIFICAMOS EL NOMBRE DE PROJECTO QUE NO SEA NADA
     if( name == "" ){
@@ -167,10 +162,10 @@ void createProject( string name ){
             // -------------------------------------------------------------   
             successMesage("The directory was created");
             // -------------------------------------------------------------
-            createFileConfig(dirPathName + "/build.yaml", getDataYaml(build_yaml) );                                                
+            createFileConfig(dirPathName + "/build.yml", getDataYaml(build_yml) );                                                
 
             for(string category : categories_raw){
-                std::string fileCategoryYaml = dirPathNameConfig+"/"+category+".yaml";
+                std::string fileCategoryYaml = dirPathNameConfig+"/"+category+".yml";
                 if( !fs::exists(fileCategoryYaml) ){
                     createFileConfig( fileCategoryYaml , "Pipi\n" );
                     cout << termcolor::green << "    Created : " << termcolor::reset <<  category +" -> "+category+".yaml" << "\n";
@@ -186,9 +181,7 @@ void createProject( string name ){
     }
 }
 // -----------------------------------------------------------------------------------------------------
-
-vector<string> cleanCategories( vector<string> categories , vector<string> raw , std::function<void(string,bool)> done ){    
-    
+vector<string> cleanCategories( vector<string> categories , vector<string> raw , std::function<void(string,bool)> done ){
     vector<string> str;
     // ------------------------------------------------------------------------------
     for( string category : raw ){
@@ -199,18 +192,17 @@ vector<string> cleanCategories( vector<string> categories , vector<string> raw ,
             done( category , true );
         }
     }
-    
     // ------------------------------------------------------------------------------    
     return str;    
 }
-
+// ----------------------------------------------------------------------------------
 void buildProject( string dirbuild ){        
     string dirPath = fs::current_path().generic_string() + "/" + dirbuild;
     if( !fs::exists(dirPath) ){        
         errorMesage( "The folder does not exist : " + dirPath );
         exit(1);
     }
-    string buildyaml = dirPath + "/build.yaml";
+    string buildyaml = dirPath + "/build.yml";
     if(!fs::exists(buildyaml)){
         errorMesage( "The config file does not exist : " + buildyaml );
         exit(1);
@@ -218,13 +210,12 @@ void buildProject( string dirbuild ){
 
     auto start = std::chrono::system_clock::now();
     normalMesage("Starting...");
-
     YAML::Node node = YAML::LoadFile( buildyaml );
-
     auto states = node["states"].as<std::vector<std::string>>();
     auto screens = node["screens"].as<map<std::string,std::map<string,string>>>();
+    auto normalize = node["normalize"].as<bool>();
     // CATEGORIES SECTION
-    vector<string> categories_raw = YAML::Load( getDataYaml( categories_yaml ) ).as<vector<string>>();
+    vector<string> categories_raw = YAML::Load( getDataYaml( categories_yml ) ).as<vector<string>>();
     // VERIFICAMOS SI LA CATEGORIA EXISTE EN LISTADO ORIGINAL Y PERMITIDO
     // SI ES ASI CREAMOS EL DIRECTOIO SI NO ESTA ACEPTADA SE ELIMINA EL DIRECTORIO
     vector<string> categories = cleanCategories( node["categories"].as<vector<string>>() , categories_raw , [dirPath](string name , bool approved ){
@@ -234,19 +225,14 @@ void buildProject( string dirbuild ){
         if( !fs::exists(d_base) && approved  ){ createDirectory( d_base );};
         */
     });
-    
-
 
     // --------------------------------------------------------------------------------------
     if( categories.size() == 0 ){warningMesage("No categories to build");}
     // --------------------------------------------------------------------------------------
-    string d_master =  dirPath + "/dist/master.css";
-    
-    if( categories.size() > 0 ){        
-                        
+    string d_master =  dirPath + "/dist/master.min.css";    
+    if( categories.size() > 0 ){
         std::ofstream fileMaster( d_master );
-        fileMaster << getDataYaml(normalize_min_css);
-        
+        if( normalize ){ fileMaster << getDataYaml(normalize_min_css); }
         for(string category : categories ){            
             auto properties =   PropertiesCss.at( category ).as<map<std::string,std::map<string,string>>>();
             for( auto const&[ cssproperty , option ] : properties ){                                
