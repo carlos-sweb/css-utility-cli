@@ -19,20 +19,20 @@
 #include "config/screens.h"
 #include "config/categories.h"
 // -----------------------------------------------------------------------------------------------
-#include "config/property/alignment.h"
-#include "config/property/backgrounds.h"
-#include "config/property/bgcolor.h"
-#include "config/property/border.h"
-#include "config/property/effects.h"
-#include "config/property/flexbox.h"
-#include "config/property/grid.h"
-#include "config/property/interactivity.h"
-#include "config/property/layout.h"
-#include "config/property/sizing.h"
-#include "config/property/spacing.h"
-#include "config/property/tables.h"
-#include "config/property/typography.h"
-#include "config/property/transform.h"
+#include "config/property/h/alignment.h"
+#include "config/property/h/backgrounds.h"
+#include "config/property/h/bgcolor.h"
+#include "config/property/h/border.h"
+#include "config/property/h/effects.h"
+#include "config/property/h/flexbox.h"
+#include "config/property/h/grid.h"
+#include "config/property/h/interactivity.h"
+#include "config/property/h/layout.h"
+#include "config/property/h/sizing.h"
+#include "config/property/h/spacing.h"
+#include "config/property/h/tables.h"
+#include "config/property/h/typography.h"
+#include "config/property/h/transform.h"
 // -----------------------------------------------------------------------------------------------
 #define VERSION "1.0"
 #define QUESTION_INITIALIZE " You want to initialize a project"
@@ -59,20 +59,20 @@ string getDataYaml( unsigned char* data){
 }
 
 std::map< std::string , YAML::Node > PropertiesCss = { 
-    { "alignment" , YAML::Load(getDataYaml(alignment_yaml)) },
-    { "backgrounds" , YAML::Load(getDataYaml(backgrounds_yaml)) },
-    { "bgcolor" , YAML::Load(getDataYaml(bgcolor_yaml))}, 
-    { "border" , YAML::Load(getDataYaml(border_yaml))}, 
-    { "effects" , YAML::Load(getDataYaml(effects_yaml))}, 
-    { "flexbox" , YAML::Load(getDataYaml(flexbox_yaml))}, 
-    { "grid" , YAML::Load(getDataYaml(grid_yaml))}, 
-    { "interactivity" , YAML::Load(getDataYaml(interactivity_yaml))},
-    { "layout" , YAML::Load(getDataYaml(layout_yaml))}, 
-    { "sizing" , YAML::Load(getDataYaml(sizing_yaml))}, 
-    { "spacing" , YAML::Load(getDataYaml(spacing_yaml))}, 
-    { "tables" , YAML::Load(getDataYaml(tables_yaml))}, 
-    { "typography" , YAML::Load(getDataYaml(typography_yaml))},
-    { "transform" , YAML::Load(getDataYaml(transform_yaml))}
+    { "alignment" , YAML::Load(getDataYaml(alignment_yml)) },
+    { "backgrounds" , YAML::Load(getDataYaml(backgrounds_yml)) },
+    { "bgcolor" , YAML::Load(getDataYaml(bgcolor_yml))}, 
+    { "border" , YAML::Load(getDataYaml(border_yml))}, 
+    { "effects" , YAML::Load(getDataYaml(effects_yml))}, 
+    { "flexbox" , YAML::Load(getDataYaml(flexbox_yml))}, 
+    { "grid" , YAML::Load(getDataYaml(grid_yml))}, 
+    { "interactivity" , YAML::Load(getDataYaml(interactivity_yml))},
+    { "layout" , YAML::Load(getDataYaml(layout_yml))}, 
+    { "sizing" , YAML::Load(getDataYaml(sizing_yml))}, 
+    { "spacing" , YAML::Load(getDataYaml(spacing_yml))}, 
+    { "tables" , YAML::Load(getDataYaml(tables_yml))}, 
+    { "typography" , YAML::Load(getDataYaml(typography_yml))},
+    { "transform" , YAML::Load(getDataYaml(transform_yml))}
 };
 
 void helpOptions(){
@@ -162,12 +162,45 @@ void createProject( string name ){
             // -------------------------------------------------------------   
             successMesage("The directory was created");
             // -------------------------------------------------------------
-            createFileConfig(dirPathName + "/build.yml", getDataYaml(build_yml) );                                                
+            createFileConfig(dirPathName + "/build.yml", getDataYaml(build_yml) );
+            // -------------------------------------------------------------
+
+            auto screens = YAML::Load(getDataYaml(screens_yml)).as<std::map<std::string,std::map<std::string,std::string>>>();
+            std::vector<std::string> screens_key;
+            for( auto const&[key,value] : screens){                
+                screens_key.push_back(key);
+            }
+            
+
 
             for(string category : categories_raw){
+
+                YAML::Emitter out;
+                out << YAML::BeginMap;
+                auto properties =   PropertiesCss.at( category ).as<map<std::string,std::map<string,string>>>();
+                for( auto const&[ cssproperty , option ] : properties ){                                        
+                    out << YAML::Key << cssproperty ;
+                    out << YAML::Value;                    
+                    out << YAML::BeginMap;
+                    out << YAML::Key << "screens" << YAML::Value << YAML::BeginSeq;
+                    for( auto key : screens_key){
+                        out << key;    
+                    }
+                    out << YAML::EndSeq ;
+                    out << YAML::Key << "include" << YAML::Value;
+                    out << YAML::BeginSeq;
+                     for( auto const&[nameClass, valueClass ] : option ){
+                        out << nameClass;
+                     }                      
+                    out << YAML::EndSeq;
+                    out << YAML::EndMap;                    
+                }
+                out << YAML::EndMap;
+                
+                    
                 std::string fileCategoryYaml = dirPathNameConfig+"/"+category+".yml";
                 if( !fs::exists(fileCategoryYaml) ){
-                    createFileConfig( fileCategoryYaml , "Pipi\n" );
+                    createFileConfig( fileCategoryYaml , out.c_str() );
                     cout << termcolor::green << "    Created : " << termcolor::reset <<  category +" -> "+category+".yaml" << "\n";
                 }
             }                                                     
