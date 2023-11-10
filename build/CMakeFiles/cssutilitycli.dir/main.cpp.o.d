@@ -279,17 +279,17 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: \
  /home/sweb/Escritorio/cpp/config/states.h \
  /home/sweb/Escritorio/cpp/config/screens.h \
  /home/sweb/Escritorio/cpp/config/categories.h \
- /home/sweb/Escritorio/cpp/config/property/alignment.h \
- /home/sweb/Escritorio/cpp/config/property/backgrounds.h \
- /home/sweb/Escritorio/cpp/config/property/bgcolor.h \
- /home/sweb/Escritorio/cpp/config/property/border.h \
- /home/sweb/Escritorio/cpp/config/property/effects.h \
- /home/sweb/Escritorio/cpp/config/property/flexbox.h \
- /home/sweb/Escritorio/cpp/config/property/grid.h \
- /home/sweb/Escritorio/cpp/config/property/interactivity.h \
- /home/sweb/Escritorio/cpp/config/property/layout.h \
- /home/sweb/Escritorio/cpp/config/property/sizing.h \
- /home/sweb/Escritorio/cpp/config/property/spacing.h \
- /home/sweb/Escritorio/cpp/config/property/tables.h \
- /home/sweb/Escritorio/cpp/config/property/typography.h \
- /home/sweb/Escritorio/cpp/config/property/transform.h
+ /home/sweb/Escritorio/cpp/config/property/h/alignment.h \
+ /home/sweb/Escritorio/cpp/config/property/h/backgrounds.h \
+ /home/sweb/Escritorio/cpp/config/property/h/bgcolor.h \
+ /home/sweb/Escritorio/cpp/config/property/h/border.h \
+ /home/sweb/Escritorio/cpp/config/property/h/effects.h \
+ /home/sweb/Escritorio/cpp/config/property/h/flexbox.h \
+ /home/sweb/Escritorio/cpp/config/property/h/grid.h \
+ /home/sweb/Escritorio/cpp/config/property/h/interactivity.h \
+ /home/sweb/Escritorio/cpp/config/property/h/layout.h \
+ /home/sweb/Escritorio/cpp/config/property/h/sizing.h \
+ /home/sweb/Escritorio/cpp/config/property/h/spacing.h \
+ /home/sweb/Escritorio/cpp/config/property/h/tables.h \
+ /home/sweb/Escritorio/cpp/config/property/h/typography.h \
+ /home/sweb/Escritorio/cpp/config/property/h/transform.h
