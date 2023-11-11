@@ -272,6 +272,9 @@ cssutilitycli_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 cssutilitycli_SOURCE_DIR:STATIC=/home/sweb/Escritorio/cpp
 
+//The directory containing a CMake configuration file for fmt.
+fmt_DIR:PATH=/usr/local/lib/cmake/fmt
+
 //The directory containing a CMake configuration file for yaml-cpp.
 yaml-cpp_DIR:PATH=/usr/local/lib/cmake/yaml-cpp
 

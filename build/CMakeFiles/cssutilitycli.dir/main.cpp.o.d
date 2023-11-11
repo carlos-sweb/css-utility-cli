@@ -191,18 +191,9 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: \
  /usr/include/c++/13.2.1/bits/stl_vector.h \
  /usr/include/c++/13.2.1/bits/stl_bvector.h \
  /usr/include/c++/13.2.1/bits/vector.tcc /usr/include/c++/13.2.1/array \
- /usr/include/c++/13.2.1/compare \
- /usr/local/include/termcolor/termcolor.hpp /usr/include/unistd.h \
- /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
- /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
- /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
- /usr/include/linux/close_range.h /usr/local/include/argh.h \
- /usr/include/c++/13.2.1/set /usr/include/c++/13.2.1/bits/stl_tree.h \
- /usr/include/c++/13.2.1/bits/stl_set.h \
- /usr/include/c++/13.2.1/bits/stl_multiset.h /usr/include/c++/13.2.1/map \
- /usr/include/c++/13.2.1/bits/stl_map.h \
- /usr/include/c++/13.2.1/bits/stl_multimap.h \
- /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
+ /usr/include/c++/13.2.1/compare /usr/local/include/fmt/core.h \
+ /usr/include/c++/13.2.1/iterator \
+ /usr/include/c++/13.2.1/bits/stream_iterator.h \
  /usr/include/c++/13.2.1/memory \
  /usr/include/c++/13.2.1/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13.2.1/bits/align.h \
@@ -211,7 +202,7 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: \
  /usr/include/c++/13.2.1/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13.2.1/backward/auto_ptr.h \
  /usr/include/c++/13.2.1/pstl/glue_memory_defs.h \
- /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
+ /usr/local/include/fmt/printf.h /usr/local/include/fmt/format.h \
  /usr/include/c++/13.2.1/cmath /usr/include/math.h \
  /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
@@ -231,6 +222,19 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: \
  /usr/include/c++/13.2.1/tr1/poly_hermite.tcc \
  /usr/include/c++/13.2.1/tr1/poly_laguerre.tcc \
  /usr/include/c++/13.2.1/tr1/riemann_zeta.tcc \
+ /usr/local/include/fmt/core.h /usr/local/include/fmt/color.h \
+ /usr/local/include/termcolor/termcolor.hpp /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
+ /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/local/include/argh.h \
+ /usr/include/c++/13.2.1/set /usr/include/c++/13.2.1/bits/stl_tree.h \
+ /usr/include/c++/13.2.1/bits/stl_set.h \
+ /usr/include/c++/13.2.1/bits/stl_multiset.h /usr/include/c++/13.2.1/map \
+ /usr/include/c++/13.2.1/bits/stl_map.h \
+ /usr/include/c++/13.2.1/bits/stl_multimap.h \
+ /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
+ /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
  /usr/local/include/yaml-cpp/binary.h \
  /usr/local/include/yaml-cpp/emitterdef.h \
  /usr/local/include/yaml-cpp/emittermanip.h \
@@ -255,8 +259,6 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: \
  /usr/local/include/yaml-cpp/node/detail/node_ref.h \
  /usr/local/include/yaml-cpp/node/detail/node_data.h \
  /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
- /usr/include/c++/13.2.1/iterator \
- /usr/include/c++/13.2.1/bits/stream_iterator.h \
  /usr/local/include/yaml-cpp/node/iterator.h \
  /usr/local/include/yaml-cpp/node/detail/iterator.h \
  /usr/include/c++/13.2.1/atomic \
@@ -275,10 +277,7 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: \
  /usr/local/include/yaml-cpp/node/parse.h \
  /usr/local/include/yaml-cpp/node/emit.h \
  /home/sweb/Escritorio/cpp/config/normalize.min.h \
- /home/sweb/Escritorio/cpp/config/build.h \
- /home/sweb/Escritorio/cpp/config/states.h \
- /home/sweb/Escritorio/cpp/config/screens.h \
- /home/sweb/Escritorio/cpp/config/categories.h \
+ /home/sweb/Escritorio/cpp/src/config.h \
  /home/sweb/Escritorio/cpp/config/property/h/alignment.h \
  /home/sweb/Escritorio/cpp/config/property/h/backgrounds.h \
  /home/sweb/Escritorio/cpp/config/property/h/bgcolor.h \

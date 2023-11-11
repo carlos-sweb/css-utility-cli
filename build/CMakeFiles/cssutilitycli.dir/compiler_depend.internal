@@ -3,8 +3,6 @@
 
 CMakeFiles/cssutilitycli.dir/main.cpp.o
  /home/sweb/Escritorio/cpp/main.cpp
- /home/sweb/Escritorio/cpp/config/build.h
- /home/sweb/Escritorio/cpp/config/categories.h
  /home/sweb/Escritorio/cpp/config/normalize.min.h
  /home/sweb/Escritorio/cpp/config/property/h/alignment.h
  /home/sweb/Escritorio/cpp/config/property/h/backgrounds.h
@@ -20,8 +18,7 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o
  /home/sweb/Escritorio/cpp/config/property/h/tables.h
  /home/sweb/Escritorio/cpp/config/property/h/transform.h
  /home/sweb/Escritorio/cpp/config/property/h/typography.h
- /home/sweb/Escritorio/cpp/config/screens.h
- /home/sweb/Escritorio/cpp/config/states.h
+ /home/sweb/Escritorio/cpp/src/config.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
@@ -343,6 +340,10 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h
  /usr/local/include/argh.h
+ /usr/local/include/fmt/color.h
+ /usr/local/include/fmt/core.h
+ /usr/local/include/fmt/format.h
+ /usr/local/include/fmt/printf.h
  /usr/local/include/termcolor/termcolor.hpp
  /usr/local/include/yaml-cpp/binary.h
  /usr/local/include/yaml-cpp/dll.h

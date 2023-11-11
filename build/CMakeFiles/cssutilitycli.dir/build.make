@@ -92,6 +92,7 @@ cssutilitycli_EXTERNAL_OBJECTS =
 
 cssutilitycli: CMakeFiles/cssutilitycli.dir/main.cpp.o
 cssutilitycli: CMakeFiles/cssutilitycli.dir/build.make
+cssutilitycli: /usr/local/lib/libfmt.a
 cssutilitycli: CMakeFiles/cssutilitycli.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sweb/Escritorio/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cssutilitycli"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cssutilitycli.dir/link.txt --verbose=$(VERBOSE)

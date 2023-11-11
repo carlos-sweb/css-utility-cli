@@ -8,16 +8,18 @@
 #include <thread>
 #include <algorithm>
 #include <functional>
+
+#include <fmt/core.h>
+#include <fmt/printf.h>
+#include <fmt/color.h>
+
 #include "termcolor/termcolor.hpp"
 #include "argh.h"
 #include "yaml-cpp/yaml.h"
 // -----------------------------------------------------------------------------------------------
 // normalize_min_css
 #include "config/normalize.min.h"
-#include "config/build.h"
-#include "config/states.h"
-#include "config/screens.h"
-#include "config/categories.h"
+#include "src/config.h"
 // -----------------------------------------------------------------------------------------------
 #include "config/property/h/alignment.h"
 #include "config/property/h/backgrounds.h"
@@ -34,6 +36,8 @@
 #include "config/property/h/typography.h"
 #include "config/property/h/transform.h"
 // -----------------------------------------------------------------------------------------------
+
+
 #define VERSION "1.0"
 #define QUESTION_INITIALIZE " You want to initialize a project"
 // -----------------------------------------------------------------------------------------------
@@ -41,7 +45,7 @@ using namespace std;
 // -----------------------------------------------------------------------------------------------
 namespace fs = std::filesystem;
 // -----------------------------------------------------------------------------------------------
-void normalMesage(string message){ cout << " " << message << "\n"; }
+void normalMesage(string message){ fmt::printf("%s\n", message ); }
 // -----------------------------------------------------------------------------------------------
 void errorMesage( string message ){ cout << termcolor::red << " Error -> "<< termcolor::reset <<  message  << "\n";}
 // -----------------------------------------------------------------------------------------------
@@ -49,7 +53,7 @@ void warningMesage( string message ){ cout << termcolor::yellow << " Warning -> 
 // -----------------------------------------------------------------------------------------------
 void successMesage( string message ){cout << termcolor::green << " Success -> "<< termcolor::reset <<  message  << "\n";}
 // -----------------------------------------------------------------------------------------------
-void showVersion(){ cout << " version " << VERSION << "\n"; }
+void showVersion(){fmt::printf(" version %s\n",VERSION);}
 // -----------------------------------------------------------------------------------------------
 
 string getDataYaml( unsigned char* data){
@@ -137,7 +141,8 @@ void createFileConfig(std::string filename , std::string content){
 // -----------------------------------------------------------------------------------------------
 void createProject( string name ){
     string dirPath = fs::current_path().generic_string();
-    vector<string> categories_raw = YAML::Load( getDataYaml( categories_yml ) ).as<vector<string>>();
+
+    vector<string> categories_raw = Build_default.categories;
     // --------------------------------------------------------------------------------------------
     // VERIFICAMOS EL NOMBRE DE PROJECTO QUE NO SEA NADA
     if( name == "" ){
@@ -162,22 +167,21 @@ void createProject( string name ){
             // -------------------------------------------------------------   
             successMesage("The directory was created");
             // -------------------------------------------------------------
-            createFileConfig(dirPathName + "/build.yml", getDataYaml(build_yml) );
+            //createFileConfig(dirPathName + "/build.yml", getDataYaml(build_yml) );
+            createFileConfig(dirPathName + "/build.yml", Build_default.yml() );            
             // -------------------------------------------------------------
-
-            auto screens = YAML::Load(getDataYaml(screens_yml)).as<std::map<std::string,std::map<std::string,std::string>>>();
+            auto screens = Build_default.screens;
             std::vector<std::string> screens_key;
             for( auto const&[key,value] : screens){                
                 screens_key.push_back(key);
             }
             
-
-
             for(string category : categories_raw){
 
                 YAML::Emitter out;
                 out << YAML::BeginMap;
                 auto properties =   PropertiesCss.at( category ).as<map<std::string,std::map<string,string>>>();
+
                 for( auto const&[ cssproperty , option ] : properties ){                                        
                     out << YAML::Key << cssproperty ;
                     out << YAML::Value;                    
@@ -248,7 +252,7 @@ void buildProject( string dirbuild ){
     auto screens = node["screens"].as<map<std::string,std::map<string,string>>>();
     auto normalize = node["normalize"].as<bool>();
     // CATEGORIES SECTION
-    vector<string> categories_raw = YAML::Load( getDataYaml( categories_yml ) ).as<vector<string>>();
+    vector<string> categories_raw = Build_default.categories;
     // VERIFICAMOS SI LA CATEGORIA EXISTE EN LISTADO ORIGINAL Y PERMITIDO
     // SI ES ASI CREAMOS EL DIRECTOIO SI NO ESTA ACEPTADA SE ELIMINA EL DIRECTORIO
     vector<string> categories = cleanCategories( node["categories"].as<vector<string>>() , categories_raw , [dirPath](string name , bool approved ){
@@ -319,7 +323,32 @@ void buildProject( string dirbuild ){
 // -----------------------------------------------------------------------------------------------
 
 
-int main(int argc, char* argv[]){    
+int main(int argc, char* argv[]){ 
+    
+    /*
+    
+    https://developer.mozilla.org/es/docs/Web/CSS/justify-content
+
+    global_css_property MyProperty { "justify-content", {         
+            {"justify-start","flex-start"},
+            {"justify-end","flex-end"},
+            {"justify-center","center"},
+            {"justify-between","space-between"},
+            {"justify-around","space-around"},
+            {"justify-evenly","space-evenly"}
+         }
+    };
+    
+    fmt::print("{}\n",MyProperty.main_property);
+    for(auto const&[key,value]: MyProperty.options ){
+        auto algo = fmt::format(".{0}{3}{1}:{2}{4}",key,MyProperty.main_property,value,"{","}");
+        std::cout << algo ;
+    }
+    std::cout << "\n";
+    */
+    
+     
+    
     // -------------------------------------------------------------------------------------
     argh::parser cmdl(argv);
     // -------------------------------------------------------------------------------------

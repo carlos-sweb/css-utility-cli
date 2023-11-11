@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/cssutilitycli.dir/main.cpp.o -o cssutilitycli  -lyaml-cpp 
+/usr/bin/c++ CMakeFiles/cssutilitycli.dir/main.cpp.o -o cssutilitycli  -lyaml-cpp /usr/local/lib/libfmt.a 
