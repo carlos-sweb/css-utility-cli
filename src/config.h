@@ -1,7 +1,17 @@
-struct global_css_property{
-    std::string main_property;
-    std::map<std::string,std::string> options;
-};
+#include "property/alignment.h"
+#include "property/backgrounds.h"
+#include "property/bgcolor.h"
+#include "property/border.h"
+#include "property/effects.h"
+#include "property/flexbox.h"
+#include "property/grid.h"
+#include "property/interactivity.h"
+#include "property/layout.h"
+#include "property/sizing.h"
+#include "property/spacing.h"
+#include "property/tables.h"
+#include "property/transforms.h"
+#include "property/typography.h"
 
 struct global_build_default {
     bool normalize= true;
@@ -19,8 +29,8 @@ struct global_build_default {
         "spacing",
         "tables",
         "typography",
-        "transform"
-    };
+        "transforms"
+    };    
     std::map<std::string,std::map<std::string,std::string>> screens { 
         {"xs", { {"min","0px"},{"max","639px"} } } , 
         {"sm", { {"min","640px"},{"max","767px"} } } ,
@@ -37,7 +47,7 @@ struct global_build_default {
         "disabled",
         "focus-visible",
         "required"
-    };
+    };    
     friend std::ostream& operator<<(std::ostream& os,const std::vector<std::string>& listado );
     friend std::ostream& operator<<(std::ostream& os,const std::map<std::string,std::string>& mapa );    
     bool stateExists(std::string name){
@@ -75,5 +85,3 @@ std::ostream& operator<<(std::ostream& os,const std::map<std::string,std::string
     for( auto const&[key,value] : mapa ){os << key << " => " << value << "\n";}
     return os;
 }
-
-

@@ -19,7 +19,10 @@
 // -----------------------------------------------------------------------------------------------
 // normalize_min_css
 #include "config/normalize.min.h"
+#include "src/helper.h"
 #include "src/config.h"
+#include "src/version.h"
+#include "src/helperOptions.h"
 // -----------------------------------------------------------------------------------------------
 #include "config/property/h/alignment.h"
 #include "config/property/h/backgrounds.h"
@@ -36,24 +39,20 @@
 #include "config/property/h/typography.h"
 #include "config/property/h/transform.h"
 // -----------------------------------------------------------------------------------------------
-
-
-#define VERSION "1.0"
 #define QUESTION_INITIALIZE " You want to initialize a project"
 // -----------------------------------------------------------------------------------------------
 using namespace std;
 // -----------------------------------------------------------------------------------------------
 namespace fs = std::filesystem;
 // -----------------------------------------------------------------------------------------------
-void normalMesage(string message){ fmt::printf("%s\n", message ); }
+void normalMesage(std::string message){ fmt::printf("%s\n", message ); }
 // -----------------------------------------------------------------------------------------------
-void errorMesage( string message ){ cout << termcolor::red << " Error -> "<< termcolor::reset <<  message  << "\n";}
+void errorMesage( std::string message ){ std::cout << termcolor::red << " Error -> "<< termcolor::reset <<  message  << "\n";}
 // -----------------------------------------------------------------------------------------------
-void warningMesage( string message ){ cout << termcolor::yellow << " Warning -> "<< termcolor::reset <<  message  << "\n";}
+void warningMesage( std::string message ){ std::cout << termcolor::yellow << " Warning -> "<< termcolor::reset <<  message  << "\n";}
 // -----------------------------------------------------------------------------------------------
-void successMesage( string message ){cout << termcolor::green << " Success -> "<< termcolor::reset <<  message  << "\n";}
+void successMesage( std::string message ){std::cout << termcolor::green << " Success -> "<< termcolor::reset <<  message  << "\n";}
 // -----------------------------------------------------------------------------------------------
-void showVersion(){fmt::printf(" version %s\n",VERSION);}
 // -----------------------------------------------------------------------------------------------
 
 string getDataYaml( unsigned char* data){
@@ -79,18 +78,7 @@ std::map< std::string , YAML::Node > PropertiesCss = {
     { "transform" , YAML::Load(getDataYaml(transform_yml))}
 };
 
-void helpOptions(){
-    cout << "\n";
-    cout << " Welcome to "<< termcolor::green << "Css-Utility-Cli " << termcolor::reset << " \n";
-    showVersion();
-    cout << "\n";
-    cout << "    -v, --version                    Show version\n";
-    cout << "    -h, --help                       Show help\n";
-    cout << "    -c=PROJECT, --create=PROJECT     create css-utility-cli project\n";
-    cout << "    -i, --init                       initialize css-utility-cli project\n";
-    cout << "    -b, --build                      build project\n";
-    cout << "\n";
-}
+
 // -----------------------------------------------------------------------------------------------
 
 string getAnswer(string question){
@@ -323,32 +311,7 @@ void buildProject( string dirbuild ){
 // -----------------------------------------------------------------------------------------------
 
 
-int main(int argc, char* argv[]){ 
-    
-    /*
-    
-    https://developer.mozilla.org/es/docs/Web/CSS/justify-content
-
-    global_css_property MyProperty { "justify-content", {         
-            {"justify-start","flex-start"},
-            {"justify-end","flex-end"},
-            {"justify-center","center"},
-            {"justify-between","space-between"},
-            {"justify-around","space-around"},
-            {"justify-evenly","space-evenly"}
-         }
-    };
-    
-    fmt::print("{}\n",MyProperty.main_property);
-    for(auto const&[key,value]: MyProperty.options ){
-        auto algo = fmt::format(".{0}{3}{1}:{2}{4}",key,MyProperty.main_property,value,"{","}");
-        std::cout << algo ;
-    }
-    std::cout << "\n";
-    */
-    
-     
-    
+int main(int argc, char* argv[]){
     // -------------------------------------------------------------------------------------
     argh::parser cmdl(argv);
     // -------------------------------------------------------------------------------------

@@ -19,6 +19,23 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o
  /home/sweb/Escritorio/cpp/config/property/h/transform.h
  /home/sweb/Escritorio/cpp/config/property/h/typography.h
  /home/sweb/Escritorio/cpp/src/config.h
+ /home/sweb/Escritorio/cpp/src/helper.h
+ /home/sweb/Escritorio/cpp/src/helperOptions.h
+ /home/sweb/Escritorio/cpp/src/property/alignment.h
+ /home/sweb/Escritorio/cpp/src/property/backgrounds.h
+ /home/sweb/Escritorio/cpp/src/property/bgcolor.h
+ /home/sweb/Escritorio/cpp/src/property/border.h
+ /home/sweb/Escritorio/cpp/src/property/effects.h
+ /home/sweb/Escritorio/cpp/src/property/flexbox.h
+ /home/sweb/Escritorio/cpp/src/property/grid.h
+ /home/sweb/Escritorio/cpp/src/property/interactivity.h
+ /home/sweb/Escritorio/cpp/src/property/layout.h
+ /home/sweb/Escritorio/cpp/src/property/sizing.h
+ /home/sweb/Escritorio/cpp/src/property/spacing.h
+ /home/sweb/Escritorio/cpp/src/property/tables.h
+ /home/sweb/Escritorio/cpp/src/property/transforms.h
+ /home/sweb/Escritorio/cpp/src/property/typography.h
+ /home/sweb/Escritorio/cpp/src/version.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
