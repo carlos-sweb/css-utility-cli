@@ -83,18 +83,66 @@ CMakeFiles/cssutilitycli.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cssutilitycli.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sweb/Escritorio/cpp/main.cpp -o CMakeFiles/cssutilitycli.dir/main.cpp.s
 
+CMakeFiles/cssutilitycli.dir/src/version.cpp.o: CMakeFiles/cssutilitycli.dir/flags.make
+CMakeFiles/cssutilitycli.dir/src/version.cpp.o: /home/sweb/Escritorio/cpp/src/version.cpp
+CMakeFiles/cssutilitycli.dir/src/version.cpp.o: CMakeFiles/cssutilitycli.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sweb/Escritorio/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cssutilitycli.dir/src/version.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cssutilitycli.dir/src/version.cpp.o -MF CMakeFiles/cssutilitycli.dir/src/version.cpp.o.d -o CMakeFiles/cssutilitycli.dir/src/version.cpp.o -c /home/sweb/Escritorio/cpp/src/version.cpp
+
+CMakeFiles/cssutilitycli.dir/src/version.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cssutilitycli.dir/src/version.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sweb/Escritorio/cpp/src/version.cpp > CMakeFiles/cssutilitycli.dir/src/version.cpp.i
+
+CMakeFiles/cssutilitycli.dir/src/version.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cssutilitycli.dir/src/version.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sweb/Escritorio/cpp/src/version.cpp -o CMakeFiles/cssutilitycli.dir/src/version.cpp.s
+
+CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o: CMakeFiles/cssutilitycli.dir/flags.make
+CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o: /home/sweb/Escritorio/cpp/src/helperOptions.cpp
+CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o: CMakeFiles/cssutilitycli.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sweb/Escritorio/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o -MF CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o.d -o CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o -c /home/sweb/Escritorio/cpp/src/helperOptions.cpp
+
+CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sweb/Escritorio/cpp/src/helperOptions.cpp > CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.i
+
+CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sweb/Escritorio/cpp/src/helperOptions.cpp -o CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.s
+
+CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o: CMakeFiles/cssutilitycli.dir/flags.make
+CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o: /home/sweb/Escritorio/cpp/src/global_build_default.cpp
+CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o: CMakeFiles/cssutilitycli.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sweb/Escritorio/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o -MF CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o.d -o CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o -c /home/sweb/Escritorio/cpp/src/global_build_default.cpp
+
+CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sweb/Escritorio/cpp/src/global_build_default.cpp > CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.i
+
+CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sweb/Escritorio/cpp/src/global_build_default.cpp -o CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.s
+
 # Object files for target cssutilitycli
 cssutilitycli_OBJECTS = \
-"CMakeFiles/cssutilitycli.dir/main.cpp.o"
+"CMakeFiles/cssutilitycli.dir/main.cpp.o" \
+"CMakeFiles/cssutilitycli.dir/src/version.cpp.o" \
+"CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o" \
+"CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o"
 
 # External object files for target cssutilitycli
 cssutilitycli_EXTERNAL_OBJECTS =
 
 cssutilitycli: CMakeFiles/cssutilitycli.dir/main.cpp.o
+cssutilitycli: CMakeFiles/cssutilitycli.dir/src/version.cpp.o
+cssutilitycli: CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o
+cssutilitycli: CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o
 cssutilitycli: CMakeFiles/cssutilitycli.dir/build.make
 cssutilitycli: /usr/local/lib/libfmt.a
 cssutilitycli: CMakeFiles/cssutilitycli.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sweb/Escritorio/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cssutilitycli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sweb/Escritorio/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable cssutilitycli"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cssutilitycli.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

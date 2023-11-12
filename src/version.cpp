@@ -1,3 +1,5 @@
+#include "version.h"
+
 std::string getVersion(){ 
     return " version 1.0";
 }

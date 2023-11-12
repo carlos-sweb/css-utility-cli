@@ -1,3 +1,5 @@
+#include "helperOptions.h"
+
 void helpOptions(){
     std::cout << "\n";
     std::cout << " Welcome to "<< termcolor::green << "Css-Utility-Cli " << termcolor::reset << " \n";

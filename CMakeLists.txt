@@ -7,9 +7,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(fmt)
 
-add_executable(cssutilitycli main.cpp)
+add_executable(cssutilitycli main.cpp src/version.cpp src/helperOptions.cpp src/global_build_default.cpp)
 
 target_link_libraries(cssutilitycli yaml-cpp fmt::fmt )
+
+target_include_directories(cssutilitycli PRIVATE includes)
 
 include(GNUInstallDirs)
 install(TARGETS cssutilitycli

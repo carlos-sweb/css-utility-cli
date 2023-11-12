@@ -277,24 +277,11 @@ CMakeFiles/cssutilitycli.dir/main.cpp.o: \
  /usr/local/include/yaml-cpp/node/parse.h \
  /usr/local/include/yaml-cpp/node/emit.h \
  /home/sweb/Escritorio/cpp/config/normalize.min.h \
- /home/sweb/Escritorio/cpp/src/helper.h \
- /home/sweb/Escritorio/cpp/src/config.h \
- /home/sweb/Escritorio/cpp/src/property/alignment.h \
- /home/sweb/Escritorio/cpp/src/property/backgrounds.h \
- /home/sweb/Escritorio/cpp/src/property/bgcolor.h \
- /home/sweb/Escritorio/cpp/src/property/border.h \
- /home/sweb/Escritorio/cpp/src/property/effects.h \
- /home/sweb/Escritorio/cpp/src/property/flexbox.h \
- /home/sweb/Escritorio/cpp/src/property/grid.h \
- /home/sweb/Escritorio/cpp/src/property/interactivity.h \
- /home/sweb/Escritorio/cpp/src/property/layout.h \
- /home/sweb/Escritorio/cpp/src/property/sizing.h \
- /home/sweb/Escritorio/cpp/src/property/spacing.h \
- /home/sweb/Escritorio/cpp/src/property/tables.h \
- /home/sweb/Escritorio/cpp/src/property/transforms.h \
- /home/sweb/Escritorio/cpp/src/property/typography.h \
- /home/sweb/Escritorio/cpp/src/version.h \
- /home/sweb/Escritorio/cpp/src/helperOptions.h \
+ /home/sweb/Escritorio/cpp/includes/helper.h \
+ /home/sweb/Escritorio/cpp/includes/global_build_default.h \
+ /home/sweb/Escritorio/cpp/includes/helperOptions.h \
+ /usr/local/include/fmt/ranges.h \
+ /home/sweb/Escritorio/cpp/includes/version.h \
  /home/sweb/Escritorio/cpp/config/property/h/alignment.h \
  /home/sweb/Escritorio/cpp/config/property/h/backgrounds.h \
  /home/sweb/Escritorio/cpp/config/property/h/bgcolor.h \

@@ -19,10 +19,11 @@
 // -----------------------------------------------------------------------------------------------
 // normalize_min_css
 #include "config/normalize.min.h"
-#include "src/helper.h"
-#include "src/config.h"
-#include "src/version.h"
-#include "src/helperOptions.h"
+#include "includes/helper.h"
+
+
+#include "global_build_default.h"
+#include "helperOptions.h"
 // -----------------------------------------------------------------------------------------------
 #include "config/property/h/alignment.h"
 #include "config/property/h/backgrounds.h"
@@ -128,8 +129,9 @@ void createFileConfig(std::string filename , std::string content){
 }
 // -----------------------------------------------------------------------------------------------
 void createProject( string name ){
+    
+    global_build_default Build_default; 
     string dirPath = fs::current_path().generic_string();
-
     vector<string> categories_raw = Build_default.categories;
     // --------------------------------------------------------------------------------------------
     // VERIFICAMOS EL NOMBRE DE PROJECTO QUE NO SEA NADA
@@ -160,11 +162,11 @@ void createProject( string name ){
             // -------------------------------------------------------------
             auto screens = Build_default.screens;
             std::vector<std::string> screens_key;
-            for( auto const&[key,value] : screens){                
+            for( const auto&[key,value] : screens){                
                 screens_key.push_back(key);
             }
             
-            for(string category : categories_raw){
+            for(const auto &category : categories_raw){
 
                 YAML::Emitter out;
                 out << YAML::BeginMap;
@@ -209,7 +211,7 @@ void createProject( string name ){
 vector<string> cleanCategories( vector<string> categories , vector<string> raw , std::function<void(string,bool)> done ){
     vector<string> str;
     // ------------------------------------------------------------------------------
-    for( string category : raw ){
+    for( const auto &category : raw ){
         if(  !count( categories.begin() , categories.end() , category )  ){            
             done( category , false );
         }else{
@@ -221,7 +223,9 @@ vector<string> cleanCategories( vector<string> categories , vector<string> raw ,
     return str;    
 }
 // ----------------------------------------------------------------------------------
-void buildProject( string dirbuild ){        
+void buildProject( string dirbuild ){
+    global_build_default Build_default;
+            
     string dirPath = fs::current_path().generic_string() + "/" + dirbuild;
     if( !fs::exists(dirPath) ){        
         errorMesage( "The folder does not exist : " + dirPath );
@@ -258,7 +262,7 @@ void buildProject( string dirbuild ){
     if( categories.size() > 0 ){
         std::ofstream fileMaster( d_master );
         if( normalize ){ fileMaster << getDataYaml(normalize_min_css); }
-        for(string category : categories ){            
+        for(const auto &category : categories ){            
             auto properties =   PropertiesCss.at( category ).as<map<std::string,std::map<string,string>>>();
             for( auto const&[ cssproperty , option ] : properties ){                                
                 for( auto const&[nameClass, valueClass ] : option ){

@@ -1,3 +1,6 @@
+#ifndef HELPER_H
+#define HELPER_H
+
 struct global_css_property{
     std::string main_property;
     std::map<std::string,std::string> options;
@@ -28,3 +31,5 @@ struct global_css_category{
         return str;
     }
 };
+
+#endif //HELPER_H

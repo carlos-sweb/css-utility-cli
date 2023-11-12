@@ -198,6 +198,78 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/global_build_default.o: src/global_build_default.cpp.o
+.PHONY : src/global_build_default.o
+
+# target to build an object file
+src/global_build_default.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o
+.PHONY : src/global_build_default.cpp.o
+
+src/global_build_default.i: src/global_build_default.cpp.i
+.PHONY : src/global_build_default.i
+
+# target to preprocess a source file
+src/global_build_default.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.i
+.PHONY : src/global_build_default.cpp.i
+
+src/global_build_default.s: src/global_build_default.cpp.s
+.PHONY : src/global_build_default.s
+
+# target to generate assembly for a file
+src/global_build_default.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.s
+.PHONY : src/global_build_default.cpp.s
+
+src/helperOptions.o: src/helperOptions.cpp.o
+.PHONY : src/helperOptions.o
+
+# target to build an object file
+src/helperOptions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.o
+.PHONY : src/helperOptions.cpp.o
+
+src/helperOptions.i: src/helperOptions.cpp.i
+.PHONY : src/helperOptions.i
+
+# target to preprocess a source file
+src/helperOptions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.i
+.PHONY : src/helperOptions.cpp.i
+
+src/helperOptions.s: src/helperOptions.cpp.s
+.PHONY : src/helperOptions.s
+
+# target to generate assembly for a file
+src/helperOptions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.s
+.PHONY : src/helperOptions.cpp.s
+
+src/version.o: src/version.cpp.o
+.PHONY : src/version.o
+
+# target to build an object file
+src/version.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/version.cpp.o
+.PHONY : src/version.cpp.o
+
+src/version.i: src/version.cpp.i
+.PHONY : src/version.i
+
+# target to preprocess a source file
+src/version.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/version.cpp.i
+.PHONY : src/version.cpp.i
+
+src/version.s: src/version.cpp.s
+.PHONY : src/version.s
+
+# target to generate assembly for a file
+src/version.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/version.cpp.s
+.PHONY : src/version.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -214,6 +286,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/global_build_default.o"
+	@echo "... src/global_build_default.i"
+	@echo "... src/global_build_default.s"
+	@echo "... src/helperOptions.o"
+	@echo "... src/helperOptions.i"
+	@echo "... src/helperOptions.s"
+	@echo "... src/version.o"
+	@echo "... src/version.i"
+	@echo "... src/version.s"
 .PHONY : help
 
 
