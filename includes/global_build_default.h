@@ -6,6 +6,7 @@
 #include <map>
 #include <string>
 #include <yaml-cpp/yaml.h>
+#include "css_categories/category_alignment.h"
 
 struct global_build_default {
     bool normalize = true;

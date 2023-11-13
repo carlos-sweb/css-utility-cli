@@ -7,7 +7,24 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(fmt)
 
-add_executable(cssutilitycli main.cpp src/version.cpp src/helperOptions.cpp src/global_build_default.cpp)
+
+
+add_executable(cssutilitycli 
+src/main.cpp 
+
+
+src/css_categories/category_alignment.cpp
+src/css_properties/alignment.cpp
+
+src/version.cpp 
+src/helperOptions.cpp
+
+src/global_css_property.cpp
+src/global_css_category.cpp
+
+src/global_build_default.cpp 
+src/create_project.cpp
+)
 
 target_link_libraries(cssutilitycli yaml-cpp fmt::fmt )
 

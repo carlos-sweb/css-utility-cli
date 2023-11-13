@@ -241,4 +241,11 @@ CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.o: \
  /usr/include/c++/13.2.1/bits/indirect_array.h \
  /usr/local/include/yaml-cpp/node/detail/impl.h \
  /usr/local/include/yaml-cpp/node/parse.h \
- /usr/local/include/yaml-cpp/node/emit.h
+ /usr/local/include/yaml-cpp/node/emit.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/category_alignment.h \
+ /home/sweb/Escritorio/cpp/includes/global_css_category.h \
+ /home/sweb/Escritorio/cpp/includes/global_css_property.h \
+ /usr/local/include/fmt/core.h /usr/include/c++/13.2.1/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/alignment.h \
+ /home/sweb/Escritorio/cpp/includes/global_css_property.h

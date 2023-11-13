@@ -174,29 +174,77 @@ cssutilitycli/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/build
 .PHONY : cssutilitycli/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+src/create_project.o: src/create_project.cpp.o
+.PHONY : src/create_project.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/create_project.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/create_project.cpp.o
+.PHONY : src/create_project.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/create_project.i: src/create_project.cpp.i
+.PHONY : src/create_project.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/create_project.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/create_project.cpp.i
+.PHONY : src/create_project.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/create_project.s: src/create_project.cpp.s
+.PHONY : src/create_project.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/create_project.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/create_project.cpp.s
+.PHONY : src/create_project.cpp.s
+
+src/css_categories/category_alignment.o: src/css_categories/category_alignment.cpp.o
+.PHONY : src/css_categories/category_alignment.o
+
+# target to build an object file
+src/css_categories/category_alignment.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/category_alignment.cpp.o
+.PHONY : src/css_categories/category_alignment.cpp.o
+
+src/css_categories/category_alignment.i: src/css_categories/category_alignment.cpp.i
+.PHONY : src/css_categories/category_alignment.i
+
+# target to preprocess a source file
+src/css_categories/category_alignment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/category_alignment.cpp.i
+.PHONY : src/css_categories/category_alignment.cpp.i
+
+src/css_categories/category_alignment.s: src/css_categories/category_alignment.cpp.s
+.PHONY : src/css_categories/category_alignment.s
+
+# target to generate assembly for a file
+src/css_categories/category_alignment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/category_alignment.cpp.s
+.PHONY : src/css_categories/category_alignment.cpp.s
+
+src/css_properties/alignment.o: src/css_properties/alignment.cpp.o
+.PHONY : src/css_properties/alignment.o
+
+# target to build an object file
+src/css_properties/alignment.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/alignment.cpp.o
+.PHONY : src/css_properties/alignment.cpp.o
+
+src/css_properties/alignment.i: src/css_properties/alignment.cpp.i
+.PHONY : src/css_properties/alignment.i
+
+# target to preprocess a source file
+src/css_properties/alignment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/alignment.cpp.i
+.PHONY : src/css_properties/alignment.cpp.i
+
+src/css_properties/alignment.s: src/css_properties/alignment.cpp.s
+.PHONY : src/css_properties/alignment.s
+
+# target to generate assembly for a file
+src/css_properties/alignment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/alignment.cpp.s
+.PHONY : src/css_properties/alignment.cpp.s
 
 src/global_build_default.o: src/global_build_default.cpp.o
 .PHONY : src/global_build_default.o
@@ -222,6 +270,54 @@ src/global_build_default.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_build_default.cpp.s
 .PHONY : src/global_build_default.cpp.s
 
+src/global_css_category.o: src/global_css_category.cpp.o
+.PHONY : src/global_css_category.o
+
+# target to build an object file
+src/global_css_category.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_css_category.cpp.o
+.PHONY : src/global_css_category.cpp.o
+
+src/global_css_category.i: src/global_css_category.cpp.i
+.PHONY : src/global_css_category.i
+
+# target to preprocess a source file
+src/global_css_category.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_css_category.cpp.i
+.PHONY : src/global_css_category.cpp.i
+
+src/global_css_category.s: src/global_css_category.cpp.s
+.PHONY : src/global_css_category.s
+
+# target to generate assembly for a file
+src/global_css_category.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_css_category.cpp.s
+.PHONY : src/global_css_category.cpp.s
+
+src/global_css_property.o: src/global_css_property.cpp.o
+.PHONY : src/global_css_property.o
+
+# target to build an object file
+src/global_css_property.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_css_property.cpp.o
+.PHONY : src/global_css_property.cpp.o
+
+src/global_css_property.i: src/global_css_property.cpp.i
+.PHONY : src/global_css_property.i
+
+# target to preprocess a source file
+src/global_css_property.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_css_property.cpp.i
+.PHONY : src/global_css_property.cpp.i
+
+src/global_css_property.s: src/global_css_property.cpp.s
+.PHONY : src/global_css_property.s
+
+# target to generate assembly for a file
+src/global_css_property.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/global_css_property.cpp.s
+.PHONY : src/global_css_property.cpp.s
+
 src/helperOptions.o: src/helperOptions.cpp.o
 .PHONY : src/helperOptions.o
 
@@ -245,6 +341,30 @@ src/helperOptions.s: src/helperOptions.cpp.s
 src/helperOptions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/helperOptions.cpp.s
 .PHONY : src/helperOptions.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 src/version.o: src/version.cpp.o
 .PHONY : src/version.o
@@ -283,15 +403,30 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... cssutilitycli"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/create_project.o"
+	@echo "... src/create_project.i"
+	@echo "... src/create_project.s"
+	@echo "... src/css_categories/category_alignment.o"
+	@echo "... src/css_categories/category_alignment.i"
+	@echo "... src/css_categories/category_alignment.s"
+	@echo "... src/css_properties/alignment.o"
+	@echo "... src/css_properties/alignment.i"
+	@echo "... src/css_properties/alignment.s"
 	@echo "... src/global_build_default.o"
 	@echo "... src/global_build_default.i"
 	@echo "... src/global_build_default.s"
+	@echo "... src/global_css_category.o"
+	@echo "... src/global_css_category.i"
+	@echo "... src/global_css_category.s"
+	@echo "... src/global_css_property.o"
+	@echo "... src/global_css_property.i"
+	@echo "... src/global_css_property.s"
 	@echo "... src/helperOptions.o"
 	@echo "... src/helperOptions.i"
 	@echo "... src/helperOptions.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/version.o"
 	@echo "... src/version.i"
 	@echo "... src/version.s"
