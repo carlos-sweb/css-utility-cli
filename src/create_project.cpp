@@ -54,13 +54,10 @@ void warningMesage( std::string message ){ std::cout << termcolor::yellow << " W
 // -----------------------------------------------------------------------------------------------
 void successMesage( std::string message ){std::cout << termcolor::green << " Success -> "<< termcolor::reset <<  message  << "\n";}
 // -----------------------------------------------------------------------------------------------
-
-
 void createProject( std::string name ){
     
     global_build_default Build_default; 
-    std::string dirPath = fs::current_path().generic_string();
-    std::vector<std::string> categories_raw = Build_default.categories;
+    std::string dirPath = fs::current_path().generic_string();    
     // --------------------------------------------------------------------------------------------
     // VERIFICAMOS EL NOMBRE DE PROJECTO QUE NO SEA NADA
     if( name == "" ){
@@ -88,17 +85,9 @@ void createProject( std::string name ){
             //createFileConfig(dirPathName + "/build.yml", getDataYaml(build_yml) );
             createFileConfig(dirPathName + "/build.yml", Build_default.yml() );            
             // -------------------------------------------------------------
-            auto screens = Build_default.screens;
-            std::vector<std::string> screens_key;
-            for( const auto&[key,value] : screens){                
-                screens_key.push_back(key);
-            }
-            
-            for(const auto &category : categories_raw){
-
+            for(const auto &category : Build_default.getCategories() ){
                 YAML::Emitter out;
                 out << YAML::BeginMap;
-                
                 /*
                 auto properties =   PropertiesCss.at( category ).as<std::map<std::string,std::map<std::string,std::string>>>();
                 for( auto const&[ cssproperty , option ] : properties ){                                        
@@ -106,6 +95,7 @@ void createProject( std::string name ){
                     out << YAML::Value;                    
                     out << YAML::BeginMap;
                     out << YAML::Key << "screens" << YAML::Value << YAML::BeginSeq;
+                    Build_default.getScreensKey()
                     for( auto key : screens_key){
                         out << key;    
                     }
@@ -118,10 +108,7 @@ void createProject( std::string name ){
                     out << YAML::EndSeq;
                     out << YAML::EndMap;                    
                 }*/
-
                 out << YAML::EndMap;
-                
-                    
                 std::string fileCategoryYaml = dirPathNameConfig+"/"+category+".yml";
                 if( !fs::exists(fileCategoryYaml) ){
                     createFileConfig( fileCategoryYaml , out.c_str() );

@@ -1,6 +1,6 @@
-#include "global_css_property.h"
+#include "css_properties/effects.h"
 
-global_css_property opacity {"opacity",{
+global_css_property *opacity = new global_css_property({"opacity",{
   {"opacity-0","'0'"},
   {"opacity-5","'0.5'"},
   {"opacity-10","'0.10'"},
@@ -16,9 +16,9 @@ global_css_property opacity {"opacity",{
   {"opacity-90","'0.90'"},
   {"opacity-95","'0.95'"},
   {"opacity-100","'1'"},
-}};
+}});
 
-global_css_property boxShadow {"box-shadow",{
+global_css_property *boxShadow = new global_css_property({"box-shadow",{
   {"elevation-0","0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14),0px 0px 0px 0px rgba(0, 0, 0, 0.12)"},
   {"elevation-1","0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0,0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)"},
   {"elevation-2","0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0,0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)"},
@@ -44,4 +44,4 @@ global_css_property boxShadow {"box-shadow",{
   {"elevation-22","0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0,0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12)"},
   {"elevation-23","0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0,0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12)"},
   {"elevation-24","0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0,0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12)"},
-}};
+}});

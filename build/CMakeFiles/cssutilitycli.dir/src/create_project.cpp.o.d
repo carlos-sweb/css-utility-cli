@@ -242,13 +242,39 @@ CMakeFiles/cssutilitycli.dir/src/create_project.cpp.o: \
  /usr/local/include/yaml-cpp/node/detail/impl.h \
  /usr/local/include/yaml-cpp/node/parse.h \
  /usr/local/include/yaml-cpp/node/emit.h \
- /home/sweb/Escritorio/cpp/includes/css_categories/category_alignment.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/alignment.h \
  /home/sweb/Escritorio/cpp/includes/global_css_category.h \
  /home/sweb/Escritorio/cpp/includes/global_css_property.h \
  /usr/local/include/fmt/core.h /usr/include/c++/13.2.1/cstring \
  /usr/include/string.h /usr/include/strings.h \
  /home/sweb/Escritorio/cpp/includes/css_properties/alignment.h \
  /home/sweb/Escritorio/cpp/includes/global_css_property.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/backgrounds.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/backgrounds.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/bgcolor.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/bgcolor.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/border.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/border.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/effects.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/effects.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/flexbox.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/flexbox.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/grid.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/grid.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/interactivity.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/interactivity.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/layout.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/layout.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/sizing.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/sizing.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/spacing.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/spacing.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/tables.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/tables.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/transforms.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/transforms.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/typography.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/typography.h \
  /home/sweb/Escritorio/cpp/includes/create_project.h \
  /usr/include/c++/13.2.1/filesystem /usr/include/c++/13.2.1/bits/fs_fwd.h \
  /usr/include/c++/13.2.1/cstdint /usr/include/c++/13.2.1/bits/chrono.h \

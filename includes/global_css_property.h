@@ -7,11 +7,10 @@
 #include <iostream>
 #include <fmt/core.h>
 
-typedef struct Global_css_property{
+typedef struct global_css_property{
     std::string main_property;
     std::map<std::string,std::string> options;
-    Global_css_property(std::string m ,std::map<std::string,std::string> o );    
-    std::string getMainProperty();
+    global_css_property(std::string m ,std::map<std::string,std::string> o );
     std::string css() const;
 }global_css_property;
 

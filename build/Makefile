@@ -198,29 +198,341 @@ src/create_project.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/create_project.cpp.s
 .PHONY : src/create_project.cpp.s
 
-src/css_categories/category_alignment.o: src/css_categories/category_alignment.cpp.o
-.PHONY : src/css_categories/category_alignment.o
+src/css_categories/alignment.o: src/css_categories/alignment.cpp.o
+.PHONY : src/css_categories/alignment.o
 
 # target to build an object file
-src/css_categories/category_alignment.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/category_alignment.cpp.o
-.PHONY : src/css_categories/category_alignment.cpp.o
+src/css_categories/alignment.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/alignment.cpp.o
+.PHONY : src/css_categories/alignment.cpp.o
 
-src/css_categories/category_alignment.i: src/css_categories/category_alignment.cpp.i
-.PHONY : src/css_categories/category_alignment.i
+src/css_categories/alignment.i: src/css_categories/alignment.cpp.i
+.PHONY : src/css_categories/alignment.i
 
 # target to preprocess a source file
-src/css_categories/category_alignment.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/category_alignment.cpp.i
-.PHONY : src/css_categories/category_alignment.cpp.i
+src/css_categories/alignment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/alignment.cpp.i
+.PHONY : src/css_categories/alignment.cpp.i
 
-src/css_categories/category_alignment.s: src/css_categories/category_alignment.cpp.s
-.PHONY : src/css_categories/category_alignment.s
+src/css_categories/alignment.s: src/css_categories/alignment.cpp.s
+.PHONY : src/css_categories/alignment.s
 
 # target to generate assembly for a file
-src/css_categories/category_alignment.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/category_alignment.cpp.s
-.PHONY : src/css_categories/category_alignment.cpp.s
+src/css_categories/alignment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/alignment.cpp.s
+.PHONY : src/css_categories/alignment.cpp.s
+
+src/css_categories/backgrounds.o: src/css_categories/backgrounds.cpp.o
+.PHONY : src/css_categories/backgrounds.o
+
+# target to build an object file
+src/css_categories/backgrounds.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/backgrounds.cpp.o
+.PHONY : src/css_categories/backgrounds.cpp.o
+
+src/css_categories/backgrounds.i: src/css_categories/backgrounds.cpp.i
+.PHONY : src/css_categories/backgrounds.i
+
+# target to preprocess a source file
+src/css_categories/backgrounds.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/backgrounds.cpp.i
+.PHONY : src/css_categories/backgrounds.cpp.i
+
+src/css_categories/backgrounds.s: src/css_categories/backgrounds.cpp.s
+.PHONY : src/css_categories/backgrounds.s
+
+# target to generate assembly for a file
+src/css_categories/backgrounds.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/backgrounds.cpp.s
+.PHONY : src/css_categories/backgrounds.cpp.s
+
+src/css_categories/bgcolor.o: src/css_categories/bgcolor.cpp.o
+.PHONY : src/css_categories/bgcolor.o
+
+# target to build an object file
+src/css_categories/bgcolor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/bgcolor.cpp.o
+.PHONY : src/css_categories/bgcolor.cpp.o
+
+src/css_categories/bgcolor.i: src/css_categories/bgcolor.cpp.i
+.PHONY : src/css_categories/bgcolor.i
+
+# target to preprocess a source file
+src/css_categories/bgcolor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/bgcolor.cpp.i
+.PHONY : src/css_categories/bgcolor.cpp.i
+
+src/css_categories/bgcolor.s: src/css_categories/bgcolor.cpp.s
+.PHONY : src/css_categories/bgcolor.s
+
+# target to generate assembly for a file
+src/css_categories/bgcolor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/bgcolor.cpp.s
+.PHONY : src/css_categories/bgcolor.cpp.s
+
+src/css_categories/border.o: src/css_categories/border.cpp.o
+.PHONY : src/css_categories/border.o
+
+# target to build an object file
+src/css_categories/border.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/border.cpp.o
+.PHONY : src/css_categories/border.cpp.o
+
+src/css_categories/border.i: src/css_categories/border.cpp.i
+.PHONY : src/css_categories/border.i
+
+# target to preprocess a source file
+src/css_categories/border.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/border.cpp.i
+.PHONY : src/css_categories/border.cpp.i
+
+src/css_categories/border.s: src/css_categories/border.cpp.s
+.PHONY : src/css_categories/border.s
+
+# target to generate assembly for a file
+src/css_categories/border.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/border.cpp.s
+.PHONY : src/css_categories/border.cpp.s
+
+src/css_categories/effects.o: src/css_categories/effects.cpp.o
+.PHONY : src/css_categories/effects.o
+
+# target to build an object file
+src/css_categories/effects.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/effects.cpp.o
+.PHONY : src/css_categories/effects.cpp.o
+
+src/css_categories/effects.i: src/css_categories/effects.cpp.i
+.PHONY : src/css_categories/effects.i
+
+# target to preprocess a source file
+src/css_categories/effects.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/effects.cpp.i
+.PHONY : src/css_categories/effects.cpp.i
+
+src/css_categories/effects.s: src/css_categories/effects.cpp.s
+.PHONY : src/css_categories/effects.s
+
+# target to generate assembly for a file
+src/css_categories/effects.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/effects.cpp.s
+.PHONY : src/css_categories/effects.cpp.s
+
+src/css_categories/flexbox.o: src/css_categories/flexbox.cpp.o
+.PHONY : src/css_categories/flexbox.o
+
+# target to build an object file
+src/css_categories/flexbox.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/flexbox.cpp.o
+.PHONY : src/css_categories/flexbox.cpp.o
+
+src/css_categories/flexbox.i: src/css_categories/flexbox.cpp.i
+.PHONY : src/css_categories/flexbox.i
+
+# target to preprocess a source file
+src/css_categories/flexbox.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/flexbox.cpp.i
+.PHONY : src/css_categories/flexbox.cpp.i
+
+src/css_categories/flexbox.s: src/css_categories/flexbox.cpp.s
+.PHONY : src/css_categories/flexbox.s
+
+# target to generate assembly for a file
+src/css_categories/flexbox.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/flexbox.cpp.s
+.PHONY : src/css_categories/flexbox.cpp.s
+
+src/css_categories/grid.o: src/css_categories/grid.cpp.o
+.PHONY : src/css_categories/grid.o
+
+# target to build an object file
+src/css_categories/grid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/grid.cpp.o
+.PHONY : src/css_categories/grid.cpp.o
+
+src/css_categories/grid.i: src/css_categories/grid.cpp.i
+.PHONY : src/css_categories/grid.i
+
+# target to preprocess a source file
+src/css_categories/grid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/grid.cpp.i
+.PHONY : src/css_categories/grid.cpp.i
+
+src/css_categories/grid.s: src/css_categories/grid.cpp.s
+.PHONY : src/css_categories/grid.s
+
+# target to generate assembly for a file
+src/css_categories/grid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/grid.cpp.s
+.PHONY : src/css_categories/grid.cpp.s
+
+src/css_categories/interactivity.o: src/css_categories/interactivity.cpp.o
+.PHONY : src/css_categories/interactivity.o
+
+# target to build an object file
+src/css_categories/interactivity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/interactivity.cpp.o
+.PHONY : src/css_categories/interactivity.cpp.o
+
+src/css_categories/interactivity.i: src/css_categories/interactivity.cpp.i
+.PHONY : src/css_categories/interactivity.i
+
+# target to preprocess a source file
+src/css_categories/interactivity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/interactivity.cpp.i
+.PHONY : src/css_categories/interactivity.cpp.i
+
+src/css_categories/interactivity.s: src/css_categories/interactivity.cpp.s
+.PHONY : src/css_categories/interactivity.s
+
+# target to generate assembly for a file
+src/css_categories/interactivity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/interactivity.cpp.s
+.PHONY : src/css_categories/interactivity.cpp.s
+
+src/css_categories/layout.o: src/css_categories/layout.cpp.o
+.PHONY : src/css_categories/layout.o
+
+# target to build an object file
+src/css_categories/layout.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/layout.cpp.o
+.PHONY : src/css_categories/layout.cpp.o
+
+src/css_categories/layout.i: src/css_categories/layout.cpp.i
+.PHONY : src/css_categories/layout.i
+
+# target to preprocess a source file
+src/css_categories/layout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/layout.cpp.i
+.PHONY : src/css_categories/layout.cpp.i
+
+src/css_categories/layout.s: src/css_categories/layout.cpp.s
+.PHONY : src/css_categories/layout.s
+
+# target to generate assembly for a file
+src/css_categories/layout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/layout.cpp.s
+.PHONY : src/css_categories/layout.cpp.s
+
+src/css_categories/sizing.o: src/css_categories/sizing.cpp.o
+.PHONY : src/css_categories/sizing.o
+
+# target to build an object file
+src/css_categories/sizing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/sizing.cpp.o
+.PHONY : src/css_categories/sizing.cpp.o
+
+src/css_categories/sizing.i: src/css_categories/sizing.cpp.i
+.PHONY : src/css_categories/sizing.i
+
+# target to preprocess a source file
+src/css_categories/sizing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/sizing.cpp.i
+.PHONY : src/css_categories/sizing.cpp.i
+
+src/css_categories/sizing.s: src/css_categories/sizing.cpp.s
+.PHONY : src/css_categories/sizing.s
+
+# target to generate assembly for a file
+src/css_categories/sizing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/sizing.cpp.s
+.PHONY : src/css_categories/sizing.cpp.s
+
+src/css_categories/spacing.o: src/css_categories/spacing.cpp.o
+.PHONY : src/css_categories/spacing.o
+
+# target to build an object file
+src/css_categories/spacing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/spacing.cpp.o
+.PHONY : src/css_categories/spacing.cpp.o
+
+src/css_categories/spacing.i: src/css_categories/spacing.cpp.i
+.PHONY : src/css_categories/spacing.i
+
+# target to preprocess a source file
+src/css_categories/spacing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/spacing.cpp.i
+.PHONY : src/css_categories/spacing.cpp.i
+
+src/css_categories/spacing.s: src/css_categories/spacing.cpp.s
+.PHONY : src/css_categories/spacing.s
+
+# target to generate assembly for a file
+src/css_categories/spacing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/spacing.cpp.s
+.PHONY : src/css_categories/spacing.cpp.s
+
+src/css_categories/tables.o: src/css_categories/tables.cpp.o
+.PHONY : src/css_categories/tables.o
+
+# target to build an object file
+src/css_categories/tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/tables.cpp.o
+.PHONY : src/css_categories/tables.cpp.o
+
+src/css_categories/tables.i: src/css_categories/tables.cpp.i
+.PHONY : src/css_categories/tables.i
+
+# target to preprocess a source file
+src/css_categories/tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/tables.cpp.i
+.PHONY : src/css_categories/tables.cpp.i
+
+src/css_categories/tables.s: src/css_categories/tables.cpp.s
+.PHONY : src/css_categories/tables.s
+
+# target to generate assembly for a file
+src/css_categories/tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/tables.cpp.s
+.PHONY : src/css_categories/tables.cpp.s
+
+src/css_categories/transforms.o: src/css_categories/transforms.cpp.o
+.PHONY : src/css_categories/transforms.o
+
+# target to build an object file
+src/css_categories/transforms.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/transforms.cpp.o
+.PHONY : src/css_categories/transforms.cpp.o
+
+src/css_categories/transforms.i: src/css_categories/transforms.cpp.i
+.PHONY : src/css_categories/transforms.i
+
+# target to preprocess a source file
+src/css_categories/transforms.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/transforms.cpp.i
+.PHONY : src/css_categories/transforms.cpp.i
+
+src/css_categories/transforms.s: src/css_categories/transforms.cpp.s
+.PHONY : src/css_categories/transforms.s
+
+# target to generate assembly for a file
+src/css_categories/transforms.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/transforms.cpp.s
+.PHONY : src/css_categories/transforms.cpp.s
+
+src/css_categories/typography.o: src/css_categories/typography.cpp.o
+.PHONY : src/css_categories/typography.o
+
+# target to build an object file
+src/css_categories/typography.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/typography.cpp.o
+.PHONY : src/css_categories/typography.cpp.o
+
+src/css_categories/typography.i: src/css_categories/typography.cpp.i
+.PHONY : src/css_categories/typography.i
+
+# target to preprocess a source file
+src/css_categories/typography.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/typography.cpp.i
+.PHONY : src/css_categories/typography.cpp.i
+
+src/css_categories/typography.s: src/css_categories/typography.cpp.s
+.PHONY : src/css_categories/typography.s
+
+# target to generate assembly for a file
+src/css_categories/typography.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_categories/typography.cpp.s
+.PHONY : src/css_categories/typography.cpp.s
 
 src/css_properties/alignment.o: src/css_properties/alignment.cpp.o
 .PHONY : src/css_properties/alignment.o
@@ -245,6 +557,318 @@ src/css_properties/alignment.s: src/css_properties/alignment.cpp.s
 src/css_properties/alignment.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/alignment.cpp.s
 .PHONY : src/css_properties/alignment.cpp.s
+
+src/css_properties/backgrounds.o: src/css_properties/backgrounds.cpp.o
+.PHONY : src/css_properties/backgrounds.o
+
+# target to build an object file
+src/css_properties/backgrounds.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/backgrounds.cpp.o
+.PHONY : src/css_properties/backgrounds.cpp.o
+
+src/css_properties/backgrounds.i: src/css_properties/backgrounds.cpp.i
+.PHONY : src/css_properties/backgrounds.i
+
+# target to preprocess a source file
+src/css_properties/backgrounds.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/backgrounds.cpp.i
+.PHONY : src/css_properties/backgrounds.cpp.i
+
+src/css_properties/backgrounds.s: src/css_properties/backgrounds.cpp.s
+.PHONY : src/css_properties/backgrounds.s
+
+# target to generate assembly for a file
+src/css_properties/backgrounds.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/backgrounds.cpp.s
+.PHONY : src/css_properties/backgrounds.cpp.s
+
+src/css_properties/bgcolor.o: src/css_properties/bgcolor.cpp.o
+.PHONY : src/css_properties/bgcolor.o
+
+# target to build an object file
+src/css_properties/bgcolor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/bgcolor.cpp.o
+.PHONY : src/css_properties/bgcolor.cpp.o
+
+src/css_properties/bgcolor.i: src/css_properties/bgcolor.cpp.i
+.PHONY : src/css_properties/bgcolor.i
+
+# target to preprocess a source file
+src/css_properties/bgcolor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/bgcolor.cpp.i
+.PHONY : src/css_properties/bgcolor.cpp.i
+
+src/css_properties/bgcolor.s: src/css_properties/bgcolor.cpp.s
+.PHONY : src/css_properties/bgcolor.s
+
+# target to generate assembly for a file
+src/css_properties/bgcolor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/bgcolor.cpp.s
+.PHONY : src/css_properties/bgcolor.cpp.s
+
+src/css_properties/border.o: src/css_properties/border.cpp.o
+.PHONY : src/css_properties/border.o
+
+# target to build an object file
+src/css_properties/border.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/border.cpp.o
+.PHONY : src/css_properties/border.cpp.o
+
+src/css_properties/border.i: src/css_properties/border.cpp.i
+.PHONY : src/css_properties/border.i
+
+# target to preprocess a source file
+src/css_properties/border.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/border.cpp.i
+.PHONY : src/css_properties/border.cpp.i
+
+src/css_properties/border.s: src/css_properties/border.cpp.s
+.PHONY : src/css_properties/border.s
+
+# target to generate assembly for a file
+src/css_properties/border.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/border.cpp.s
+.PHONY : src/css_properties/border.cpp.s
+
+src/css_properties/effects.o: src/css_properties/effects.cpp.o
+.PHONY : src/css_properties/effects.o
+
+# target to build an object file
+src/css_properties/effects.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/effects.cpp.o
+.PHONY : src/css_properties/effects.cpp.o
+
+src/css_properties/effects.i: src/css_properties/effects.cpp.i
+.PHONY : src/css_properties/effects.i
+
+# target to preprocess a source file
+src/css_properties/effects.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/effects.cpp.i
+.PHONY : src/css_properties/effects.cpp.i
+
+src/css_properties/effects.s: src/css_properties/effects.cpp.s
+.PHONY : src/css_properties/effects.s
+
+# target to generate assembly for a file
+src/css_properties/effects.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/effects.cpp.s
+.PHONY : src/css_properties/effects.cpp.s
+
+src/css_properties/flexbox.o: src/css_properties/flexbox.cpp.o
+.PHONY : src/css_properties/flexbox.o
+
+# target to build an object file
+src/css_properties/flexbox.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/flexbox.cpp.o
+.PHONY : src/css_properties/flexbox.cpp.o
+
+src/css_properties/flexbox.i: src/css_properties/flexbox.cpp.i
+.PHONY : src/css_properties/flexbox.i
+
+# target to preprocess a source file
+src/css_properties/flexbox.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/flexbox.cpp.i
+.PHONY : src/css_properties/flexbox.cpp.i
+
+src/css_properties/flexbox.s: src/css_properties/flexbox.cpp.s
+.PHONY : src/css_properties/flexbox.s
+
+# target to generate assembly for a file
+src/css_properties/flexbox.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/flexbox.cpp.s
+.PHONY : src/css_properties/flexbox.cpp.s
+
+src/css_properties/grid.o: src/css_properties/grid.cpp.o
+.PHONY : src/css_properties/grid.o
+
+# target to build an object file
+src/css_properties/grid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/grid.cpp.o
+.PHONY : src/css_properties/grid.cpp.o
+
+src/css_properties/grid.i: src/css_properties/grid.cpp.i
+.PHONY : src/css_properties/grid.i
+
+# target to preprocess a source file
+src/css_properties/grid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/grid.cpp.i
+.PHONY : src/css_properties/grid.cpp.i
+
+src/css_properties/grid.s: src/css_properties/grid.cpp.s
+.PHONY : src/css_properties/grid.s
+
+# target to generate assembly for a file
+src/css_properties/grid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/grid.cpp.s
+.PHONY : src/css_properties/grid.cpp.s
+
+src/css_properties/interactivity.o: src/css_properties/interactivity.cpp.o
+.PHONY : src/css_properties/interactivity.o
+
+# target to build an object file
+src/css_properties/interactivity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/interactivity.cpp.o
+.PHONY : src/css_properties/interactivity.cpp.o
+
+src/css_properties/interactivity.i: src/css_properties/interactivity.cpp.i
+.PHONY : src/css_properties/interactivity.i
+
+# target to preprocess a source file
+src/css_properties/interactivity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/interactivity.cpp.i
+.PHONY : src/css_properties/interactivity.cpp.i
+
+src/css_properties/interactivity.s: src/css_properties/interactivity.cpp.s
+.PHONY : src/css_properties/interactivity.s
+
+# target to generate assembly for a file
+src/css_properties/interactivity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/interactivity.cpp.s
+.PHONY : src/css_properties/interactivity.cpp.s
+
+src/css_properties/layout.o: src/css_properties/layout.cpp.o
+.PHONY : src/css_properties/layout.o
+
+# target to build an object file
+src/css_properties/layout.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/layout.cpp.o
+.PHONY : src/css_properties/layout.cpp.o
+
+src/css_properties/layout.i: src/css_properties/layout.cpp.i
+.PHONY : src/css_properties/layout.i
+
+# target to preprocess a source file
+src/css_properties/layout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/layout.cpp.i
+.PHONY : src/css_properties/layout.cpp.i
+
+src/css_properties/layout.s: src/css_properties/layout.cpp.s
+.PHONY : src/css_properties/layout.s
+
+# target to generate assembly for a file
+src/css_properties/layout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/layout.cpp.s
+.PHONY : src/css_properties/layout.cpp.s
+
+src/css_properties/sizing.o: src/css_properties/sizing.cpp.o
+.PHONY : src/css_properties/sizing.o
+
+# target to build an object file
+src/css_properties/sizing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/sizing.cpp.o
+.PHONY : src/css_properties/sizing.cpp.o
+
+src/css_properties/sizing.i: src/css_properties/sizing.cpp.i
+.PHONY : src/css_properties/sizing.i
+
+# target to preprocess a source file
+src/css_properties/sizing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/sizing.cpp.i
+.PHONY : src/css_properties/sizing.cpp.i
+
+src/css_properties/sizing.s: src/css_properties/sizing.cpp.s
+.PHONY : src/css_properties/sizing.s
+
+# target to generate assembly for a file
+src/css_properties/sizing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/sizing.cpp.s
+.PHONY : src/css_properties/sizing.cpp.s
+
+src/css_properties/spacing.o: src/css_properties/spacing.cpp.o
+.PHONY : src/css_properties/spacing.o
+
+# target to build an object file
+src/css_properties/spacing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/spacing.cpp.o
+.PHONY : src/css_properties/spacing.cpp.o
+
+src/css_properties/spacing.i: src/css_properties/spacing.cpp.i
+.PHONY : src/css_properties/spacing.i
+
+# target to preprocess a source file
+src/css_properties/spacing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/spacing.cpp.i
+.PHONY : src/css_properties/spacing.cpp.i
+
+src/css_properties/spacing.s: src/css_properties/spacing.cpp.s
+.PHONY : src/css_properties/spacing.s
+
+# target to generate assembly for a file
+src/css_properties/spacing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/spacing.cpp.s
+.PHONY : src/css_properties/spacing.cpp.s
+
+src/css_properties/tables.o: src/css_properties/tables.cpp.o
+.PHONY : src/css_properties/tables.o
+
+# target to build an object file
+src/css_properties/tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/tables.cpp.o
+.PHONY : src/css_properties/tables.cpp.o
+
+src/css_properties/tables.i: src/css_properties/tables.cpp.i
+.PHONY : src/css_properties/tables.i
+
+# target to preprocess a source file
+src/css_properties/tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/tables.cpp.i
+.PHONY : src/css_properties/tables.cpp.i
+
+src/css_properties/tables.s: src/css_properties/tables.cpp.s
+.PHONY : src/css_properties/tables.s
+
+# target to generate assembly for a file
+src/css_properties/tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/tables.cpp.s
+.PHONY : src/css_properties/tables.cpp.s
+
+src/css_properties/transforms.o: src/css_properties/transforms.cpp.o
+.PHONY : src/css_properties/transforms.o
+
+# target to build an object file
+src/css_properties/transforms.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/transforms.cpp.o
+.PHONY : src/css_properties/transforms.cpp.o
+
+src/css_properties/transforms.i: src/css_properties/transforms.cpp.i
+.PHONY : src/css_properties/transforms.i
+
+# target to preprocess a source file
+src/css_properties/transforms.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/transforms.cpp.i
+.PHONY : src/css_properties/transforms.cpp.i
+
+src/css_properties/transforms.s: src/css_properties/transforms.cpp.s
+.PHONY : src/css_properties/transforms.s
+
+# target to generate assembly for a file
+src/css_properties/transforms.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/transforms.cpp.s
+.PHONY : src/css_properties/transforms.cpp.s
+
+src/css_properties/typography.o: src/css_properties/typography.cpp.o
+.PHONY : src/css_properties/typography.o
+
+# target to build an object file
+src/css_properties/typography.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/typography.cpp.o
+.PHONY : src/css_properties/typography.cpp.o
+
+src/css_properties/typography.i: src/css_properties/typography.cpp.i
+.PHONY : src/css_properties/typography.i
+
+# target to preprocess a source file
+src/css_properties/typography.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/typography.cpp.i
+.PHONY : src/css_properties/typography.cpp.i
+
+src/css_properties/typography.s: src/css_properties/typography.cpp.s
+.PHONY : src/css_properties/typography.s
+
+# target to generate assembly for a file
+src/css_properties/typography.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cssutilitycli.dir/build.make CMakeFiles/cssutilitycli.dir/src/css_properties/typography.cpp.s
+.PHONY : src/css_properties/typography.cpp.s
 
 src/global_build_default.o: src/global_build_default.cpp.o
 .PHONY : src/global_build_default.o
@@ -406,12 +1030,90 @@ help:
 	@echo "... src/create_project.o"
 	@echo "... src/create_project.i"
 	@echo "... src/create_project.s"
-	@echo "... src/css_categories/category_alignment.o"
-	@echo "... src/css_categories/category_alignment.i"
-	@echo "... src/css_categories/category_alignment.s"
+	@echo "... src/css_categories/alignment.o"
+	@echo "... src/css_categories/alignment.i"
+	@echo "... src/css_categories/alignment.s"
+	@echo "... src/css_categories/backgrounds.o"
+	@echo "... src/css_categories/backgrounds.i"
+	@echo "... src/css_categories/backgrounds.s"
+	@echo "... src/css_categories/bgcolor.o"
+	@echo "... src/css_categories/bgcolor.i"
+	@echo "... src/css_categories/bgcolor.s"
+	@echo "... src/css_categories/border.o"
+	@echo "... src/css_categories/border.i"
+	@echo "... src/css_categories/border.s"
+	@echo "... src/css_categories/effects.o"
+	@echo "... src/css_categories/effects.i"
+	@echo "... src/css_categories/effects.s"
+	@echo "... src/css_categories/flexbox.o"
+	@echo "... src/css_categories/flexbox.i"
+	@echo "... src/css_categories/flexbox.s"
+	@echo "... src/css_categories/grid.o"
+	@echo "... src/css_categories/grid.i"
+	@echo "... src/css_categories/grid.s"
+	@echo "... src/css_categories/interactivity.o"
+	@echo "... src/css_categories/interactivity.i"
+	@echo "... src/css_categories/interactivity.s"
+	@echo "... src/css_categories/layout.o"
+	@echo "... src/css_categories/layout.i"
+	@echo "... src/css_categories/layout.s"
+	@echo "... src/css_categories/sizing.o"
+	@echo "... src/css_categories/sizing.i"
+	@echo "... src/css_categories/sizing.s"
+	@echo "... src/css_categories/spacing.o"
+	@echo "... src/css_categories/spacing.i"
+	@echo "... src/css_categories/spacing.s"
+	@echo "... src/css_categories/tables.o"
+	@echo "... src/css_categories/tables.i"
+	@echo "... src/css_categories/tables.s"
+	@echo "... src/css_categories/transforms.o"
+	@echo "... src/css_categories/transforms.i"
+	@echo "... src/css_categories/transforms.s"
+	@echo "... src/css_categories/typography.o"
+	@echo "... src/css_categories/typography.i"
+	@echo "... src/css_categories/typography.s"
 	@echo "... src/css_properties/alignment.o"
 	@echo "... src/css_properties/alignment.i"
 	@echo "... src/css_properties/alignment.s"
+	@echo "... src/css_properties/backgrounds.o"
+	@echo "... src/css_properties/backgrounds.i"
+	@echo "... src/css_properties/backgrounds.s"
+	@echo "... src/css_properties/bgcolor.o"
+	@echo "... src/css_properties/bgcolor.i"
+	@echo "... src/css_properties/bgcolor.s"
+	@echo "... src/css_properties/border.o"
+	@echo "... src/css_properties/border.i"
+	@echo "... src/css_properties/border.s"
+	@echo "... src/css_properties/effects.o"
+	@echo "... src/css_properties/effects.i"
+	@echo "... src/css_properties/effects.s"
+	@echo "... src/css_properties/flexbox.o"
+	@echo "... src/css_properties/flexbox.i"
+	@echo "... src/css_properties/flexbox.s"
+	@echo "... src/css_properties/grid.o"
+	@echo "... src/css_properties/grid.i"
+	@echo "... src/css_properties/grid.s"
+	@echo "... src/css_properties/interactivity.o"
+	@echo "... src/css_properties/interactivity.i"
+	@echo "... src/css_properties/interactivity.s"
+	@echo "... src/css_properties/layout.o"
+	@echo "... src/css_properties/layout.i"
+	@echo "... src/css_properties/layout.s"
+	@echo "... src/css_properties/sizing.o"
+	@echo "... src/css_properties/sizing.i"
+	@echo "... src/css_properties/sizing.s"
+	@echo "... src/css_properties/spacing.o"
+	@echo "... src/css_properties/spacing.i"
+	@echo "... src/css_properties/spacing.s"
+	@echo "... src/css_properties/tables.o"
+	@echo "... src/css_properties/tables.i"
+	@echo "... src/css_properties/tables.s"
+	@echo "... src/css_properties/transforms.o"
+	@echo "... src/css_properties/transforms.i"
+	@echo "... src/css_properties/transforms.s"
+	@echo "... src/css_properties/typography.o"
+	@echo "... src/css_properties/typography.i"
+	@echo "... src/css_properties/typography.s"
 	@echo "... src/global_build_default.o"
 	@echo "... src/global_build_default.i"
 	@echo "... src/global_build_default.s"

@@ -1,7 +1,7 @@
-CMakeFiles/cssutilitycli.dir/src/css_categories/category_alignment.cpp.o: \
- /home/sweb/Escritorio/cpp/src/css_categories/category_alignment.cpp \
+CMakeFiles/cssutilitycli.dir/src/css_categories/sizing.cpp.o: \
+ /home/sweb/Escritorio/cpp/src/css_categories/sizing.cpp \
  /usr/include/stdc-predef.h \
- /home/sweb/Escritorio/cpp/includes/css_categories/category_alignment.h \
+ /home/sweb/Escritorio/cpp/includes/css_categories/sizing.h \
  /home/sweb/Escritorio/cpp/includes/global_css_category.h \
  /home/sweb/Escritorio/cpp/includes/global_css_property.h \
  /usr/include/c++/13.2.1/vector \
@@ -171,5 +171,5 @@ CMakeFiles/cssutilitycli.dir/src/css_categories/category_alignment.cpp.o: \
  /usr/include/c++/13.2.1/backward/auto_ptr.h \
  /usr/include/c++/13.2.1/pstl/glue_memory_defs.h \
  /usr/include/c++/13.2.1/pstl/execution_defs.h \
- /home/sweb/Escritorio/cpp/includes/css_properties/alignment.h \
+ /home/sweb/Escritorio/cpp/includes/css_properties/sizing.h \
  /home/sweb/Escritorio/cpp/includes/global_css_property.h

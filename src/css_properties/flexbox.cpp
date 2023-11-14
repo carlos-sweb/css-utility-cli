@@ -1,36 +1,36 @@
-#include "global_css_property.h"
+#include "css_properties/flexbox.h"
 
-global_css_property flexDirection {"flex-direction" , {
+global_css_property *flexDirection = new global_css_property({"flex-direction" , {
   {"flex-row","row"},
   {"flex-row-reverse","row-reverse"},
   {"flex-col","column"},
   {"flex-col-reverse","column-reverse"},
-}};
+}});
 
-global_css_property flexWrap {"flex-wrap" , {
+global_css_property *flexWrap = new global_css_property({"flex-wrap" , {
   {"flex-wrap","wrap"},
   {"flex-wrap-reverse","wrap-reverse"},
   {"flex-nowrap","nowrap"},
-}};
+}});
 
-global_css_property flex {"flex" , {
+global_css_property *flex = new global_css_property({"flex" , {
   {"flex-1","1 1 0%"},
   {"flex-auto","1 1 auto"},
   {"flex-initial","0 1 auto"},
   {"flex-none","none"},
-}};
+}});
 
-global_css_property flexGrow {"flex-grow" , {
+global_css_property *flexGrow = new global_css_property({"flex-grow" , {
   {"flex-grow-0","'0'"},
   {"flex-grow","'1'"},
-}};
+}});
 
-global_css_property flexShrink {"flex-shrink" , {
+global_css_property *flexShrink = new global_css_property({"flex-shrink" , {
   {"flex-shrink-0","'0'"},
   {"flex-shrink","'1'"},
-}};
+}});
 
-global_css_property order {"order" , {
+global_css_property *order = new global_css_property({"order" , {
   {"order-1","'1'"},
   {"order-2","'2'"},
   {"order-3","'3'"},
@@ -46,4 +46,4 @@ global_css_property order {"order" , {
   {"order-first","'-9999'"},
   {"order-last","'9999'"},
   {"order-none","none"},
-}};
+}});

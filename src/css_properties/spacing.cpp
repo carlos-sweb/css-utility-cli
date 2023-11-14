@@ -1,6 +1,6 @@
-#include "global_css_property.h"
+#include "css_properties/spacing.h"
 
-global_css_property padding {"padding",{
+global_css_property *padding = new global_css_property({"padding",{
   {"p-0","0px"},
   {"p-0\\.5","0.125rem"},
   {"p-1","0.25rem"},
@@ -36,9 +36,9 @@ global_css_property padding {"padding",{
   {"p-80","20rem"},
   {"p-96","24rem"},
   {"p-px","1px"},
-}};
+}});
 
-global_css_property paddingTop {"padding-top",{
+global_css_property *paddingTop = new global_css_property({"padding-top",{
   {"pt-0","0px"},
   {"pt-0\\.5","0.125rem"},
   {"pt-1","0.25rem"},
@@ -74,9 +74,9 @@ global_css_property paddingTop {"padding-top",{
   {"pt-80","20rem"},
   {"pt-96","24rem"},
   {"pt-px","1px"},
-}};
+}});
 
-global_css_property paddingLeft {"padding-left",{
+global_css_property *paddingLeft = new global_css_property({"padding-left",{
   {"pl-0","0px"},
   {"pl-0\\.5","0.125rem"},
   {"pl-1","0.25rem"},
@@ -112,9 +112,9 @@ global_css_property paddingLeft {"padding-left",{
   {"pl-80","20rem"},
   {"pl-96","24rem"},
   {"pl-px","1px"},
-}};
+}});
 
-global_css_property paddingRight {"padding-right",{
+global_css_property *paddingRight = new global_css_property({"padding-right",{
   {"pr-0","0px"},
   {"pr-0\\.5","0.125rem"},
   {"pr-1","0.25rem"},
@@ -150,9 +150,9 @@ global_css_property paddingRight {"padding-right",{
   {"pr-80","20rem"},
   {"pr-96","24rem"},
   {"pr-px","1px"},
-}};
+}});
 
-global_css_property paddingBottom {"padding-bottom",{
+global_css_property *paddingBottom = new global_css_property({"padding-bottom",{
   {"pb-0","0px"},
   {"pb-0\\.5","0.125rem"},
   {"pb-1","0.25rem"},
@@ -188,9 +188,9 @@ global_css_property paddingBottom {"padding-bottom",{
   {"pb-80","20rem"},
   {"pb-96","24rem"},
   {"pb-px","1px"},
-}};
+}});
 
-global_css_property margin {"margin",{
+global_css_property *margin = new global_css_property({"margin",{
   {"m-0","0px"},
   {"m-0\\.5","0.125rem"},
   {"m-1","0.25rem"},
@@ -226,9 +226,9 @@ global_css_property margin {"margin",{
   {"m-80","20rem"},
   {"m-96","24rem"},
   {"m-auto","auto"},
-}};
+}});
 
-global_css_property marginTop {"margin-top",{
+global_css_property *marginTop = new global_css_property({"margin-top",{
   {"mt-0","0px"},
   {"mt-0\\.5","0.125rem"},
   {"mt-1","0.25rem"},
@@ -264,9 +264,9 @@ global_css_property marginTop {"margin-top",{
   {"mt-80","20rem"},
   {"mt-96","24rem"},
   {"mt-auto","auto"},
-}};
+}});
 
-global_css_property marginLeft {"margin-left",{
+global_css_property *marginLeft = new global_css_property({"margin-left",{
   {"ml-0","0px"},
   {"ml-0\\.5","0.125rem"},
   {"ml-1","0.25rem"},
@@ -302,9 +302,9 @@ global_css_property marginLeft {"margin-left",{
   {"ml-80","20rem"},
   {"ml-96","24rem"},
   {"ml-auto","auto"},
-}};
+}});
 
-global_css_property marginRight {"margin-right",{
+global_css_property *marginRight = new global_css_property({"margin-right",{
   {"mr-0","0px"},
   {"mr-0\\.5","0.125rem"},
   {"mr-1","0.25rem"},
@@ -340,9 +340,9 @@ global_css_property marginRight {"margin-right",{
   {"mr-80","20rem"},
   {"mr-96","24rem"},
   {"mr-auto","auto"},
-}};
+}});
 
-global_css_property marginBottom {"margin-bottom",{
+global_css_property *marginBottom = new global_css_property({"margin-bottom",{
   {"mb-0","0px"},
   {"mb-0\\.5","0.125rem"},
   {"mb-1","0.25rem"},
@@ -378,4 +378,4 @@ global_css_property marginBottom {"margin-bottom",{
   {"mb-80","20rem"},
   {"mb-96","24rem"},
   {"mb-auto","auto"},
-}};
+}});

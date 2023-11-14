@@ -1,6 +1,6 @@
-
-
-global_css_category tables {"tables",{
-  borderCollapse,
-  tableLayout
-}};
+#ifndef TABLES_H
+#define TABLES_H
+#include "global_css_property.h"
+extern global_css_property *borderCollapse;
+extern global_css_property *tableLayout;
+#endif //SPACING_H

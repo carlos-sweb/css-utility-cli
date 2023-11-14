@@ -8,8 +8,6 @@
 #include <thread>
 #include <algorithm>
 #include <functional>
-
-
 #include "argh.h"
 // -----------------------------------------------------------------------------------------------
 // normalize_min_css
@@ -19,29 +17,9 @@
 #include "helperOptions.h"
 #include "create_project.h"
 
-#include "css_categories/category_alignment.h"
 // -----------------------------------------------------------------------------------------------
 
 int main(int argc, char* argv[]){
-
-
-    
-
-    
-
-
-    std::cout << "El resultado es:" << "\n";
-    //std::cout << alignment->css() << "\n";    
-    
-
-    /*
-    global_css_property * Puntero = new global_css_property({"carlos",{{"alto","bonito"}}});
-    std::cout << Puntero->css() << "\n";
-    delete Puntero;
-    */
-
-    
-    
     // -------------------------------------------------------------------------------------
     argh::parser cmdl(argv);
     // -------------------------------------------------------------------------------------

@@ -1,4 +1,6 @@
-global_css_property transform {"transform",{
+
+#include "css_properties/transforms.h"
+global_css_property *transform = new global_css_property({"transform",{
   {"scale-0","scale(0)"},
   {"scale-x-0","scaleX(0)"},
   {"scale-y-0","scaleY(0)"},
@@ -141,9 +143,9 @@ global_css_property transform {"transform",{
   {"skew-y-6","skewY(6deg)  "},
   {"skew-x-12","skewX(12deg)"},
   {"skew-y-12","skewY(12deg)"},
-}};
+}});
 
-global_css_property transformOrigin {"transform-origin",{
+global_css_property *transformOrigin = new global_css_property({"transform-origin",{
   {"origin-center","center"},
   {"origin-top","top"},
   {"origin-top-right","top right"},
@@ -153,4 +155,4 @@ global_css_property transformOrigin {"transform-origin",{
   {"origin-bottom-left","botton left"},
   {"origin-left","left"},
   {"origin-top-left","top left"},
-}};
+}});

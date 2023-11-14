@@ -1,6 +1,6 @@
-#include "global_css_property.h"
+#include "css_properties/sizing.h"
 
-global_css_property width {"width",{
+global_css_property *width = new global_css_property({"width",{
   {"w-0","0px"},
   {"w-0\\.5","0.125rem"},
   {"w-1","0.25rem"},
@@ -67,16 +67,16 @@ global_css_property width {"width",{
   {"w-screen","100vw"},
   {"w-min","min-content"},
   {"w-max","max-content"},
-}};
+}});
 
-global_css_property minWidth {"min-width",{
+global_css_property *minWidth = new global_css_property({"min-width",{
   {"min-w-0","0px"},
   {"min-w-full","100%"},
   {"min-w-min","min-content"},
   {"min-w-max","max-content"},
-}};
+}});
 
-global_css_property maxWidth {"max-width",{
+global_css_property *maxWidth = new global_css_property({"max-width",{
   {"max-w-0","0rem"},
   {"max-w-none","none"},
   {"max-w-xs","20rem"},
@@ -93,9 +93,9 @@ global_css_property maxWidth {"max-width",{
   {"max-w-full","100%"},
   {"max-w-min","min-content"},
   {"max-w-max","max-content"},
-}};
+}});
 
-global_css_property height {"height",{
+global_css_property *height = new global_css_property({"height",{
   {"h-0","0px"},
   {"h-0\\.5","0.125rem"},
   {"h-1","0.25rem"},
@@ -150,9 +150,9 @@ global_css_property height {"height",{
   {"h-5\\/6","83.333333%"},
   {"h-full","100%"},
   {"h-screen","100vh"},
-}};
+}});
 
-global_css_property minHeight {"min-height",{
+global_css_property *minHeight = new global_css_property({"min-height",{
   {"h-min0","0px"},
   {"h-min0\\.5","0.125rem"},
   {"h-min1","0.25rem"},
@@ -207,4 +207,4 @@ global_css_property minHeight {"min-height",{
   {"h-min5\\/6","83.333333%"},
   {"h-minfull","100%"},
   {"h-minscreen","100vh"},
-}};
+}});

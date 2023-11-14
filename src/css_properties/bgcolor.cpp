@@ -1,6 +1,6 @@
-#include "global_css_property.h"
+#include "css_properties/bgcolor.h"
 
-global_css_property backgroundColor {"background-color",{
+global_css_property* backgroundColor = new global_css_property({"background-color",{
   {"red50","#FFEBEE"},
   {"red100","#FFCDD2"},
   {"red200","#EF9A9A"},
@@ -396,4 +396,4 @@ global_css_property backgroundColor {"background-color",{
   {"bc-slategray","slategray"},
   {"bc-darkslategray","darkslategray"},
   {"bc-black","black"}
-}};
+}});
