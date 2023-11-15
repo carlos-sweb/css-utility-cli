@@ -4,6 +4,16 @@ global_css_property::global_css_property(std::string m, std::map<std::string,std
     
 }
 
+std::map<std::string,std::vector<std::string>> global_css_property::getProperties() const{
+    std::map<std::string,std::vector<std::string>> str;
+    std::vector<std::string> names;
+    for(const auto &[K,V] : options){
+        names.push_back(K);
+    }
+    str.insert(std::make_pair(main_property,names));
+    return str;
+};
+
 std::string global_css_property::css() const {
     std::string str = "";
     for( auto const&[className,css_value]: options ){

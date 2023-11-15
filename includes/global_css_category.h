@@ -7,6 +7,7 @@ typedef struct global_css_category{
     std::string name_category;
     std::vector<global_css_property*> properties;
     global_css_category(std::string n,std::vector<global_css_property*> p);
+    std::vector<std::map<std::string,std::vector<std::string>>> getProperties() const;
     std::string css() const;    
 }global_css_category;
 

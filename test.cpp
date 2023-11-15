@@ -194,3 +194,29 @@ void buildProject( string dirbuild ){
     normalMesage("Elapsed time: " + to_string( elapsed_seconds.count() ) + "s" );
 }
 // -----------------------------------------------------------------------------------------------
+
+
+for(const auto &category : Build_default.getCategories() ){
+                YAML::Emitter out;
+                out << YAML::BeginMap;
+                /*
+                auto properties =   PropertiesCss.at( category ).as<std::map<std::string,std::map<std::string,std::string>>>();
+                for( auto const&[ cssproperty , option ] : properties ){                                        
+                    out << YAML::Key << cssproperty ;
+                    out << YAML::Value;                    
+                    out << YAML::BeginMap;
+                    out << YAML::Key << "screens" << YAML::Value << YAML::BeginSeq;
+                    Build_default.getScreensKey()
+                    for( auto key : screens_key){
+                        out << key;    
+                    }
+                    out << YAML::EndSeq ;
+                    out << YAML::Key << "include" << YAML::Value;
+                    out << YAML::BeginSeq;
+                     for( auto const&[nameClass, valueClass ] : option ){
+                        out << nameClass;
+                     }                      
+                    out << YAML::EndSeq;
+                    out << YAML::EndMap;                    
+                }*/
+                out << YAML::EndMap;

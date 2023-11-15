@@ -4,9 +4,7 @@
 
 std::string getAnswer(std::string question){
     std::string name;
-    do{
-     std::cout << " " << question;
-    std::cin >> name;    
+    do{std::cout << " " << question;std::cin >> name;    
     }while( !std::cin.fail() && name == "" );    
     return name;
 }
@@ -86,32 +84,9 @@ void createProject( std::string name ){
             createFileConfig(dirPathName + "/build.yml", Build_default.yml() );            
             // -------------------------------------------------------------
             for(const auto &category : Build_default.getCategories() ){
-                YAML::Emitter out;
-                out << YAML::BeginMap;
-                /*
-                auto properties =   PropertiesCss.at( category ).as<std::map<std::string,std::map<std::string,std::string>>>();
-                for( auto const&[ cssproperty , option ] : properties ){                                        
-                    out << YAML::Key << cssproperty ;
-                    out << YAML::Value;                    
-                    out << YAML::BeginMap;
-                    out << YAML::Key << "screens" << YAML::Value << YAML::BeginSeq;
-                    Build_default.getScreensKey()
-                    for( auto key : screens_key){
-                        out << key;    
-                    }
-                    out << YAML::EndSeq ;
-                    out << YAML::Key << "include" << YAML::Value;
-                    out << YAML::BeginSeq;
-                     for( auto const&[nameClass, valueClass ] : option ){
-                        out << nameClass;
-                     }                      
-                    out << YAML::EndSeq;
-                    out << YAML::EndMap;                    
-                }*/
-                out << YAML::EndMap;
                 std::string fileCategoryYaml = dirPathNameConfig+"/"+category+".yml";
                 if( !fs::exists(fileCategoryYaml) ){
-                    createFileConfig( fileCategoryYaml , out.c_str() );
+                    createFileConfig( fileCategoryYaml ,  Build_default.getConfigCategory(category) );
                     std::cout << termcolor::green << "    Created : " << termcolor::reset <<  category +" -> "+category+".yaml" << "\n";
                 }
             }                                                     

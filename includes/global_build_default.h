@@ -42,10 +42,10 @@ struct global_build_default {
     std::vector<std::string> getCategories() const;
     std::vector<std::string> getScreensKey() const;
     std::map<std::string, std::map<std::string, std::string>> screens = { 
-        {"xs", { {"min","0px"},{"max","639px"} } } , 
-        {"sm", { {"min","640px"},{"max","767px"} } } ,
-        {"md", { {"min","768px"},{"max","1023px"} } } ,
-        {"lg", { {"min","1024px"},{"max","2000px"} } } 
+            {"xs", { {"min","0px"},{"max","639px"} } } , 
+            {"sm", { {"min","640px"},{"max","767px"} } } ,
+            {"md", { {"min","768px"},{"max","1023px"} } } ,
+            {"lg", { {"min","1024px"},{"max","2000px"} } } 
         };;
     std::vector<std::string> states ={
         "link",
@@ -57,13 +57,12 @@ struct global_build_default {
         "disabled",
         "focus-visible",
         "required"
-    };;
-
+    };
     global_build_default() = default; // Constructor
-
     bool stateExists(std::string name) const;
     bool categoryExists(std::string name) const;
     std::string yml() const;
+    std::string getConfigCategory(std::string name_category) const;
     friend std::ostream& operator<<(std::ostream& os, const global_build_default& config);
     friend std::ostream& operator<<(std::ostream& os, const std::vector<std::string>& listado);    
     friend std::ostream& operator<<(std::ostream& os, const std::map<std::string, std::map<std::string, std::string>>& listado);

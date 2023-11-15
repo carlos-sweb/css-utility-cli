@@ -1,6 +1,33 @@
 #include "global_build_default.h"
 
 
+std::string global_build_default::getConfigCategory(std::string name_category) const {
+
+    if( categoryExists(name_category) ){
+        
+        global_css_category *choose_cat;        
+        YAML::Emitter out;          
+        //out << YAML::BeginSeq;                
+        for( const auto&item : _cat ){            
+            if( name_category == item->name_category ){
+                choose_cat = item;
+                out << YAML::Flow << choose_cat->getProperties();
+            }            
+        }
+        //out << YAML::Key << "screens" << YAML::Value << YAML::Flow << getScreensKey();
+        // out << YAML::Key << "states" << YAML::Value << YAML::Flow << states;
+        //out << YAML::EndSeq;
+
+        
+        
+        
+        return out.c_str();    
+    }else{
+        return "";
+    }
+
+}
+
 std::vector<std::string> global_build_default::getScreensKey() const{
     std::vector<std::string> str = {};
     for(const auto&[key,value] : screens){
