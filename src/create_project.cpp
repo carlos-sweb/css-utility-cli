@@ -79,15 +79,14 @@ void createProject( std::string name ){
             &&  createDirectory( dirPathNameDist )  ){                
             // -------------------------------------------------------------   
             successMesage("The directory was created");
-            // -------------------------------------------------------------
-            //createFileConfig(dirPathName + "/build.yml", getDataYaml(build_yml) );
-            createFileConfig(dirPathName + "/build.yml", Build_default.yml() );            
+            // -------------------------------------------------------------            
+            createFileConfig(dirPathName + "/build.json", Build_default.json() );            
             // -------------------------------------------------------------
             for(const auto &category : Build_default.getCategories() ){
-                std::string fileCategoryYaml = dirPathNameConfig+"/"+category+".yml";
-                if( !fs::exists(fileCategoryYaml) ){
-                    createFileConfig( fileCategoryYaml ,  Build_default.getConfigCategory(category) );
-                    std::cout << termcolor::green << "    Created : " << termcolor::reset <<  category +" -> "+category+".yaml" << "\n";
+                std::string fileCategoryJson = dirPathNameConfig+"/"+category+".json";
+                if( !fs::exists(fileCategoryJson) ){
+                    createFileConfig( fileCategoryJson ,  Build_default.getConfigCategory(category) );
+                    std::cout << termcolor::green << "    Created : " << termcolor::reset <<  category +" -> "+category+".json" << "\n";
                 }
             }                                                     
             // -------------------------------------------------------------

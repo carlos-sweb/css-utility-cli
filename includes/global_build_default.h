@@ -5,7 +5,19 @@
 #include <vector>
 #include <map>
 #include <string>
+
+#include <fmt/core.h>
+#include <fmt/format.h>
+
+
 #include <yaml-cpp/yaml.h>
+#include "rapidjson/document.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
+#include "rapidjson/prettywriter.h"
+
+using namespace rapidjson;
+
 #include "css_categories/alignment.h"
 #include "css_categories/backgrounds.h"
 #include "css_categories/bgcolor.h"
@@ -41,6 +53,8 @@ struct global_build_default {
     };
     std::vector<std::string> getCategories() const;
     std::vector<std::string> getScreensKey() const;
+    rapidjson::Value getScreensJson(rapidjson::Document::AllocatorType& allocator) const;
+    rapidjson::Value getStatesjson(rapidjson::Document::AllocatorType& allocator) const;
     std::map<std::string, std::map<std::string, std::string>> screens = { 
             {"xs", { {"min","0px"},{"max","639px"} } } , 
             {"sm", { {"min","640px"},{"max","767px"} } } ,
@@ -61,7 +75,7 @@ struct global_build_default {
     global_build_default() = default; // Constructor
     bool stateExists(std::string name) const;
     bool categoryExists(std::string name) const;
-    std::string yml() const;
+    std::string json() const;
     std::string getConfigCategory(std::string name_category) const;
     friend std::ostream& operator<<(std::ostream& os, const global_build_default& config);
     friend std::ostream& operator<<(std::ostream& os, const std::vector<std::string>& listado);    

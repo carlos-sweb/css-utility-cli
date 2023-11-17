@@ -13,13 +13,12 @@
 // normalize_min_css
 #include "./../config/normalize.min.h"
 
-#include "global_build_default.h"
 #include "helperOptions.h"
 #include "create_project.h"
-
 // -----------------------------------------------------------------------------------------------
 
 int main(int argc, char* argv[]){
+ 
     // -------------------------------------------------------------------------------------
     argh::parser cmdl(argv);
     // -------------------------------------------------------------------------------------
