@@ -1,43 +1,28 @@
 #include "global_build_default.h"
 
-
 std::string global_build_default::getConfigCategory(std::string name_category) const {
+    Document d;
+    d.Parse(R"({"general":[]})");
 
-    if( categoryExists(name_category) ){
-        
-        global_css_category *choose_cat;
-        Document d;
-        d.SetObject();
-                          
-        for( const auto&item : _cat ){            
-            if( name_category == item->name_category ){
-                choose_cat = item;
-                for( const auto &_item : item->getProperties() ){                    
-                    for(const auto &[key,value] : _item ){
-                        Value keyProperty; 
-                        keyProperty.SetString(key.c_str(),static_cast<SizeType>(key.length()),d.GetAllocator());
-                        Value valueProperty;valueProperty.SetObject();
-                        for(const auto &className : value){
-                            Value c_name; 
-                            c_name.SetString(className.c_str(),static_cast<SizeType>(className.length()),d.GetAllocator());
-                            Value c_value;c_value.SetObject();
-                        }
-                        d.AddMember(keyProperty,valueProperty,d.GetAllocator());
-                    }                    
-                }                    
-            }            
+    for(const auto &item : _cat){
+        if( name_category == item->name_category ){
+            for(const auto &_item : item->getProperties()){
+                for(const auto &[key,value] : _item){
+                    // Key -> es el nombre de la propiedad
+                    std::string a = "/"+key;
+                    std::string aa = "/"+key+"/-";                                                       
+                    Pointer(a.c_str()).Create(d);
+                }
+            }
         }
-        
-
-
-        StringBuffer buffer;
-        PrettyWriter<StringBuffer> writer(buffer);
-        d.Accept(writer);
-        return buffer.GetString();         
-    }else{
-        return "";
     }
+    
 
+
+    StringBuffer buffer;
+    PrettyWriter<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
 }
 
 rapidjson::Value global_build_default::getStatesjson(rapidjson::Document::AllocatorType& allocator) const{
