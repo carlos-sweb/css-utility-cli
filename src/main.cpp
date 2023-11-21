@@ -14,6 +14,7 @@
 #include "./../config/normalize.min.h"
 #include "helperOptions.h"
 #include "create_project.h"
+#include "build_project.h"
 // -----------------------------------------------------------------------------------------------
 int main(int argc, char* argv[]){
     // -------------------------------------------------------------------------------------
@@ -30,9 +31,9 @@ int main(int argc, char* argv[]){
     if(cmdl[{"-c","--create"}]){createProject( "" );}
     // -------------------------------------------------------------------------------------
     // Aqui sabemos que la palabra  buil viene solo --build
-    // if(cmdl[{"-b","--build"}]){buildProject("");}
+    if(cmdl[{"-b","--build"}]){buildProject("");}
     // Aqui sabemos que viene --build="somethink" de todas manera podria venir bacia 
-    //if(cmdl({"-b","--build"})){buildProject(cmdl({ "-b", "--build" }).str());}
+    if(cmdl({"-b","--build"})){buildProject(cmdl({ "-b", "--build" }).str());}
     // -------------------------------------------------------------------------------------
     return EXIT_SUCCESS;
     // -------------------------------------------------------------------------------------

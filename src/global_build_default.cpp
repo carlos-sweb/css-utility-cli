@@ -1,28 +1,41 @@
 #include "global_build_default.h"
-
-std::string global_build_default::getConfigCategory(std::string name_category) const {
+std::string global_build_default::getConfigCategory(std::string name_category) const {    
     Document d;
-    d.Parse(R"({"general":[]})");
-
+    d.Parse(R"({})");
     for(const auto &item : _cat){
         if( name_category == item->name_category ){
             for(const auto &_item : item->getProperties()){
                 for(const auto &[key,value] : _item){
-                    // Key -> es el nombre de la propiedad
-                    std::string a = "/"+key;
-                    std::string aa = "/"+key+"/-";                                                       
-                    Pointer(a.c_str()).Create(d);
+                    // n means normal , I dont sure how i can called when
+                    // the property is outside of screens list(xs-md-sm-lg)
+                    //SECTION n ( normal )
+                    // -------------------------------------------------------------
+                    for( const auto &className : value ){
+                        std::string PointerString = "/"+key+"/"+className+"/screens";                        
+                        Pointer(PointerString.c_str()).Create(d);
+                        Value * _value = Pointer(PointerString.c_str()).Get(d);
+                        _value->SetArray();
+                        SetValueByPointer(d , Pointer(std::string(PointerString+"/-").c_str()) , "n" );
+                        for( const auto & screen : getScreensKey() ){
+                            // SetValueByPointer(d , Pointer(std::string(PointerString+"/-").c_str()) , screen.c_str() );
+                            /*
+                            for(const auto &state : states){
+                                SetValueByPointer(d , Pointer(std::string(PointerString+"/-").c_str()) , std::string(screen+":"+state).c_str() );
+                            }
+                            */
+                        }
+                    }
+                    // -------------------------------------------------------------
                 }
             }
         }
     }
-    
-
-
+    // --------------------------------------------------------------------------------
     StringBuffer buffer;
     PrettyWriter<StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
+    // --------------------------------------------------------------------------------
 }
 
 rapidjson::Value global_build_default::getStatesjson(rapidjson::Document::AllocatorType& allocator) const{
@@ -94,31 +107,3 @@ std::string global_build_default::json() const {
     return buffer.GetString();       
 }
 
-
-std::ostream& operator<<(std::ostream& os, const std::map<std::string, std::map<std::string, std::string>>& listado){
-    for( const auto&[key,value] : listado ){
-        os << " -" << key << "\n";
-        if(value.find("min") != value.end()){
-          os << "   - min -> " << value.at("min") << "\n";
-        }        
-        if(value.find("max") != value.end()){
-          os << "   - max -> " << value.at("max") << "\n";
-        }
-    }
-    return os;
-}
-
-std::ostream& operator<<(std::ostream& os, const std::vector<std::string>& listado) {
-    for( const auto &item : listado){
-        os << " - " << item << "\n";
-    }
-    return os;
-}
-
-std::ostream& operator<<(std::ostream& os, const global_build_default& config) {
-    os << "* normalize: " << config.normalize << "\n";
-    os << "* categories:\n" << config.getCategories();
-    os << "* screens:\n" << config.screens;
-    os << "* states:\n" << config.states;
-    return os;
-}

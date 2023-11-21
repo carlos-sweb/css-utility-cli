@@ -1,6 +1,5 @@
-#include "global_build_default.h"
-#include "create_project.h"
 
+#include "create_project.h"
 
 std::string getAnswer(std::string question){
     std::string name;

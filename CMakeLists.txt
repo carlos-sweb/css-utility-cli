@@ -63,9 +63,10 @@ src/css_categories/typography.cpp
 
 src/global_build_default.cpp 
 src/create_project.cpp
+src/build_project.cpp
 )
 
-target_link_libraries(cssutilitycli yaml-cpp fmt::fmt )
+target_link_libraries(cssutilitycli fmt::fmt )
 
 target_include_directories(cssutilitycli PRIVATE includes)
 

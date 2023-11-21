@@ -76,9 +76,6 @@ struct global_build_default {
     bool stateExists(std::string name) const;
     bool categoryExists(std::string name) const;
     std::string json() const;
-    std::string getConfigCategory(std::string name_category) const;
-    friend std::ostream& operator<<(std::ostream& os, const global_build_default& config);
-    friend std::ostream& operator<<(std::ostream& os, const std::vector<std::string>& listado);    
-    friend std::ostream& operator<<(std::ostream& os, const std::map<std::string, std::map<std::string, std::string>>& listado);
+    std::string getConfigCategory(std::string name_category) const;    
 };
 #endif // GLOBAL_BUILD_DEFAULT_H

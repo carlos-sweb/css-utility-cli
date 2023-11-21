@@ -9,8 +9,7 @@
 #include <fstream>
 #include <termcolor/termcolor.hpp>
 #include <fmt/core.h>
-#include <yaml-cpp/yaml.h>
-
+#include "global_build_default.h"
 namespace fs = std::filesystem;
 std::string getAnswer(std::string question);
 bool answer(std::string question);
@@ -20,5 +19,4 @@ void errorMesage( std::string message );
 void warningMesage( std::string message );
 void successMesage( std::string message );
 void createProject( std::string name );
-
 #endif // CREATE_PROJECT_H
