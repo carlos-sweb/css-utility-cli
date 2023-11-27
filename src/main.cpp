@@ -11,7 +11,6 @@
 #include "argh.h"
 // -----------------------------------------------------------------------------------------------
 // normalize_min_css
-#include "./../config/normalize.min.h"
 #include "helperOptions.h"
 #include "create_project.h"
 #include "build_project.h"

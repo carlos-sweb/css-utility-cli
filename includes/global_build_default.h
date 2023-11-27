@@ -15,6 +15,8 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/prettywriter.h"
 #include "rapidjson/pointer.h"
+#include "rapidjson/error/en.h"
+#include "rapidjson/istreamwrapper.h"
 
 using namespace rapidjson;
 
