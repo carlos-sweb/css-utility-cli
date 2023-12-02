@@ -6,7 +6,7 @@
 #include <map>
 #include <string>
 #include <algorithm>
-
+#include <fstream>
 #include <fmt/core.h>
 #include <fmt/format.h>
 
@@ -53,6 +53,7 @@ struct global_build_default {
         transforms,
         typography
     };
+    
     std::vector<std::string> getCategories() const;
     std::vector<std::string> getScreensKey() const;
     rapidjson::Value getScreensJson(rapidjson::Document::AllocatorType& allocator) const;
@@ -77,7 +78,8 @@ struct global_build_default {
     global_build_default() = default; // Constructor
     bool stateExists(std::string name) const;
     bool categoryExists(std::string name) const;
-    std::string json() const;
+    std::string json() const;    
     std::string getConfigCategory(std::string name_category) const;    
+    global_css_category* at(std::string name_category) const;
 };
 #endif // GLOBAL_BUILD_DEFAULT_H

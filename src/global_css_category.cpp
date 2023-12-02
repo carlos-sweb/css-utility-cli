@@ -4,9 +4,7 @@ global_css_category::global_css_category(std::string n,std::vector<global_css_pr
 
 }
 
-
-std::vector<std::map<std::string,std::vector<std::string>>> global_css_category::getProperties() const{
-        
+std::vector<std::map<std::string,std::vector<std::string>>> global_css_category::getProperties() const{  
     std::vector<std::map<std::string,std::vector<std::string>>> _str;    
     for( const auto &property : properties ){
         _str.push_back( property->getProperties() );

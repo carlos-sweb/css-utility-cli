@@ -2,24 +2,20 @@
 #include "normalize.h"
 
 void buildProject(std::string path){
-
+    helperOptions ho;
     fs::path pathBuild = fs::current_path();    
-    pathBuild /= path;
-    
+    pathBuild /= path;    
     if( !fs::is_directory( pathBuild ) ){
-        std::cout << " Error no existe el directorio ? "  << '\n';
-        // errorMesage("jajaja");
+        ho.normalMesage( pathBuild );
+        ho.errorMesage("The directory does not exist");
         return;
     }
-
-    fs::path buildJsonPath = pathBuild /  "build.json" ; 
-    
-    if( !fs::exists( buildJsonPath ) ){
-        std::cout << " Error no existe el build.json ? "  << '\n';
+    fs::path buildJsonPath = pathBuild /  "build.json" ;
+    if( !fs::exists(buildJsonPath) ){        
+        ho.normalMesage( buildJsonPath );
+        ho.errorMesage( "Configuration file does not exist " );
         return;
     }
-
-    
 
     std::ifstream file( buildJsonPath , std::ifstream::in);    
     IStreamWrapper isw(file);
@@ -32,35 +28,58 @@ void buildProject(std::string path){
         GetParseError_En(d.GetParseError()));
         return;    
     }
+    
+    std::string outputFile = d["output"]["file"].GetString();
+
+    fs::path MaterMinCss = pathBuild / "dist" / outputFile ; 
+    
+    if( !fs::exists( buildJsonPath ) ){
+        std::cout << " Error no existe el build.json ? "  << '\n';
+        return;
+    }
+
+    std::ofstream archivo( MaterMinCss , std::ios::out | std::ios::trunc);
+    // NORMALIZE SECTION
+    //const Value &normalize = d["normalize"];
+
+    bool normalize = d.HasMember("normalize") ?  d["normalize"].IsBool() ? d["normalize"].GetBool()  : false  : false;
+
+    if( d.HasMember("normalize") ){
+        if( !d["normalize"].IsBool() ){
+            std::cout << "Error la opcion normalize debe ser verdadero o falso" << "\n";
+        }
+    }
+
+    if( normalize ){
+        if (archivo.is_open()){
+            archivo << normalize_min_css;                                
+        }            
+    }
 
 
     
 
-    std::ofstream archivo("/home/sweb/Escritorio/basura/hola/dist/master.min.css" , std::ios::out | std::ios::trunc);
-    // NORMALIZE SECTION
-    const Value &normalize = d["normalize"];    
-    if( normalize.IsBool() ){        
-        if( normalize.GetBool()  ){        
-            if (archivo.is_open()){
-                archivo << normalize_min_css;                                
-            }            
-        }
-    }else{
-        std::cout << "Normalize option must be boolean :(";
-    }
 
     global_build_default Build_default; 
     // CATEGORIES SECCTION
-    const Value &categories = d["categories"];
-    if( categories.IsArray() ){            
+    const Value &categories = d["categories"];    
+
+    if( categories.IsArray() && archivo.is_open() ){            
         for( SizeType i = 0 ; i < categories.Size() ; i++ ){
         const std::string nameCategory = categories[i].GetString();
             if( Build_default.categoryExists( nameCategory ) ){
-                std::cout << "Existe -> " <<  nameCategory << "\n";
+                
+                global_css_category* categoryBuild = Build_default.at( nameCategory );
+
+                archivo << categoryBuild->css();
+
             }else{
-                std::cout << "Noexiste -> " << nameCategory  << "\n";
+                //std::cout << "Noexiste -> " << nameCategory  << "\n";
+                // Dont know this category
             }
-        }
+            // this break i must remove only test
+            
+        }        
     }
 
     // CLOSE FILE   

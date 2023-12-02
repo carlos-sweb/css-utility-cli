@@ -1,7 +1,27 @@
 #include "global_build_default.h"
 std::string global_build_default::getConfigCategory(std::string name_category) const {    
+    
     Document d;
     d.Parse(R"({})");
+
+    
+    /*
+    for(const auto &item : _cat){
+        if( name_category == item->name_category ){
+            for(const auto &_item : item->getProperties()){
+                for(const auto &[key,value] : _item){
+                  for( const auto &className : value ){
+                    //std::cout << className << "\n";
+                  }
+                }
+            }
+        break;
+        }        
+    }
+    */
+
+
+
     for(const auto &item : _cat){
         if( name_category == item->name_category ){
             for(const auto &_item : item->getProperties()){
@@ -28,9 +48,12 @@ std::string global_build_default::getConfigCategory(std::string name_category) c
                     // -------------------------------------------------------------
                 }
             }
+        // verificar si podemos agregar un break; aqui    
         }
     }
     // --------------------------------------------------------------------------------
+
+
     StringBuffer buffer;
     PrettyWriter<StringBuffer> writer(buffer);
     d.Accept(writer);
@@ -86,7 +109,7 @@ bool global_build_default::categoryExists(std::string name) const {
 
 std::string global_build_default::json() const {
     Document d;
-    d.Parse(R"({"normalize":true,"categories":[],"screens":{},"states":[]})");
+    d.Parse(R"({"normalize":true,"categories":[],"screens":{},"states":[],"output":{"file":"master.css","minify":true}})");
     for(const auto &name : getCategories() ){
         SetValueByPointer(d,"/categories/-",name.c_str());
     }
@@ -107,3 +130,13 @@ std::string global_build_default::json() const {
     return buffer.GetString();       
 }
 
+global_css_category* global_build_default::at(std::string name_category) const{
+    int indice = -1;
+    for( int i = 0 ; i < _cat.size() ; i++ ){
+       if( _cat[i]->name_category == name_category ){
+        indice = i;
+        break;
+       }
+    }
+    return _cat[ indice ];
+}

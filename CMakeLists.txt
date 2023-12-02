@@ -12,7 +12,6 @@ find_package(fmt)
 add_executable(cssutilitycli 
 src/main.cpp 
 
-src/version.cpp 
 src/helperOptions.cpp
 
 src/global_css_property.cpp
