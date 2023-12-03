@@ -1,7 +1,12 @@
 #include "build_project.h"
 #include "normalize.h"
 
-void buildProject(std::string path){
+void buildProject(std::string path){   
+
+    auto start = std::chrono::system_clock::now();
+    
+
+
     helperOptions ho;
     fs::path pathBuild = fs::current_path();    
     pathBuild /= path;    
@@ -16,28 +21,26 @@ void buildProject(std::string path){
         ho.errorMesage( "Configuration file does not exist " );
         return;
     }
-
     std::ifstream file( buildJsonPath , std::ifstream::in);    
     IStreamWrapper isw(file);
     // ANALIZAMOS EL BUILD.JSON
     Document d;
     if (d.ParseStream(isw).HasParseError()) {    
-    std::cout << "hay un error al analizar el archivo json " << "\n";
+    
+        ho.normalMesage( buildJsonPath );
+        ho.errorMesage("Unable to parse file");    
+    
     fprintf(stderr, "\nError(offset %u): %s\n", 
         (unsigned)d.GetErrorOffset(),
         GetParseError_En(d.GetParseError()));
         return;    
-    }
-    
+    }    
     std::string outputFile = d["output"]["file"].GetString();
-
-    fs::path MaterMinCss = pathBuild / "dist" / outputFile ; 
-    
+    fs::path MaterMinCss = pathBuild / "dist" / outputFile ;     
     if( !fs::exists( buildJsonPath ) ){
         std::cout << " Error no existe el build.json ? "  << '\n';
         return;
     }
-
     std::ofstream archivo( MaterMinCss , std::ios::out | std::ios::trunc);
     // NORMALIZE SECTION
     //const Value &normalize = d["normalize"];
@@ -85,8 +88,14 @@ void buildProject(std::string path){
     // CLOSE FILE   
     if (archivo.is_open()){archivo.close();}
 
-
-
+    // Some computation here
+    auto end = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end-start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+ 
+    std::cout << "finished computation at " << std::ctime(&end_time)
+              << "elapsed time: " << elapsed_seconds.count() << "s"
+              << std::endl;
 
 
 }
