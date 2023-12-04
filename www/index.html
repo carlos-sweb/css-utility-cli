@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Hello World
+      </h1>
+      <p class="subtitle">
+        My first website with <strong>Bulma</strong>!
+      </p>
+    </div>
+  </section>
+  <section>
+      <ul>
+    <li><a href="#/">Incio</a></li>
+</ul>
+<ul>
+    <li><a href="#/vegetables/artichokes/1">Artichokes</a></li>
+    <li><a href="#/vegetables/onion/20">Onion</a></li>
+    <li><a href="#/vegetables/carrots/2">Carrots</a></li>
+</ul>
+<div id="root" ></div>
+  </section>
+    <script src="https://cdn.jsdelivr.net/npm/pp-is@latest/pp-is.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/pp-events@latest/pp-events.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/pp-validate@latest/pp-validate.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/pp-model.js@latest/pp-model.min.js" ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pp-router.js@2.1.8/pp-router.min.js" ></script>
+    <script type="text/javascript">
+            
+        // Declare root html element
+        var root = document.getElementById("root");
+
+        // Declare router here
+        var router = new ppRouter(
+            // How to use it ?
+            {
+            "/":{
+                controller:function(){
+                    root.innerHTML = `<h1>Home</h1>`;
+                }
+            },
+            "/route-remove":{
+                controller:function(){
+                    root.innerHTML = `<h1>Route Remove</h1>`;
+                }
+            }
+            }
+        );
+
+        // If you want to add another router
+        router.addRoute("/vegetables/:name(string)/:id(number)",
+            {
+                controller:function( params ){              
+                    root.innerHTML = `<h1>vegetables ${params.name} : ${params.id} </h1>`;
+                }
+            }
+        );
+
+        // If you want to remove any route
+        router.removeRoute("/route-remove");
+
+        // If you want to default redirect
+        router.redirect("/");
+
+        // If you want to default Function for noFound state
+
+        router.noFound = function( location ){
+            // Put you code here
+        }
+
+        //getting enjoy you router
+        router.start();
+        // if you want
+        //router.start("/my-url-base");
+
+
+    </script>
+  </body>
+</html>

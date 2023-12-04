@@ -63,11 +63,19 @@ src/css_categories/typography.cpp
 src/global_build_default.cpp 
 src/create_project.cpp
 src/build_project.cpp
+src/server.cpp
 )
 
-target_link_libraries(cssutilitycli fmt::fmt )
+target_link_libraries(cssutilitycli fmt::fmt httpserver)
 
 target_include_directories(cssutilitycli PRIVATE includes)
+
+add_custom_target(copy_www_folder ALL 
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${PROJECT_SOURCE_DIR}/www
+    ${PROJECT_BINARY_DIR}/www
+    COMMENT "Copy www folder into binary directory")
+
 
 include(GNUInstallDirs)
 install(TARGETS cssutilitycli

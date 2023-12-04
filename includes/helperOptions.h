@@ -17,8 +17,14 @@ typedef struct helperOptions{
     void showVersion();
     void normalMesage(std::string message);
     void errorMesage(std::string message);
+    void errorMesage(std::string message1,std::string message2);
+    void errorMesage(std::string message1,std::string message2,std::string message3);
     void successMesage(std::string message);
+    void successMesage(std::string message1,std::string message2);
+    void successMesage(std::string message1,std::string message2,std::string message3);
     void warningMesage(std::string message);
+    void warningMesage(std::string message1,std::string message2);
+    void warningMesage(std::string message1,std::string message2,std::string message3);
     std::string getAnswer(std::string question);
     bool answer( std::string question);
     bool createDirectory( std::string directoryName );

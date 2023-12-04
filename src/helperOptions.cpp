@@ -41,13 +41,15 @@ bool helperOptions::answer( std::string question ){
 }
 
 void helperOptions::normalMesage(std::string message){ fmt::print("{}\n", message ); }
-
 void helperOptions::errorMesage( std::string message ){ std::cout << termcolor::red << " Error -> "<< termcolor::reset <<  message  << "\n";}
-
+void helperOptions::errorMesage( std::string message1,std::string message2 ){ std::cout << termcolor::red << " Error -> "<< termcolor::reset <<  message1  << message2  << "\n";}
+void helperOptions::errorMesage( std::string message1,std::string message2,std::string message3 ){ std::cout << termcolor::red << " Error -> "<< termcolor::reset <<  message1  << message2  << message3  << "\n";}
 void helperOptions::warningMesage( std::string message ){ std::cout << termcolor::yellow << " Warning -> "<< termcolor::reset <<  message  << "\n";}
-
+void helperOptions::warningMesage( std::string message1,std::string message2 ){ std::cout << termcolor::yellow << " Warning -> "<< termcolor::reset <<  message1  << message2 <<"\n";}
+void helperOptions::warningMesage( std::string message1,std::string message2,std::string message3 ){ std::cout << termcolor::yellow << " Warning -> "<< termcolor::reset <<  message1  << message2 << message3 <<"\n";}
 void helperOptions::successMesage( std::string message ){std::cout << termcolor::green << " Success -> "<< termcolor::reset <<  message  << "\n";}
-
+void helperOptions::successMesage( std::string message1,std::string message2){std::cout << termcolor::green << " Success -> "<< termcolor::reset <<  message1  << message2 << "\n";}
+void helperOptions::successMesage( std::string message1,std::string message2,std::string message3){std::cout << termcolor::green << " Success -> "<< termcolor::reset <<  message1  << message2 << message3 << "\n";}
 
 std::string helperOptions::getVersion(){ 
     return " version 1.0";

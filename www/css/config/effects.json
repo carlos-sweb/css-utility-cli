@@ -1,0 +1,206 @@
+{
+    "opacity": {
+        "opacity-0": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-10": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-100": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-20": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-25": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-30": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-40": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-5": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-50": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-60": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-70": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-75": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-80": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-90": {
+            "screens": [
+                "n"
+            ]
+        },
+        "opacity-95": {
+            "screens": [
+                "n"
+            ]
+        }
+    },
+    "box-shadow": {
+        "elevation-0": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-1": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-10": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-11": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-12": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-13": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-14": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-15": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-16": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-17": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-18": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-19": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-2": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-20": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-21": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-22": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-23": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-24": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-3": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-4": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-5": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-6": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-7": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-8": {
+            "screens": [
+                "n"
+            ]
+        },
+        "elevation-9": {
+            "screens": [
+                "n"
+            ]
+        }
+    }
+}

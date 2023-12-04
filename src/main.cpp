@@ -14,6 +14,12 @@
 #include "helperOptions.h"
 #include "create_project.h"
 #include "build_project.h"
+
+
+#include <httpserver.hpp>
+#include "server.h"
+
+
 // -----------------------------------------------------------------------------------------------
 int main(int argc, char* argv[]){
     // -------------------------------------------------------------------------------------
@@ -34,6 +40,23 @@ int main(int argc, char* argv[]){
     if(cmdl[{"-b","--build"}]){buildProject("");}
     // Aqui sabemos que viene --build="somethink" de todas manera podria venir bacia 
     if(cmdl({"-b","--build"})){buildProject(cmdl({ "-b", "--build" }).str());}
+
+    if( cmdl[{"-s","--server"}] ){
+
+
+        httpserver::webserver ws =  httpserver::create_webserver(9000);
+
+        hello_world_resource hwr;
+        master_css mc;
+               
+        ws.register_resource("/", &hwr);
+        ws.register_resource("/css/master.css", &mc);
+
+        ws.start(true);
+
+    }
+    
+
     // -------------------------------------------------------------------------------------
     return EXIT_SUCCESS;
     // -------------------------------------------------------------------------------------
