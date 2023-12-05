@@ -21,8 +21,8 @@ global_css_property *flex = new global_css_property({"flex" , {
 }});
 
 global_css_property *flexGrow = new global_css_property({"flex-grow" , {
-  {"flex-grow-0","'0'"},
-  {"flex-grow","'1'"},
+  {"flex-grow-0","0"},
+  {"flex-grow","1"},
 }});
 
 global_css_property *flexShrink = new global_css_property({"flex-shrink" , {

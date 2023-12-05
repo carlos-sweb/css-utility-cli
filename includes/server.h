@@ -14,4 +14,8 @@ class master_css : public http_resource {
     public:        
         std::shared_ptr<http_response> render(const http_request&);
 };
+class build_json : public http_resource {
+    public:        
+        std::shared_ptr<http_response> render(const http_request&);
+};
 #endif //SERVER_H

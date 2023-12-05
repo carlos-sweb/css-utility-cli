@@ -3,85 +3,52 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="css/master.css">
+    <title>CssUtilityCli</title>
+    <link rel="stylesheet" href="css/dist/master.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+      html,body{
+        font-family: 'Ubuntu', sans-serif;
+      }
+    </style>
   </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
+  <body class="h-full w-full flex flex-col">    
+    <!--HEADER TOP BAR-->
+    <div class="flex  green300 elevation-2 h-14 w-full" >
+
+      <div class="flex flex-col justify-center pl-2 pr-2" >
+        <span class="text-bluegray900 text-2xl font-extrabold" >CssUtilityCli</span>
+      </div>
+      <div class="flex flex-grow" ></div>
+      <div class="flex flex-col justify-center pl-2 pr-2" >
+        <span>Version 1.0</span>
+      </div>
     </div>
-  </section>
-  <section>
-      <ul>
-    <li><a href="#/">Incio</a></li>
-</ul>
-<ul>
-    <li><a href="#/vegetables/artichokes/1">Artichokes</a></li>
-    <li><a href="#/vegetables/onion/20">Onion</a></li>
-    <li><a href="#/vegetables/carrots/2">Carrots</a></li>
-</ul>
-<div id="root" ></div>
-  </section>
+    <!--HEADER TOP BAR-->
+    <div class="w-full h-full flex flex-col justify-center items-center mt-1" style="gap:5px;" >
+        
+        <hr>           
+        <div class="w-80" >
+          <form action="">
+            <label  class="flex text-bluegray800 text-lg h-6 pb-1" for="output" >Name output File:</label>
+            <div class="flex w-full ">
+              <input name="output" type="text" class="w-full rounded h-5 pt-2 pl-3 pr-3 pb-2 text-bluegray800 border-solid border-gray300" placeholder="master.css" >
+            </div>
+          </form>          
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pp-is@latest/pp-is.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/pp-events@latest/pp-events.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/pp-validate@latest/pp-validate.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/pp-model.js@latest/pp-model.min.js" ></script>
-
     <script src="https://cdn.jsdelivr.net/npm/pp-router.js@2.1.8/pp-router.min.js" ></script>
-    <script type="text/javascript">
-            
-        // Declare root html element
-        var root = document.getElementById("root");
-
-        // Declare router here
-        var router = new ppRouter(
-            // How to use it ?
-            {
-            "/":{
-                controller:function(){
-                    root.innerHTML = `<h1>Home</h1>`;
-                }
-            },
-            "/route-remove":{
-                controller:function(){
-                    root.innerHTML = `<h1>Route Remove</h1>`;
-                }
-            }
-            }
-        );
-
-        // If you want to add another router
-        router.addRoute("/vegetables/:name(string)/:id(number)",
-            {
-                controller:function( params ){              
-                    root.innerHTML = `<h1>vegetables ${params.name} : ${params.id} </h1>`;
-                }
-            }
-        );
-
-        // If you want to remove any route
-        router.removeRoute("/route-remove");
-
-        // If you want to default redirect
-        router.redirect("/");
-
-        // If you want to default Function for noFound state
-
-        router.noFound = function( location ){
-            // Put you code here
-        }
-
-        //getting enjoy you router
-        router.start();
-        // if you want
-        //router.start("/my-url-base");
-
+    <script type="text/javascript" >
 
     </script>
   </body>

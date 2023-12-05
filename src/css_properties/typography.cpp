@@ -473,15 +473,15 @@ global_css_property *fontStyle  = new global_css_property({"font-style",{
 }});
 
 global_css_property *fontWeight  = new global_css_property({"font-weight",{
-  {"font-thin","'100'"},
-  {"font-extralight","'200'"},
-  {"font-light","'300'"},
-  {"font-normal","'400'"},
-  {"font-medium","'500'"},
-  {"font-tsemiboldhin","'600'"},
-  {"font-bold","'700'"},
-  {"font-extrabold","'800'"},
-  {"font-black","'900'"},
+  {"font-thin","100"},
+  {"font-extralight","200"},
+  {"font-light","300"},
+  {"font-normal","400"},
+  {"font-medium","500"},
+  {"font-tsemiboldhin","600"},
+  {"font-bold","700"},
+  {"font-extrabold","800"},
+  {"font-black","900"},
 }});
 
 global_css_property *listStyleType  = new global_css_property({"list-style-type",{
