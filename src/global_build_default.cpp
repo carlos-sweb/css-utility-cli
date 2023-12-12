@@ -4,24 +4,6 @@ std::string global_build_default::getConfigCategory(std::string name_category) c
     Document d;
     d.Parse(R"({})");
 
-    
-    /*
-    for(const auto &item : _cat){
-        if( name_category == item->name_category ){
-            for(const auto &_item : item->getProperties()){
-                for(const auto &[key,value] : _item){
-                  for( const auto &className : value ){
-                    //std::cout << className << "\n";
-                  }
-                }
-            }
-        break;
-        }        
-    }
-    */
-
-
-
     for(const auto &item : _cat){
         if( name_category == item->name_category ){
             for(const auto &_item : item->getProperties()){
@@ -96,6 +78,41 @@ std::vector<std::string> global_build_default::getCategories() const{
         str.push_back(item->name_category);
     }    
     return str;
+}
+
+void global_build_default::eachCategories(const Value &categoriesJson , std::function<void(global_css_category*)> func) const{        
+    if( categoriesJson.IsArray() ){
+        for( SizeType i = 0 ; i < categoriesJson.Size() ; i++ ){
+            const std::string nameCategory = categoriesJson[i].GetString();
+            if( categoryExists(nameCategory) ){
+              global_css_category* categoryBuild = at( nameCategory );  
+              func(categoryBuild);
+            }
+        }
+    }
+}
+
+void global_build_default::eachStates(const Value &statesJson , std::function<void(const char*)> func) const{
+    if( statesJson.IsArray() ){
+       for(auto& v : statesJson.GetArray()){
+            if( stateExists( std::string( v.GetString() ) ) ){
+                func( v.GetString() );
+            }            
+        } 
+    }
+}
+
+void global_build_default::eachScreens(const Value &screensJson,std::function<void(std::string,std::string)> func) const{
+    if( screensJson.IsObject() ){        
+        for( auto& screen : screensJson.GetObject()){
+            std::string name  = std::string( screen.name.GetString());
+            std::string min = std::string(screen.value["min"].GetString());
+            std::string max = std::string(screen.value["min"].GetString());
+            if( screen.value.HasMember("min") && screen.value.HasMember("max") ){                                        
+                func(min,max);
+            }
+        }
+    }
 }
 
 bool global_build_default::stateExists(std::string name) const {

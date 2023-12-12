@@ -26,24 +26,24 @@ global_css_property *flexGrow = new global_css_property({"flex-grow" , {
 }});
 
 global_css_property *flexShrink = new global_css_property({"flex-shrink" , {
-  {"flex-shrink-0","'0'"},
-  {"flex-shrink","'1'"},
+  {"flex-shrink-0","0"},
+  {"flex-shrink","1"},
 }});
 
 global_css_property *order = new global_css_property({"order" , {
-  {"order-1","'1'"},
-  {"order-2","'2'"},
-  {"order-3","'3'"},
-  {"order-4","'4'"},
-  {"order-5","'5'"},
-  {"order-6","'6'"},
-  {"order-7","'7'"},
-  {"order-8","'8'"},
-  {"order-9","'9'"},
-  {"order-10","'10'"},
-  {"order-11","'11'"},
-  {"order-12","'12'"},
-  {"order-first","'-9999'"},
-  {"order-last","'9999'"},
+  {"order-1","1"},
+  {"order-2","2"},
+  {"order-3","3"},
+  {"order-4","4"},
+  {"order-5","5"},
+  {"order-6","6"},
+  {"order-7","7"},
+  {"order-8","8"},
+  {"order-9","9"},
+  {"order-10","10"},
+  {"order-11","11"},
+  {"order-12","12"},
+  {"order-first","-9999"},
+  {"order-last","9999"},
   {"order-none","none"},
 }});

@@ -44,15 +44,15 @@ int main(int argc, char* argv[]){
     if( cmdl[{"-s","--server"}] ){
 
 
-        httpserver::webserver ws =  httpserver::create_webserver(9000);
 
+        /*
+        httpserver::webserver ws =  httpserver::create_webserver(9000);
         hello_world_resource hwr;
         master_css mc;
-               
         ws.register_resource("/", &hwr);
         ws.register_resource("/css/master.css", &mc);
-
         ws.start(true);
+        */
 
     }
     

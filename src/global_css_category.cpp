@@ -19,3 +19,10 @@ std::string global_css_category::css() const {
     }
     return str;    
 }
+std::string global_css_category::css(const char* state) const{
+    std::string str = "";
+    for( const auto &property : properties){        
+        str.append( property->css(state) );
+    }
+    return str;
+};

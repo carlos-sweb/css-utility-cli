@@ -7,6 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <fstream>
+#include <functional>
 #include <fmt/core.h>
 #include <fmt/format.h>
 
@@ -55,6 +56,7 @@ struct global_build_default {
     };
     
     std::vector<std::string> getCategories() const;
+    void eachCategories(const Value &categories, std::function<void(global_css_category*)> func) const;
     std::vector<std::string> getScreensKey() const;
     rapidjson::Value getScreensJson(rapidjson::Document::AllocatorType& allocator) const;
     rapidjson::Value getStatesjson(rapidjson::Document::AllocatorType& allocator) const;
@@ -67,6 +69,11 @@ struct global_build_default {
     std::vector<std::string> states ={
         "link",
         "visited",
+        "first-child",
+        "last-child",
+        "only-child",
+        "nth-child(odd)",
+        "nth-child(even)",
         "hover",
         "focus",
         "active",
@@ -75,6 +82,8 @@ struct global_build_default {
         "focus-visible",
         "required"
     };
+    void eachStates(const Value &statesJson , std::function<void(const char*)> func) const;
+    void eachScreens(const Value &screensJson,std::function<void(std::string,std::string)> func) const;
     global_build_default() = default; // Constructor
     bool stateExists(std::string name) const;
     bool categoryExists(std::string name) const;

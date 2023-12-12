@@ -36,40 +36,58 @@ void buildProject(std::string path){
  
     std::ofstream archivo( MaterMinCss , std::ios::out | std::ios::trunc);
     // NORMALIZE SECTION
-
     bool normalize = d.HasMember("normalize") ?  d["normalize"].IsBool() ? d["normalize"].GetBool()  : false  : false;
-
     if( d.HasMember("normalize") ){
         if( !d["normalize"].IsBool() ){
             ho.warningMesage("The normalize option must be of boolean type");            
         }
     }
-
     if( normalize ){
         if (archivo.is_open()){
             archivo << normalize_min_css;                                
         }            
     }
-
     global_build_default Build_default; 
     // CATEGORIES SECCTION
-    const Value &categories = d["categories"];    
 
-    if( categories.IsArray() && archivo.is_open() ){            
-        for( SizeType i = 0 ; i < categories.Size() ; i++ ){
-        const std::string nameCategory = categories[i].GetString();
-            if( Build_default.categoryExists( nameCategory ) ){                
-                global_css_category* categoryBuild = Build_default.at( nameCategory );
-                archivo << categoryBuild->css();
-            }else{
-                //std::cout << "Noexiste -> " << nameCategory  << "\n";
-                // Dont know this category
+    const Value &categories = d["categories"];
+    const Value &states = d["states"];
+    const Value &screens = d["screens"];
+
+
+    Build_default.eachScreens(screens,[&archivo](std::string min , std::string max){
+        archivo << std::string(fmt::format("@media screen and (min-width:{0}) and (max-width:{1}){{",min,max));
+        archivo << "}";
+    });
+        
+    Build_default.eachCategories( categories , [&archivo,&states,&Build_default](global_css_category *categoryBuild){
+        archivo << categoryBuild->css();
+        Build_default.eachStates( states ,[&archivo,&categoryBuild](const char* state){
+            archivo << categoryBuild->css(state);
+        });
+    });
+    /*
+    if( d.HasMember("screens") ){
+    const Value &screens = d["screens"];
+        if( screens.IsObject() ){        
+            for( auto& screen : screens.GetObject() ){           
+                std::string name  = std::string( screen.name.GetString() );
+                std::string min = std::string(screen.value["min"].GetString());
+                std::string max = std::string(screen.value["min"].GetString());
+                if( screen.value.HasMember("min") && screen.value.HasMember("max") ){                    
+                    archivo << std::string(fmt::format("@media screen and (min-width:{0}) and (max-width:{1}){{",min,max)) << "";
+                    Build_default.eachCategories( categories , [&archivo,&states,&Build_default](global_css_category *categoryBuild){
+                        archivo << categoryBuild->css();
+                        Build_default.eachStates( states ,[&archivo,&categoryBuild](const char* state){
+                            archivo << categoryBuild->css(state);
+                        });
+                    });
+                    archivo << "}";
+                }
             }
-            // this break i must remove only test
-            
-        }        
-    }
-
+        }
+    } 
+    */   
     // CLOSE FILE   
     if (archivo.is_open()){archivo.close();}
     // Some computation here
