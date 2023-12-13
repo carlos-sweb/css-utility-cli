@@ -54,18 +54,31 @@ void buildProject(std::string path){
     const Value &states = d["states"];
     const Value &screens = d["screens"];
 
-
-    Build_default.eachScreens(screens,[&archivo](std::string min , std::string max){
-        archivo << std::string(fmt::format("@media screen and (min-width:{0}) and (max-width:{1}){{",min,max));
-        archivo << "}";
+ 
+    Build_default.eachScreens(screens,[&archivo,&states,&Build_default,&categories](std::string name , std::string min , std::string max){        
+        archivo << std::string(fmt::format(" @media screen and (min-width:{0}) and (max-width:{1}){{",min,max));        
+        Build_default.eachCategories( categories , [&archivo,&states,&Build_default,&name](global_css_category *categoryBuild){
+            archivo << categoryBuild->cssScreenWrapper(name);
+            Build_default.eachStates( states ,[&archivo,&categoryBuild,&name](const char* state){
+                archivo << categoryBuild->cssScreenWrapper(name,state);
+            });
+        });
+        archivo << "}";        
     });
-        
+    
+    
     Build_default.eachCategories( categories , [&archivo,&states,&Build_default](global_css_category *categoryBuild){
         archivo << categoryBuild->css();
         Build_default.eachStates( states ,[&archivo,&categoryBuild](const char* state){
             archivo << categoryBuild->css(state);
         });
     });
+    
+
+ 
+
+
+
     /*
     if( d.HasMember("screens") ){
     const Value &screens = d["screens"];

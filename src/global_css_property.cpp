@@ -22,6 +22,13 @@ std::string global_css_property::css() const {
     return str;
 }
 
+std::string global_css_property::cssScreenWrapper(std::string prefix) const{
+    std::string str = "";
+    for( auto const&[className,css_value]: options ){
+        str.append(fmt::format(".{5}\\:{0}{3}{1}:{2}{4}", className , main_property, css_value ,"{","}", prefix ));
+    }        
+    return str;
+}
 
 std::string global_css_property::css( const char* state ) const{
     std::string str = "";
@@ -40,6 +47,28 @@ std::string global_css_property::css( const char* state ) const{
             str.append(fmt::format(".{5}\\:{0} > :{6}{3}{1}:{2}{4}", className , main_property, css_value ,"{","}",shortState,state));
         }else{
             str.append(fmt::format(".{5}\\:{0}:{5}{3}{1}:{2}{4}", className , main_property, css_value ,"{","}",state));
+        }
+        
+    }        
+    return str;
+}
+
+std::string global_css_property::cssScreenWrapper( std::string prefix, const char* state ) const{
+    std::string str = "";
+    for( auto const&[className,css_value]: options ){
+        if( std::string(state)  == "first-child" || std::string(state)  == "last-child" ){
+            size_t position = std::string(state).find("-");
+            std::string shortState = std::string(state).substr(0, position);
+            str.append(fmt::format(".{7}\\:{5}\\:{0} > :{6}{3}{1}:{2}{4}", className , main_property, css_value ,"{","}",shortState,state,prefix));
+        }else if( std::string(state)  == "only-child" ){
+            size_t position = std::string(state).find("-");
+            std::string shortState = std::string(state).substr(0, position);
+            str.append(fmt::format(".{7}\\:{5}\\:{0}:{6}{3}{1}:{2}{4}", className , main_property, css_value ,"{","}",shortState,state,prefix));
+        }else if( std::string(state)  == "nth-child(odd)"  || std::string(state)  == "nth-child(even)" ){            
+            std::string shortState = std::string(state) == "nth-child(odd)" ? "odd" : "even";
+            str.append(fmt::format(".{6}\\:{5}\\:{0} > :{6}{3}{1}:{2}{4}", className , main_property, css_value ,"{","}",shortState,state,prefix));
+        }else{
+            str.append(fmt::format(".{6}\\:{5}\\:{0}:{5}{3}{1}:{2}{4}", className , main_property, css_value ,"{","}",state,prefix));
         }
         
     }        

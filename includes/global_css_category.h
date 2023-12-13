@@ -9,7 +9,9 @@ typedef struct global_css_category{
     global_css_category(std::string n,std::vector<global_css_property*> p);
     std::vector<std::map<std::string,std::vector<std::string>>> getProperties() const;
     std::string css() const;
-    std::string css(const char* state) const;   
+    std::string css(const char* state) const;
+    std::string cssScreenWrapper(std::string prefix) const;
+    std::string cssScreenWrapper(std::string prefix , const char* state) const;
 }global_css_category;
 
 

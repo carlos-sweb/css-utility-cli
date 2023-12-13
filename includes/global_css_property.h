@@ -13,6 +13,8 @@ typedef struct global_css_property{
     global_css_property(std::string m ,std::map<std::string,std::string> o );
     std::string css() const;
     std::string css(const char* state) const;
+    std::string cssScreenWrapper(std::string prefix) const;
+    std::string cssScreenWrapper(std::string prefix , const char* state) const;
     std::map<std::string,std::vector<std::string>> getProperties() const;
 }global_css_property;
 

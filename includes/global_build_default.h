@@ -83,7 +83,7 @@ struct global_build_default {
         "required"
     };
     void eachStates(const Value &statesJson , std::function<void(const char*)> func) const;
-    void eachScreens(const Value &screensJson,std::function<void(std::string,std::string)> func) const;
+    void eachScreens(const Value &screensJson,std::function<void(std::string,std::string,std::string)> func) const;
     global_build_default() = default; // Constructor
     bool stateExists(std::string name) const;
     bool categoryExists(std::string name) const;

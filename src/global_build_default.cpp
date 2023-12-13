@@ -102,14 +102,14 @@ void global_build_default::eachStates(const Value &statesJson , std::function<vo
     }
 }
 
-void global_build_default::eachScreens(const Value &screensJson,std::function<void(std::string,std::string)> func) const{
+void global_build_default::eachScreens(const Value &screensJson,std::function<void(std::string,std::string,std::string)> func) const{
     if( screensJson.IsObject() ){        
         for( auto& screen : screensJson.GetObject()){
             std::string name  = std::string( screen.name.GetString());
             std::string min = std::string(screen.value["min"].GetString());
-            std::string max = std::string(screen.value["min"].GetString());
+            std::string max = std::string(screen.value["max"].GetString());
             if( screen.value.HasMember("min") && screen.value.HasMember("max") ){                                        
-                func(min,max);
+                func(name,min,max);
             }
         }
     }
