@@ -1,6 +1,7 @@
 #ifndef TYPOGRAPHY_H
 #define TYPOGRAPHY_H
 #include "global_css_property.h"
+#include "css_var/global_color.h"
 extern global_css_property *color;
 extern global_css_property *verticalAlign;
 extern global_css_property *textAlign;

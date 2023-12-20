@@ -2,6 +2,7 @@
 #ifndef BORDER_H
 #define BORDER_H
 #include "global_css_property.h"
+#include "css_var/global_color.h"
 extern global_css_property *borderBottomRightRadius;
 extern global_css_property *borderBottomLeftRadius;
 extern global_css_property *borderTopRightRadius;
