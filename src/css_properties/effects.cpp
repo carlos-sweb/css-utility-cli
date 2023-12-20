@@ -18,7 +18,7 @@ global_css_property *opacity = new global_css_property({"opacity",{
   {"opacity-100","'1'"},
 }});
   //{"shadow-around","0 0 0 0.125em rgba(72,95,199,.25)"}
-global_css_property *boxShadowAround = new global_css_property({"box-shadow"},g_color.get("shadow-around"));
+global_css_property *boxShadowAround = new global_css_property({"box-shadow"},g_color.getRGBA("shadow-around","0 0 0 0.125em"));
 
 global_css_property *boxShadow = new global_css_property({"box-shadow",{
   {"shadow-0","0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14),0px 0px 0px 0px rgba(0, 0, 0, 0.12)"},

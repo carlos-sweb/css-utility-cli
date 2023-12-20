@@ -1,16 +1,15 @@
 #ifndef GLOBAL_COLOR_H
 #define GLOBAL_COLOR_H
 #include <map>
-#include <string>
-#include <iostream>
-#include <vector>
-#include <string>
-#include <map>
-#include <iostream>
+#include <iostream>     // std::cout
+#include <sstream>      // std::istringstream
+#include <string>       // std::string
 
 typedef struct global_var_color{
-    std::string toRGBA(std::string hex) const;
+    std::string toRGBA(std::string hexColor) const;
     std::map<std::string,std::string> getRGBA() const;
+    std::map<std::string,std::string> getRGBA(std::string prefix) const;
+    std::map<std::string,std::string> getRGBA(std::string prefix,std::string prefixvalue) const;
     std::map<std::string,std::string> get() const;
     std::map<std::string,std::string> get(std::string prefix) const;
     std::map<std::string,std::string> colors = {
@@ -267,8 +266,14 @@ typedef struct global_var_color{
     {"bluegray600","#546E7A"},
     {"bluegray700","#455A64"},
     {"bluegray800","#37474F"},
-    {"bluegray900","#263238"},
-    {"indianred","indianred"},
+    {"bluegray900","#263238"}    
+  };
+}global_var_color;
+extern global_var_color g_color;
+#endif // GLOBAL_COLOR_H
+
+/*
+{"indianred","indianred"},
     {"lightcoral","lightcoral"},
     {"salmon","salmon"},
     {"darksalmon","darksalmon"},
@@ -409,8 +414,4 @@ typedef struct global_var_color{
     {"slategray","slategray"},
     {"darkslategray","darkslategray"},
     {"black","black"}
-  };
-}global_var_color;
-
-extern global_var_color g_color;
-#endif // GLOBAL_COLOR_H
+    */
