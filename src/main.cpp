@@ -1,3 +1,5 @@
+#include <stdio.h>                                                              
+#include <stdlib.h>  
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -8,6 +10,7 @@
 #include <thread>
 #include <algorithm>
 #include <functional>
+#include <typeinfo>
 #include "argh.h"
 // -----------------------------------------------------------------------------------------------
 // normalize_min_css
@@ -38,14 +41,20 @@ int main(int argc, char* argv[]){
     if(cmdl({"-b","--build"})){buildProject(cmdl({ "-b", "--build" }).str());}
     
     if( cmdl[{"-s","--server"}] ){
-        /*
-        httpserver::webserver ws =  httpserver::create_webserver(9000);
+        int port = 9000;    
+        if( cmdl({"-p","--port"})  ){
+            int n_port  = atoi( std::string(cmdl({"-p","--port"}).str()).c_str() );
+            port = n_port != 0 && n_port >= 8080 ? n_port : port;
+        }
+
+        httpserver::webserver ws =  httpserver::create_webserver(port);
         hello_world_resource hwr;
         master_css mc;
         ws.register_resource("/", &hwr);
         ws.register_resource("/css/master.css", &mc);
         ws.start(true);
-        */
+        
+        
     }
     // -------------------------------------------------------------------------------------
     return EXIT_SUCCESS;
