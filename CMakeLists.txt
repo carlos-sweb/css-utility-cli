@@ -5,11 +5,11 @@ project(cssutilitycli LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(fmt)
 
-
+find_package(fmt REQUIRED)
 
 add_executable(cssutilitycli 
+
 src/main.cpp 
 
 src/css_var/global_color.cpp
@@ -64,10 +64,10 @@ src/css_categories/typography.cpp
 src/global_build_default.cpp 
 src/create_project.cpp
 src/build_project.cpp
-src/server.cpp
+
 )
 
-target_link_libraries(cssutilitycli fmt::fmt httpserver)
+target_link_libraries(cssutilitycli fmt::fmt)
 
 target_include_directories(cssutilitycli PRIVATE includes)
 
