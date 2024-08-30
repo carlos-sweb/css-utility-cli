@@ -71,13 +71,6 @@ target_link_libraries(cssutilitycli fmt::fmt)
 
 target_include_directories(cssutilitycli PRIVATE includes)
 
-add_custom_target(copy_www_folder ALL 
-    COMMAND ${CMAKE_COMMAND} -E copy_directory
-    ${PROJECT_SOURCE_DIR}/www
-    ${PROJECT_BINARY_DIR}/www
-    COMMENT "Copy www folder into binary directory")
-
-
 include(GNUInstallDirs)
 install(TARGETS cssutilitycli
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
