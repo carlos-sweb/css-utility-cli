@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(fmt REQUIRED)
 
+find_package(Crow)
+
 add_executable(cssutilitycli 
 
 src/main.cpp 
@@ -67,7 +69,7 @@ src/build_project.cpp
 
 )
 
-target_link_libraries(cssutilitycli fmt::fmt)
+target_link_libraries(cssutilitycli PUBLIC Crow::Crow fmt::fmt)
 
 target_include_directories(cssutilitycli PRIVATE includes)
 
