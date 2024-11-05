@@ -33,8 +33,8 @@ void createProject( std::string name ){
             for(const auto &category : Build_default.getCategories() ){
                 std::string fileCategoryJson = dirPathNameConfig+"/"+category+".json";
                 if( !fs::exists(fileCategoryJson) ){
-                    ho.createFileConfig( fileCategoryJson ,  Build_default.getConfigCategory(category) );
-                    std::cout << termcolor::green << "    Created : " << termcolor::reset <<  category +" -> "+category+".json" << "\n";
+                    ho.createFileConfig( fileCategoryJson ,  Build_default.getConfigCategory(category) );        
+                    std::cout << termcolor::green << " Created : " << termcolor::reset <<  category +" -> "+category+".json" << "\n";
                 }
             }                                                     
             // -------------------------------------------------------------

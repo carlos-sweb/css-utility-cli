@@ -59,15 +59,24 @@ void helperOptions::showVersion(){
 }
 
 void helperOptions::help(){
+    
     std::cout << "\n";
-    std::cout << " Welcome to "<< termcolor::green << "Css-Utility-Cli " << termcolor::reset << " \n";
-    std::vector<std::string> outputs = {
-        getVersion(),
-        "    -v, --version                    Show version",
-        "    -h, --help                       Show help",
-        "    -c=PROJECT, --create=PROJECT     create css-utility-cli project",
-        "    -i, --init                       initialize css-utility-cli project",
-        "    -b, --build                      build project\n"
+    std::cout << termcolor::bold << " Welcome to "<< termcolor::reset<< termcolor::green << "Css-Utility-Cli " << termcolor::reset << " \n";
+    std::vector<std::string> outputs = {        
+        getVersion(),        
+        "",
+        fmt::format("{:4}{:33}{}","","-v, --version","Show version"),
+        fmt::format("{:4}{:33}{}","","-h, --help","Show help"),        
+        fmt::format("{:4}{:33}{}","","-l, --list","Show list of:"),        
+        fmt::format("{:4}{}","","List options"),        
+        fmt::format("{:7}{:30}{}","","all","list all options to build"),
+        fmt::format("{:7}{:30}{}","","categories","list categories options to build"),
+        fmt::format("{:7}{:30}{}","","screens","list screens options to build"),
+        fmt::format("{:7}{:30}{}","","states","list states options to build"),
+        fmt::format("{:4}{:33}{}","","-c=PROJECT, --create=PROJECT","create css-utility-cli project"),        
+        fmt::format("{:4}{:33}{}","","-i, --init ", "initialize css-utility-cli project"),        
+        fmt::format("{:4}{:33}{}","","-b, --build","build project"),
+        fmt::format("{:33}{}","","\n")
     };    
-    fmt::print("{}", fmt::join(outputs, "\n"));    
+    fmt::print("{}", fmt::join(outputs, "\n"));        
 }

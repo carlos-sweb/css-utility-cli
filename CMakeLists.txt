@@ -66,6 +66,7 @@ src/css_categories/typography.cpp
 src/global_build_default.cpp 
 src/create_project.cpp
 src/build_project.cpp
+src/list_options.cpp
 
 )
 

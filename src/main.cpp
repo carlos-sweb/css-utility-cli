@@ -1,3 +1,5 @@
+// check $this project https://github.com/cppfastio/fast_io
+
 #include <stdio.h>                                                              
 #include <stdlib.h>  
 #include <filesystem>
@@ -17,15 +19,12 @@
 #include "helperOptions.h"
 #include "create_project.h"
 #include "build_project.h"
+#include "list_options.h"
 
 #define CROW_STATIC_DIRECTORY "/home/sweb/cppProjects/css-utility-cli/public/"
 //#define CROW_STATIC_ENDPOINT "/alternative_endpoint/<path>"
 //#define CROW_DISABLE_STATIC_DIR
-
-
 #include "crow.h"
-
-
 #include <random>
 
 
@@ -44,7 +43,15 @@ int main(int argc, char* argv[]){
         helperOptions ho;        
         if(cmdl[{"-v","--version"}]){ ho.showVersion();}        
         if(cmdl[{"-h","--help"}]){ ho.help(); }
-    }    
+    }
+    if( cmdl[{"-l","--list"}] ){ listOptions( "all" ); }
+    if( cmdl({"-l","--list"}) ){
+
+        listOptions( cmdl({"-l","--list"}).str() );
+     
+        
+    }
+
     if( cmdl[{"-i","--init"}] ){
         std::cout << "Try Init Working...\n";
     }

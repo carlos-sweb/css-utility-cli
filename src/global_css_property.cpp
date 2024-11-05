@@ -1,6 +1,9 @@
 #include "global_css_property.h"
 
-global_css_property::global_css_property(std::string m, std::map<std::string,std::string> o ): main_property(m) , options(o) {
+global_css_property::global_css_property(
+    std::string m,
+    std::map<std::string,std::string> o 
+): main_property(m) , options(o) {
     
 }
 

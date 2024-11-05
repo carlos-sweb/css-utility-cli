@@ -49,12 +49,16 @@ void buildProject(std::string path){
     }
     global_build_default Build_default; 
     // CATEGORIES SECCTION
+    // Hay que Arreglar aqui   
+    //const Value &states = d.HasMember("states") ? d["states"] : "Vacio";
+    //const Value &categories = d.HasMember("categories") ?  d["categories"] : "Array Vacio";
+    //const Value &screens = d.HasMember("screens") ?  d["screens"] : "Array Vacio";
 
-    const Value &categories = d["categories"];
     const Value &states = d["states"];
+    const Value &categories = d["categories"];
     const Value &screens = d["screens"];
 
- 
+    // Compilación Principal del archivo master.css
     Build_default.eachScreens(screens,[&archivo,&states,&Build_default,&categories](std::string name , std::string min , std::string max){        
         archivo << std::string(fmt::format(" @media screen and (min-width:{0}) and (max-width:{1}){{",min,max));        
         Build_default.eachCategories( categories , [&archivo,&states,&Build_default,&name](global_css_category *categoryBuild){
@@ -65,7 +69,7 @@ void buildProject(std::string path){
         });
         archivo << "}";        
     });
-    
+    // Compilación Principal del archivo master.css
     
     Build_default.eachCategories( categories , [&archivo,&states,&Build_default](global_css_category *categoryBuild){
         archivo << categoryBuild->css();
@@ -73,34 +77,7 @@ void buildProject(std::string path){
             archivo << categoryBuild->css(state);
         });
     });
-    
-
- 
-
-
-
-    /*
-    if( d.HasMember("screens") ){
-    const Value &screens = d["screens"];
-        if( screens.IsObject() ){        
-            for( auto& screen : screens.GetObject() ){           
-                std::string name  = std::string( screen.name.GetString() );
-                std::string min = std::string(screen.value["min"].GetString());
-                std::string max = std::string(screen.value["min"].GetString());
-                if( screen.value.HasMember("min") && screen.value.HasMember("max") ){                    
-                    archivo << std::string(fmt::format("@media screen and (min-width:{0}) and (max-width:{1}){{",min,max)) << "";
-                    Build_default.eachCategories( categories , [&archivo,&states,&Build_default](global_css_category *categoryBuild){
-                        archivo << categoryBuild->css();
-                        Build_default.eachStates( states ,[&archivo,&categoryBuild](const char* state){
-                            archivo << categoryBuild->css(state);
-                        });
-                    });
-                    archivo << "}";
-                }
-            }
-        }
-    } 
-    */   
+     
     // CLOSE FILE   
     if (archivo.is_open()){archivo.close();}
     // Some computation here

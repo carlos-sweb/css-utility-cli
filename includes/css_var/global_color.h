@@ -3,16 +3,19 @@
 #include <map>
 #include <iostream>     // std::cout
 #include <sstream>      // std::istringstream
-#include <string>       // std::string
+#include <string>       
+
+using std::string;
+using std::map;
 
 typedef struct global_var_color{
-    std::string toRGBA(std::string hexColor) const;
-    std::map<std::string,std::string> getRGBA() const;
-    std::map<std::string,std::string> getRGBA(std::string prefix) const;
-    std::map<std::string,std::string> getRGBA(std::string prefix,std::string prefixvalue) const;
-    std::map<std::string,std::string> get() const;
-    std::map<std::string,std::string> get(std::string prefix) const;
-    std::map<std::string,std::string> colors = {
+    string toRGBA(string hexColor) const;
+    map<string,string> getRGBA() const;
+    map<string,string> getRGBA(string prefix) const;
+    map<string,string> getRGBA(string prefix,string prefixvalue) const;
+    map<string,string> get() const;
+    map<string,string> get(string prefix) const;
+    map<string,string> colors = {
     {"red50","#FFEBEE"},
     {"red100","#FFCDD2"},
     {"red200","#EF9A9A"},

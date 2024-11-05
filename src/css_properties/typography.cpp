@@ -1,6 +1,14 @@
 #include "css_properties/typography.h"
 
+// https://www.w3.org/wiki/CSS/Properties/color
+// Values  <color value> | <color keyword> | currentColor | transparent | inherit
+/* Initial value Depends on user agent.
+HTML5 indicates that the initial value for the 'color' property is expected to be black, but users can easily change it in their user agent settings.
+*/
+// Applies to  All elements
+// Inherited Yes
 global_css_property *color = new global_css_property({"color", g_color.get("text") });
+
 
 global_css_property *verticalAlign = new global_css_property({"vertical-align",{
   {"align-baseline","baseline"},
@@ -11,8 +19,12 @@ global_css_property *verticalAlign = new global_css_property({"vertical-align",{
   {"align-text-bottom","text-bottom"},
 }});
 
+// https://www.w3.org/wiki/CSS/Properties/text-align
+// Values  left | right | center | justify | inherit
+// Initial value a nameless value that acts as 'left' if 'direction' is 'ltr', 'right' if 'direction' is 'rtl'
+// {"left","right","center","justify","inherit"}
 global_css_property *textAlign = new global_css_property({"text-align",{
-  {"text-left","left"},
+  {"text-left","left"}, // Default
   {"text-center","center"},
   {"text-right","right"},
   {"text-inherit","inherit"},
