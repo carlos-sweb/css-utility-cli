@@ -58,9 +58,20 @@ int main(int argc, char* argv[]){
     // -------------------------------------------------------------------------------------
     // Aqui sabemos que esta declaro con un = , auque de todas 
     // formas proria venir vacio
-    if( cmdl({"-c","--create"})){createProject( cmdl({ "-c", "--create" }).str());}
+    if( cmdl({"-c","--create"})){
+        std::unique_ptr<create_project> cProject = 
+        std::make_unique<create_project>(create_project(
+            cmdl({ "-c", "--create" }).str()
+        ));
+        // createProject( cmdl({ "-c", "--create" }).str());
+    }
     // Verificamos presencia del atributo pero sabemos de ante mano que esta vacio
-    if(cmdl[{"-c","--create"}]){createProject( "" );}
+    if(cmdl[{"-c","--create"}]){
+        std::unique_ptr<create_project> cProject = 
+        std::make_unique<create_project>(create_project(
+           ""
+        ));
+    }
     // -------------------------------------------------------------------------------------
     // Aqui sabemos que la palabra  buil viene solo --build
     if(cmdl[{"-b","--build"}]){buildProject("");}
@@ -70,7 +81,6 @@ int main(int argc, char* argv[]){
     if(cmdl[{"-s","--server"}]){
 
         // int port = numeroAleatorio(8000,125000);
-
         crow::SimpleApp app;        
         crow::mustache::set_base("/home/sweb/cppProjects/css-utility-cli/public");
         crow::mustache::set_global_base("/home/sweb/cppProjects/css-utility-cli/public");
@@ -100,7 +110,7 @@ int main(int argc, char* argv[]){
         ([](std::string s){
             return crow::response(s);
         });
-        // app.port(port).multithreaded().run();  
+        // app.port(port).multithreaded().run();
         app.port(18080).multithreaded().run();  
 
     }    

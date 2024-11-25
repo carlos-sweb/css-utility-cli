@@ -1,14 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
-
 project(cssutilitycli LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 find_package(fmt REQUIRED)
+find_package(Crow REQUIRED)
 
-find_package(Crow)
 
 add_executable(cssutilitycli 
 
@@ -64,7 +62,7 @@ src/css_categories/typography.cpp
 
 
 src/global_build_default.cpp 
-src/create_project.cpp
+
 src/build_project.cpp
 src/list_options.cpp
 

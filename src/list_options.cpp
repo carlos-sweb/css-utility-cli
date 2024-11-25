@@ -11,9 +11,9 @@ void listOptions( std::string option ){
 	};
     if (std::find(list_options_support.begin(), list_options_support.end(), option ) != list_options_support.end())
     {
-        ho.successMesage("listOptions work..... ", option );
+        ho.successMessage("listOptions work..... ", option );
     }else{    	
-        ho.errorMesage(option ,": invalid option ");
+        ho.errorMessage(option ,": invalid option ");
     }
        
 
