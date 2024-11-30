@@ -6,4 +6,7 @@ global_css_category *flexbox = new global_css_category({"flexbox",{
   flexGrow,
   flexShrink,
   order,
+  gap,
+  gapX,
+  gapY
 }});
